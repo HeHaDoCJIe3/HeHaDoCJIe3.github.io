@@ -1,0 +1,1731 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Профессиональный моушн-дизайн для России и СНГ. Создание рекламных роликов, UI/UX анимаций, моушн-графики и 3D визуализации.">
+    <meta name="keywords" content="моушн-дизайн, анимация, рекламные ролики, UI/UX, 3D визуализация, моушн-графика">
+    <meta name="author" content="Barashkov Motion">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Barashkov Motion - Профессиональный моушн-дизайн">
+    <meta property="og:description" content="Создание анимаций, которые решают бизнес-задачи и привлекают внимание">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ru_RU">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Barashkov Motion - Профессиональный моушн-дизайн">
+    <meta name="twitter:description" content="Создание анимаций, которые решают бизнес-задачи и привлекают внимание">
+    
+    <!-- Additional SEO meta tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="geo.region" content="RU">
+    <meta name="geo.placename" content="Russia">
+    <meta name="language" content="Russian">
+    
+    <title>Barashkov Motion | Профессиональный моушн-дизайн</title>
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Roboto:wght@300;400;500&display=swap" as="style">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style">
+    
+    <!-- External resources with async loading -->
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎬</text></svg>">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+    
+    <!-- Theme color for mobile browsers -->
+    <meta name="theme-color" content="#00d9ff">
+    <meta name="msapplication-TileColor" content="#00d9ff">
+    
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CreativeBusiness",
+      "name": "Barashkov Motion",
+      "description": "Профессиональный моушн-дизайн для России и СНГ",
+      "url": "https://yourdomain.com",
+      "logo": "https://yourdomain.com/logo.png",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "RU"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "availableLanguage": "Russian"
+      },
+      "serviceType": "Motion Design",
+      "areaServed": ["RU", "CIS"],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Motion Design Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Рекламные ролики",
+              "description": "Создание продающих видео для соцсетей, YouTube и ТВ"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "UI/UX Анимация",
+              "description": "Плавные анимации интерфейсов"
+            }
+          }
+        ]
+      }
+    }
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #0a0a16;
+            --secondary: #1a1a2e;
+            --accent: #00d9ff;
+            --accent-dark: #0084a8;
+            --text: #ffffff;
+            --text-secondary: #a0a0c0;
+            --glass: rgba(30, 30, 60, 0.5);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            
+            /* Performance optimizations */
+            --transition-fast: 0.2s ease;
+            --transition-medium: 0.3s ease;
+            --transition-slow: 0.6s ease;
+            --shadow-light: 0 2px 10px rgba(0, 0, 0, 0.1);
+            --shadow-medium: 0 5px 20px rgba(0, 0, 0, 0.2);
+            --shadow-heavy: 0 10px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Optimize for reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* Performance optimizations */
+        .hero-animation video,
+        .work-preview {
+            will-change: transform;
+            transform: translateZ(0);
+            backface-visibility: hidden;
+        }
+
+        /* Optimize animations for better performance */
+        .benefit-card,
+        .testimonial-card,
+        .service-title-block,
+        .service-description-block {
+            will-change: opacity, transform;
+        }
+
+        /* Smooth scrolling for the whole page */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Optimize backdrop filters */
+        @supports (backdrop-filter: blur(10px)) {
+            header {
+                backdrop-filter: blur(10px);
+                -webkit-backdrop-filter: blur(10px);
+            }
+        }
+
+        @supports not (backdrop-filter: blur(10px)) {
+            header {
+                background: rgba(30, 30, 60, 0.95);
+            }
+        }
+
+        /* Critical CSS optimizations */
+        .section {
+            contain: layout style paint;
+        }
+
+        .services-modern-container {
+            contain: layout style;
+        }
+
+        /* Optimize images and media */
+        img, video {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Print styles */
+        @media print {
+            header, footer, .hero-animation {
+                display: none;
+            }
+            
+            body {
+                background: white;
+                color: black;
+            }
+            
+            .section {
+                page-break-inside: avoid;
+            }
+        }
+
+        /* High contrast mode support */
+        @media (prefers-contrast: high) {
+            :root {
+                --glass: rgba(0, 0, 0, 0.9);
+                --glass-border: rgba(255, 255, 255, 0.3);
+            }
+        }
+
+        body {
+            background-color: var(--primary);
+            color: var(--text);
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+            position: relative;
+            min-height: 100vh;
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        /* Focus styles for accessibility */
+        a:focus,
+        button:focus,
+        input:focus,
+        textarea:focus {
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+        }
+
+        /* Skip to main content link for accessibility */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 6px;
+            background: var(--accent);
+            color: var(--primary);
+            padding: 8px;
+            text-decoration: none;
+            border-radius: 4px;
+            z-index: 1000;
+            transition: var(--transition-fast);
+        }
+
+        .skip-link:focus {
+            top: 6px;
+        }
+
+        /* Навигация */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 3%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            background: var(--glass);
+            border-bottom: 1px solid var(--glass-border);
+            transition: padding var(--transition-medium), box-shadow var(--transition-medium);
+            will-change: padding, box-shadow;
+        }
+
+        header.scrolled {
+            padding: 15px 3%;
+            box-shadow: var(--shadow-medium);
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--text);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        .logo i {
+            margin-right: 10px;
+            color: var(--accent);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav li {
+            margin-left: 30px;
+        }
+
+        nav a {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+            padding: 5px 0;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Основное содержимое - ШИРЕ И МЕНЬШЕ ОТСТУПОВ */
+        .container {
+            max-width: 1400px; /* Увеличенная максимальная ширина */
+            margin: 0 auto;
+            padding: 100px 2% 50px; /* Уменьшены боковые отступы */
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Герой-секция */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-animation {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            max-width: 800px; /* Увеличенная ширина контента */
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 4.5rem;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            background: linear-gradient(90deg, #ffffff, var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 800;
+        }
+
+        .hero p {
+            font-size: 1.3rem; /* Увеличен размер текста */
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+            max-width: 700px; /* Увеличенная ширина текста */
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            border: 2px solid transparent;
+            font-size: 1.1rem;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: var(--primary);
+            box-shadow: 0 5px 20px rgba(0, 217, 255, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 217, 255, 0.6);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--text);
+            border: 2px solid var(--accent);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(0, 217, 255, 0.1);
+            transform: translateY(-3px);
+        }
+
+        /* Секция услуг */
+        .section {
+            padding: 100px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        .section-title {
+            font-size: 3rem; /* Увеличен размер заголовка */
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px; /* Увеличенная ширина подчеркивания */
+            height: 5px; /* Увеличенная высота подчеркивания */
+            background: var(--accent);
+            border-radius: 3px;
+        }
+
+        .section-subtitle {
+            color: var(--text-secondary);
+            max-width: 800px; /* Увеличенная ширина подзаголовка */
+            margin: 0 auto;
+            font-size: 1.3rem; /* Увеличен размер текста */
+        }
+
+        /* Новый стиль для секции услуг */
+        .services-modern-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px; /* Увеличен промежуток между колонками */
+            align-items: start;
+        }
+
+        .services-titles {
+            display: flex;
+            flex-direction: column;
+            padding-right: 40px; /* Увеличен отступ */
+            border-right: 1px solid var(--glass-border);
+        }
+
+        .service-title-block {
+            height: 100px; /* Фиксированная высота для точного выравнивания */
+            display: flex;
+            align-items: center;
+            justify-content: flex-end; /* Выравнивание по правому краю */
+            border-bottom: 1px solid var(--glass-border);
+            padding: 0;
+            margin: 0;
+        }
+
+        .service-title-modern {
+            font-size: 32px; /* Увеличен размер текста */
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            line-height: 1.4;
+            text-align: right;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            padding-right: 25px; /* Увеличен отступ */
+            margin: 0;
+        }
+
+        .service-title-modern:hover {
+            color: var(--accent);
+        }
+
+        .service-title-modern::after {
+            content: "";
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 10px; /* Увеличен размер точки */
+            height: 10px; /* Увеличен размер точки */
+            background: var(--accent);
+            border-radius: 50%;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .service-title-modern:hover::after {
+            opacity: 1;
+        }
+
+        .services-descriptions {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-description-block {
+            height: 100px; /* Фиксированная высота для точного выравнивания */
+            display: flex;
+            align-items: center;
+            justify-content: flex-start; /* Выравнивание по левому краю */
+            border-bottom: 1px solid var(--glass-border);
+            padding: 0;
+            margin: 0;
+        }
+
+        .service-description {
+            font-size: 20px; /* Увеличен размер текста */
+            line-height: 1.7; /* Увеличен межстрочный интервал */
+            color: var(--text-secondary);
+            max-width: 600px; /* Увеличенная ширина текста */
+            margin: 0;
+        }
+
+        /* Адаптивность для нового блока */
+        @media (max-width: 900px) {
+            .services-modern-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .services-titles {
+                border-right: none;
+                border-bottom: 1px solid var(--glass-border);
+                padding-right: 0;
+                padding-bottom: 30px;
+                margin-bottom: 20px;
+            }
+            
+            .service-title-modern {
+                text-align: left;
+                padding-right: 0;
+                padding-left: 25px;
+            }
+            
+            .service-title-modern::after {
+                left: 0;
+                right: auto;
+            }
+            
+            .service-title-block,
+            .service-description-block {
+                height: 80px; /* Фиксированная высота для мобильных */
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .service-title-modern {
+                font-size: 26px;
+            }
+            
+            .service-description {
+                font-size: 18px;
+            }
+        }
+
+        /* Портфолио */
+        .portfolio-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .tab {
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 30px;
+            background: var(--glass);
+            transition: all 0.3s ease;
+            font-weight: 500;
+            border: 1px solid transparent;
+            text-align: center;
+        }
+
+        .tab:hover {
+            border-color: var(--accent);
+        }
+
+        .tab.active {
+            background: var(--accent);
+            color: var(--primary);
+        }
+
+        .portfolio-content {
+            background: var(--glass);
+            border-radius: 20px;
+            border: 1px solid var(--glass-border);
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+        }
+
+        .tab-content {
+            display: none;
+            padding: 40px;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .tab-content.active {
+            display: grid;
+        }
+
+        .preview-container {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--secondary);
+        }
+
+        .work-preview {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .work-description {
+            padding: 20px;
+        }
+
+        .work-description h3 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            color: var(--accent);
+        }
+
+        .work-description p {
+            font-size: 1.2rem;
+            line-height: 1.7;
+            margin-bottom: 30px;
+            color: var(--text-secondary);
+        }
+
+        /* Преимущества */
+        .benefits {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .benefit-card {
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            border-radius: 15px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent);
+        }
+
+        .benefit-icon {
+            font-size: 3rem;
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+
+        /* Отзывы */
+        .testimonials {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Увеличен минимальный размер */
+            gap: 30px; /* Увеличен промежуток */
+            margin-top: 50px;
+        }
+
+        .testimonial-card {
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            border-radius: 15px;
+            padding: 35px; /* Увеличен отступ */
+            backdrop-filter: blur(10px);
+            position: relative;
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 5rem;
+            color: rgba(0, 217, 255, 0.2);
+            font-family: Georgia, serif;
+            line-height: 1;
+        }
+
+        .testimonial-text {
+            margin-bottom: 25px; /* Увеличен отступ */
+            font-style: italic;
+            font-size: 1.1rem; /* Увеличен размер текста */
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+
+        .author-avatar {
+            width: 55px; /* Увеличен размер */
+            height: 55px; /* Увеличен размер */
+            border-radius: 50%;
+            background: var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            color: var(--primary);
+            font-weight: bold;
+            font-size: 1.2rem; /* Увеличен размер текста */
+        }
+
+        /* Контакты */
+        .contact-section {
+            display: flex;
+            gap: 60px; /* Увеличен промежуток */
+            align-items: center;
+        }
+
+        .contact-info {
+            flex: 1;
+        }
+
+        .contact-card {
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 45px; /* Увеличен отступ */
+            backdrop-filter: blur(10px);
+            margin-bottom: 30px;
+        }
+
+        .contact-title {
+            font-size: 2.2rem; /* Увеличен размер текста */
+            margin-bottom: 25px; /* Увеличен отступ */
+            color: var(--accent);
+        }
+
+        .contact-details {
+            list-style: none;
+        }
+
+        .contact-details li {
+            margin-bottom: 20px; /* Увеличен отступ */
+            display: flex;
+            align-items: center;
+            font-size: 1.1rem; /* Увеличен размер текста */
+        }
+
+        .contact-details i {
+            width: 45px; /* Увеличен размер */
+            height: 45px; /* Увеличен размер */
+            background: rgba(0, 217, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px; /* Увеличен отступ */
+            color: var(--accent);
+            font-size: 1.2rem; /* Увеличен размер иконки */
+        }
+
+        .contact-form {
+            flex: 1;
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 45px; /* Увеличен отступ */
+            backdrop-filter: blur(10px);
+        }
+
+        .form-group {
+            margin-bottom: 30px; /* Увеличен отступ */
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 18px 22px; /* Увеличен отступ */
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--glass-border);
+            border-radius: 10px;
+            color: var(--text);
+            font-size: 1.1rem; /* Увеличен размер текста */
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--accent);
+            background: rgba(0, 217, 255, 0.05);
+        }
+
+        textarea.form-control {
+            min-height: 170px; /* Увеличенная высота */
+            resize: vertical;
+        }
+
+        /* Form Message Styles */
+        .form-message {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            font-weight: 500;
+            text-align: center;
+        }
+
+        .form-message.success {
+            background: rgba(0, 255, 0, 0.1);
+            color: #00ff00;
+            border: 1px solid rgba(0, 255, 0, 0.3);
+        }
+
+        .form-message.error {
+            background: rgba(255, 0, 0, 0.1);
+            color: #ff6b6b;
+            border: 1px solid rgba(255, 0, 0, 0.3);
+        }
+
+        .btn-loading {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-loading i {
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* Company Logos Honeycomb Styles */
+        .company-logos-section {
+            margin-top: 80px;
+            text-align: center;
+        }
+
+        .logos-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 50px;
+            color: var(--text);
+        }
+
+        .honeycomb-container {
+            /* Adjustable hex size and spacing */
+            --size: 120px; /* hex width (flat-top) */
+            --gap: 12px; /* horizontal gap between hexes in a row */
+            --row-gap: 10px; /* vertical gap between interlocking rows */
+            max-width: 1000px;
+            margin: 0 auto;
+            padding-bottom: 20px; /* avoid last row clipping */
+        }
+
+        /* Rows to build a tight honeycomb */
+        .honeycomb-row {
+            display: flex;
+            justify-content: center;
+            gap: var(--gap);
+        }
+
+        /* Overlap rows so hexes interlock vertically by 1/2 hex height */
+        .honeycomb-row + .honeycomb-row {
+            /* interlock rows by half hex height, then add a small vertical gap */
+            margin-top: calc((var(--size) * -0.433) + var(--row-gap));
+        }
+
+        /* Offset every alternate row by half hex width */
+        .honeycomb-row.offset {
+            /* shift by half hex width plus half of horizontal gap so columns line up */
+            padding-left: calc((var(--size) * 0.5) + (var(--gap) * 0.5));
+        }
+
+        .honeycomb-item {
+            width: var(--size);
+            height: calc(var(--size) * 0.866); /* hex height for flat-top: w * sqrt(3)/2 */
+            position: relative;
+            margin: 0;
+            transition: transform 0.3s ease;
+        }
+
+        .honeycomb-content {
+            width: 100%;
+            height: 100%;
+            background: var(--glass);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            /* Hexagon clipping (flat-top) */
+            -webkit-clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+            clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+        }
+
+        /* Inner framed area to mimic screenshot look */
+        .honeycomb-content .hex-inner {
+            width: 86%;
+            height: 86%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0,0,0,0.35);
+            -webkit-clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+            clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+            box-shadow: inset 0 0 0 2px rgba(255,255,255,0.06);
+        }
+
+        /* Hex border using pseudo-element so it follows the clip-path */
+        .honeycomb-content::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border: 2px solid var(--glass-border);
+            -webkit-clip-path: inherit;
+            clip-path: inherit;
+            pointer-events: none;
+        }
+
+        /* Shine effect */
+        .honeycomb-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 30%, rgba(0, 217, 255, 0.12) 50%, transparent 70%);
+            transform: translateX(-120%);
+            transition: transform 0.6s ease;
+            -webkit-clip-path: inherit;
+            clip-path: inherit;
+        }
+
+        .honeycomb-content:hover::before {
+            transform: translateX(120%);
+        }
+
+        .honeycomb-content:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 15px 40px rgba(0, 217, 255, 0.25);
+            z-index: 2;
+        }
+
+        .company-logo {
+            width: 70%;
+            height: 70%;
+            object-fit: contain;
+            filter: brightness(0) invert(1);
+            transition: transform 0.3s ease, filter 0.3s ease;
+        }
+
+        .honeycomb-content:hover .company-logo {
+            filter: brightness(1) invert(0);
+            transform: scale(1.08);
+        }
+
+        /* Responsive honeycomb layout */
+        @media (max-width: 768px) {
+            .honeycomb-container {
+                --size: 100px;
+                --gap: 10px;
+                --row-gap: 8px;
+                max-width: 640px;
+            }
+
+            .logos-title {
+                font-size: 1.5rem;
+                margin-bottom: 40px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .honeycomb-container {
+                --size: 84px;
+                --gap: 8px;
+                --row-gap: 6px;
+            }
+        }
+
+        /* Футер */
+        footer {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 60px 3% 40px; /* Уменьшены боковые отступы */
+            text-align: center;
+            border-top: 1px solid var(--glass-border);
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer-logo {
+            font-size: 2.2rem; /* Увеличен размер текста */
+            font-weight: 700;
+            margin-bottom: 25px; /* Увеличен отступ */
+        }
+
+        .footer-logo span {
+            color: var(--accent);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 25px; /* Увеличен промежуток */
+            margin-bottom: 35px; /* Увеличен отступ */
+        }
+
+        .social-link {
+            width: 55px; /* Увеличен размер */
+            height: 55px; /* Увеличен размер */
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text);
+            font-size: 22px; /* Увеличен размер иконки */
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: var(--accent);
+            color: var(--primary);
+            transform: translateY(-5px);
+        }
+
+        .copyright {
+            color: var(--text-secondary);
+            font-size: 1rem; /* Увеличен размер текста */
+        }
+
+        /* Адаптивность */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+            
+            .contact-section {
+                flex-direction: column;
+            }
+            
+            .tab-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            nav ul {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+            }
+            
+            .section-title {
+                font-size: 2.5rem; /* Увеличен размер для мобилок */
+            }
+
+            .container {
+                padding: 100px 3% 50px; /* Сохраняем уменьшенные отступы на мобилках */
+            }
+            
+            .tab-content {
+                padding: 20px;
+            }
+            
+            .preview-container {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Accessibility skip link -->
+    <a href="#main-content" class="skip-link">Перейти к основному содержанию</a>
+    
+    <!-- Шапка -->
+    <header>
+        <a href="#" class="logo"><i class="fas fa-play-circle"></i>Barashkov<span>Motion</span></a>
+        <nav>
+            <ul id="nav-menu">
+                <li><a href="#home">Главная</a></li>
+                <li><a href="#services">Услуги</a></li>
+                <li><a href="#portfolio">Портфолио</a></li>
+                <li><a href="#about">Обо мне</a></li>
+                <li><a href="#contact">Контакты</a></li>
+            </ul>
+        </nav>
+        <button class="mobile-menu-btn" aria-label="Открыть меню" aria-expanded="false" aria-controls="nav-menu">
+            <i class="fas fa-bars" aria-hidden="true"></i>
+        </button>
+    </header>
+
+    <!-- Основной контент -->
+    <main class="container" id="main-content">
+        <!-- Герой-секция -->
+        <section class="hero" id="home">
+            <!-- Анимация на фоне -->
+            <div class="hero-animation">
+        <video autoplay loop muted playsinline style="width:100%; height:100%; object-fit: cover;">
+                    <source src="videos/abstract.mp4" type="video/mp4">
+                    Ваш браузер не поддерживает видео.
+                </video>
+    </div>
+    
+    <div class="hero-content">
+        <h1>Оживим ваш бренд с помощью моушн-дизайна</h1>
+        <p>Профессиональные анимации, которые увеличат вовлеченность, улучшат пользовательский опыт и выделят вас среди конкурентов</p>
+        <div class="hero-btns">
+            <a href="#portfolio" class="btn btn-primary">Посмотреть работы</a>
+            <a href="#contact" class="btn btn-secondary">Обсудить проект</a>
+        </div>
+    </div>
+</section>
+
+        <!-- Услуги - НОВЫЙ БЛОК -->
+        <section class="section" id="services">
+            <div class="section-header">
+                <h2 class="section-title">Направления работы</h2>
+                <p class="section-subtitle">Создаю анимации, которые решают бизнес-задачи и привлекают внимание</p>
+            </div>
+            
+            <div class="services-modern-container">
+                <div class="services-titles">
+                    <div class="service-title-block">
+                        <h3 class="service-title-modern">Рекламные ролики</h3>
+                    </div>
+                    <div class="service-title-block">
+                        <h3 class="service-title-modern">UI/UX Анимация</h3>
+                    </div>
+                    <div class="service-title-block">
+                        <h3 class="service-title-modern">Моушн-графика</h3>
+                    </div>
+                    <div class="service-title-block">
+                        <h3 class="service-title-modern">3D Визуализация</h3>
+                    </div>
+                    <div class="service-title-block">
+                        <h3 class="service-title-modern">Бренд-анимация</h3>
+                    </div>
+                </div>
+                
+                <div class="services-descriptions">
+                    <div class="service-description-block">
+                        <p class="service-description">
+                            Создание продающих видео для соцсетей, YouTube и ТВ с высокой конверсией и вовлеченностью.
+                        </p>
+                    </div>
+                    <div class="service-description-block">
+                        <p class="service-description">
+                            Плавные анимации интерфейсов, улучшающие пользовательский опыт и повышающие лояльность клиентов.
+                        </p>
+                    </div>
+                    <div class="service-description-block">
+                        <p class="service-description">
+                            Анимированные инфографики, презентации и объясняющие ролики для эффективной коммуникации с аудиторией.
+                        </p>
+                    </div>
+                    <div class="service-description-block">
+                        <p class="service-description">
+                            Создание реалистичных 3D-анимаций продуктов, архитектуры и персонажей для различных медиаформатов.
+                        </p>
+                    </div>
+                    <div class="service-description-block">
+                        <p class="service-description">
+                            Разработка уникальной анимационной идентичности бренда, укрепляющей узнаваемость и доверие.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Портфолио -->
+        <section class="section" id="portfolio">
+            <div class="section-header">
+                <h2 class="section-title">Мои работы</h2>
+                <p class="section-subtitle">Примеры проектов для российских и международных клиентов</p>
+            </div>
+            
+            <!-- Вкладки портфолио -->
+            <div class="portfolio-tabs">
+                <div class="tab active" data-tab="bank">Мобильный банк</div>
+                <div class="tab" data-tab="restaurant">Рестораны</div>
+                <div class="tab" data-tab="tech">3D Техника</div>
+                <div class="tab" data-tab="education">Образование</div>
+            </div>
+            
+            <!-- Контент вкладок -->
+            <div class="portfolio-content">
+                <!-- Вкладка 1 -->
+                <div class="tab-content active" id="bank">
+                    <div class="preview-container">
+                        <!-- Видео-превью работы -->
+                        <video autoplay loop muted playsinline class="work-preview">
+                            <source src="C:\Users\andre\Downloads\Таск2\липс 2.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="work-description">
+                        <h3>Анимация для мобильного банка</h3>
+                        <p>Разработал комплексную систему анимаций для мобильного приложения крупного российского банка. Анимации включают плавные переходы между экранами, микровзаимодействия с картами и интерактивными элементами, а также анимированную визуализацию финансовых операций.</p>
+                        <p>Результат: улучшение пользовательского опыта, увеличение времени пребывания в приложении на 27%, повышение удовлетворенности клиентов.</p>
+                        <a href="#" class="btn btn-primary">Смотреть кейс</a>
+                    </div>
+                </div>
+                
+                <!-- Вкладка 2 -->
+                <div class="tab-content" id="restaurant">
+                    <div class="preview-container">
+                        <!-- Видео-превью работы -->
+                        <video autoplay loop muted playsinline class="work-preview">
+                            <source src="C:\Users\andre\Downloads\Таск2\липс 2.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="work-description">
+                        <h3>Реклама для сети ресторанов</h3>
+                        <p>Создал серию анимированных рекламных роликов для сети ресторанов премиум-класса. Работа включала разработку стиля моушн-графики, анимацию блюд и интерьеров, создание фирменных переходов и эффектов.</p>
+                        <p>Результат: ролики получили более 2 млн просмотров в соцсетях, конверсия в заказы выросла на 35%, бренд укрепил позиции в премиум-сегменте.</p>
+                        <a href="#" class="btn btn-primary">Смотреть кейс</a>
+                    </div>
+                </div>
+                
+                <!-- Вкладка 3 -->
+                <div class="tab-content" id="tech">
+                    <div class="preview-container">
+                        <!-- Видео-превью работы -->
+                        <video autoplay loop muted playsinline class="work-preview">
+                            <source src="C:\Users\andre\Downloads\Таск2\липс 2.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="work-description">
+                        <h3>3D визуализация техники</h3>
+                        <p>Разработал серию 3D-анимаций для международного производителя строительной техники. Проект включал создание реалистичных моделей оборудования, анимацию рабочих процессов и визуализацию технических характеристик.</p>
+                        <p>Результат: анимации использованы на выставках и в маркетинговых материалах, что помогло увеличить узнаваемость бренда на новых рынках и повысить доверие к продукции.</p>
+                        <a href="#" class="btn btn-primary">Смотреть кейс</a>
+                    </div>
+                </div>
+                
+                <!-- Вкладка 4 -->
+                <div class="tab-content" id="education">
+                    <div class="preview-container">
+                        <!-- Видео-превью работы -->
+                        <video autoplay loop muted playsinline class="work-preview">
+                            <source src="C:\Users\andre\Downloads\Таск2\липс 2.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="work-description">
+                        <h3>Анимация для образовательной платформы</h3>
+                        <p>Создал анимированные образовательные материалы для онлайн-платформы по изучению программирования. Разработал систему персонажей, анимированные объяснения сложных концепций и интерактивные элементы обучения.</p>
+                        <p>Результат: повышение вовлеченности студентов на 42%, улучшение усвоения материала, снижение процента отказов от курсов.</p>
+                        <a href="#" class="btn btn-primary">Смотреть кейс</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Обо мне -->
+        <section class="section" id="about">
+            <div class="section-header">
+        <h2 class="section-title">Обо мне</h2>
+        <p class="section-subtitle">Основатель "Barashkov Motion"</p>
+    </div>
+    
+    <div style="max-width: 900px; margin: 0 auto; text-align: center;">
+        <div style="width: 220px; height: 220px; border-radius: 50%; margin: 0 auto 40px; overflow: hidden; border: 4px solid var(--accent);">
+            <img src="images/annnn.jpg" 
+                 alt="Мое фото"
+                 style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+                
+                <p style="margin-bottom: 35px; font-size: 1.2rem;"> <!-- Увеличен размер текста -->
+                    Привет! Я профессиональный моушн-дизайнер с 7-летним опытом работы. Специализируюсь на создании анимаций для бизнеса, рекламы и пользовательских интерфейсов. 
+                    Работал с крупными компаниями из России, Казахстана, Беларуси и других стран СНГ.
+                </p>
+                
+                <p style="margin-bottom: 45px; font-size: 1.2rem;"> <!-- Увеличен размер текста -->
+                    Моя миссия - помогать бизнесу выделяться с помощью качественной анимации, которая решает конкретные задачи: увеличивает конверсию, 
+                    улучшает пользовательский опыт и укрепляет бренд.
+                </p>
+                
+                <div class="testimonials">
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">Работали над анимацией для нашего мобильного приложения. Результат превзошел ожидания - пользователи отмечают плавность интерфейса!</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">АК</div>
+                            <div>
+                                <strong>Алексей К.</strong>
+                                <div>Product Manager, Москва</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">Заказали рекламный ролик для соцсетей. Конверсия выросла на 35% по сравнению с предыдущими кампаниями. Отличный результат!</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">МС</div>
+                            <div>
+                                <strong>Марина С.</strong>
+                                <div>Marketing Director, Алматы</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Company Logos Honeycomb -->
+                <div class="company-logos-section">
+                    <h3 class="logos-title">Компании, с которыми мы работали</h3>
+                    <div class="honeycomb-container">
+                        <div class="honeycomb-row">
+                            <div class="honeycomb-item">
+                                <div class="honeycomb-content"><div class="hex-inner">
+                                    <img src="https://via.placeholder.com/80x80/00d9ff/ffffff?text=Сбер" alt="Сбербанк" class="company-logo">
+                                </div></div>
+                            </div>
+                            <div class="honeycomb-item">
+                                <div class="honeycomb-content"><div class="hex-inner">
+                                    <img src="https://via.placeholder.com/80x80/00d9ff/ffffff?text=Яндекс" alt="Яндекс" class="company-logo">
+                                </div></div>
+                            </div>
+                            <div class="honeycomb-item">
+                                <div class="honeycomb-content"><div class="hex-inner">
+                                    <img src="https://via.placeholder.com/80x80/00d9ff/ffffff?text=МТС" alt="МТС" class="company-logo">
+                                </div></div>
+                            </div>
+                            <div class="honeycomb-item">
+                                <div class="honeycomb-content"><div class="hex-inner">
+                                    <img src="https://via.placeholder.com/80x80/00d9ff/ffffff?text=Альфа" alt="Альфа-Банк" class="company-logo">
+                                </div></div>
+                            </div>
+                        </div>
+                        <div class="honeycomb-row offset">
+                            <div class="honeycomb-item">
+                                <div class="honeycomb-content"><div class="hex-inner">
+                                    <img src="https://via.placeholder.com/80x80/00d9ff/ffffff?text=Тинькофф" alt="Тинькофф Банк" class="company-logo">
+                                </div></div>
+                            </div>
+                            <div class="honeycomb-item">
+                                <div class="honeycomb-content"><div class="hex-inner">
+                                    <img src="https://via.placeholder.com/80x80/00d9ff/ffffff?text=ВТБ" alt="ВТБ" class="company-logo">
+                                </div></div>
+                            </div>
+                            <div class="honeycomb-item">
+                                <div class="honeycomb-content"><div class="hex-inner">
+                                    <img src="https://via.placeholder.com/80x80/00d9ff/ffffff?text=Газпром" alt="Газпром" class="company-logo">
+                                </div></div>
+                            </div>
+                        </div>
+                        <div class="honeycomb-row">
+                            <div class="honeycomb-item">
+                                <div class="honeycomb-content"><div class="hex-inner">
+                                    <img src="https://via.placeholder.com/80x80/00d9ff/ffffff?text=Лукойл" alt="Лукойл" class="company-logo">
+                                </div></div>
+                            </div>
+                            <div class="honeycomb-item">
+                                <div class="honeycomb-content"><div class="hex-inner">
+                                    <img src="https://via.placeholder.com/80x80/00d9ff/ffffff?text=РЖД" alt="РЖД" class="company-logo">
+                                </div></div>
+                            </div>
+                            <div class="honeycomb-item">
+                                <div class="honeycomb-content"><div class="hex-inner">
+                                    <img src="https://via.placeholder.com/80x80/00d9ff/ffffff?text=Магнит" alt="Магнит" class="company-logo">
+                                </div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Контакты -->
+        <section class="section" id="contact">
+            <div class="section-header">
+                <h2 class="section-title">Свяжитесь со мной</h2>
+                <p class="section-subtitle">Готов обсудить ваш проект и предложить решение</p>
+            </div>
+            <div class="contact-section">
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <h3 class="contact-title">Контакты</h3>
+                        <ul class="contact-details">
+                            <li>
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>УРАЛМАШ, ул. Д4</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-phone-alt"></i>
+                                <span>+7 (495) 123-45-67</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-envelope"></i>
+                                <span>hello@motionlab.ru</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-clock"></i>
+                                <span>Пн-Пт: 10:00 - 19:00</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <h3 class="contact-title">Соцсети</h3>
+                        <div class="social-links">
+                            <a href="#" class="social-link"><i class="fab fa-behance"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-dribbble"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-telegram"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-vk"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3 class="contact-title">Отправить сообщение</h3>
+                    <form id="contactForm" onsubmit="submitToYandexDisk(event)">
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="name" placeholder="Ваше имя" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" name="email" placeholder="Ваш email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" class="form-control" name="phone" placeholder="Ваш телефон">
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" name="message" placeholder="Опишите ваш проект" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%" id="submitBtn">
+                            <span class="btn-text">Отправить</span>
+                            <span class="btn-loading" style="display: none;">
+                                <i class="fas fa-spinner fa-spin"></i> Отправка...
+                            </span>
+                        </button>
+                    </form>
+                    
+                    <!-- Success/Error Messages -->
+                    <div id="formMessage" class="form-message" style="display: none;"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Футер -->
+    <footer>
+        <div class="footer-logo">Barashkov<span>Motion</span></div>
+        <p>Профессиональный моушн-дизайн для России и СНГ</p>
+        <div class="social-links">
+            <a href="#" class="social-link"><i class="fab fa-behance"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-dribbble"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-telegram"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-vk"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+        </div>
+        <p class="copyright">© 2025 Barashkov Motion Все права защищены.</p>
+    </footer>
+
+    <script>
+        // Performance optimization: Use requestAnimationFrame for scroll events
+        let ticking = false;
+        
+        // Utility function for debouncing
+        function debounce(func, wait) {
+            let timeout;
+            return function executedFunction(...args) {
+                const later = () => {
+                    clearTimeout(timeout);
+                    func(...args);
+                };
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+            };
+        }
+
+        // Smooth scrolling with error handling
+        document.addEventListener('DOMContentLoaded', function() {
+            const anchors = document.querySelectorAll('a[href^="#"]');
+            anchors.forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const target = document.querySelector(targetId);
+                    if (target) {
+                        target.scrollIntoView({ 
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        });
+
+        // Header scroll effect with performance optimization
+        function updateHeader() {
+            const header = document.querySelector('header');
+            if (header) {
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            }
+            ticking = false;
+        }
+
+        window.addEventListener('scroll', function() {
+            if (!ticking) {
+                requestAnimationFrame(updateHeader);
+                ticking = true;
+            }
+        });
+
+        // Mobile menu with accessibility
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const nav = document.querySelector('nav ul');
+            
+            if (mobileMenuBtn && nav) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    const isExpanded = this.getAttribute('aria-expanded') === 'true';
+                    this.setAttribute('aria-expanded', !isExpanded);
+                    nav.style.display = isExpanded ? 'none' : 'flex';
+                });
+
+                // Close menu when clicking outside
+                document.addEventListener('click', function(e) {
+                    if (!mobileMenuBtn.contains(e.target) && !nav.contains(e.target)) {
+                        nav.style.display = 'none';
+                        mobileMenuBtn.setAttribute('aria-expanded', 'false');
+                    }
+                });
+            }
+        });
+
+        // Intersection Observer for scroll animations (more performant)
+        document.addEventListener('DOMContentLoaded', function() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -100px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            // Observe elements for animation
+            const animatedElements = document.querySelectorAll('.benefit-card, .testimonial-card');
+            animatedElements.forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'opacity var(--transition-slow), transform var(--transition-slow)';
+                observer.observe(el);
+            });
+        });
+        
+        // Portfolio tabs with error handling
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabs = document.querySelectorAll('.tab');
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    const targetId = tab.dataset.tab;
+                    const targetContent = document.getElementById(targetId);
+                    
+                    if (targetContent) {
+                        // Remove active class from all tabs and content
+                        document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+                        document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+                        
+                        // Add active class to current tab and content
+                        tab.classList.add('active');
+                        targetContent.classList.add('active');
+                    }
+                });
+            });
+        });
+        
+        // Mobile optimization for animations
+        if (window.innerWidth < 768) {
+            const player = document.querySelector('.hero-animation lottie-player');
+            if (player) {
+                player.setSpeed(0.8);
+            }
+        }
+
+        // Service worker registration for PWA capabilities
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(registration => console.log('SW registered'))
+                    .catch(error => console.log('SW registration failed'));
+            });
+        }
+
+        // Lazy loading for images and videos
+        if ('IntersectionObserver' in window) {
+            const mediaObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const media = entry.target;
+                        if (media.tagName === 'VIDEO' && media.dataset.src) {
+                            media.src = media.dataset.src;
+                            media.load();
+                        }
+                    }
+                });
+            });
+
+            document.querySelectorAll('video[data-src]').forEach(video => {
+                mediaObserver.observe(video);
+            });
+        }
+
+        // Yandex Disk Form Submission
+        async function submitToYandexDisk(event) {
+            event.preventDefault();
+            
+            const form = document.getElementById('contactForm');
+            const submitBtn = document.getElementById('submitBtn');
+            const btnText = submitBtn.querySelector('.btn-text');
+            const btnLoading = submitBtn.querySelector('.btn-loading');
+            const formMessage = document.getElementById('formMessage');
+            
+            // Get form data
+            const formData = new FormData(form);
+            const data = {
+                name: formData.get('name'),
+                email: formData.get('email'),
+                phone: formData.get('phone') || 'Не указан',
+                message: formData.get('message'),
+                timestamp: new Date().toLocaleString('ru-RU'),
+                source: 'Website Contact Form'
+            };
+            
+            // Show loading state
+            submitBtn.disabled = true;
+            btnText.style.display = 'none';
+            btnLoading.style.display = 'inline-flex';
+            
+            try {
+                // Send data to Yandex Disk endpoint
+                const response = await fetch('https://disk.yandex.ru/i/cHMX8YiXukx_MA', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data)
+                });
+                
+                if (response.ok) {
+                    // Success
+                    formMessage.textContent = 'Сообщение успешно отправлено! Мы свяжемся с вами в ближайшее время.';
+                    formMessage.className = 'form-message success';
+                    formMessage.style.display = 'block';
+                    form.reset();
+                    
+                    // Hide message after 5 seconds
+                    setTimeout(() => {
+                        formMessage.style.display = 'none';
+                    }, 5000);
+                } else {
+                    throw new Error('Ошибка при отправке');
+                }
+            } catch (error) {
+                console.error('Form submission error:', error);
+                
+                // Error
+                formMessage.textContent = 'Произошла ошибка при отправке. Пожалуйста, попробуйте еще раз или свяжитесь с нами по телефону.';
+                formMessage.className = 'form-message error';
+                formMessage.style.display = 'block';
+            } finally {
+                // Reset button state
+                submitBtn.disabled = false;
+                btnText.style.display = 'inline';
+                btnLoading.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>

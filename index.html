@@ -518,123 +518,63 @@
             font-size: 1.3rem; /* Увеличен размер текста */
         }
 
-        /* Новый стиль для секции услуг */
+        /* Новый стиль для секции услуг: карточки с объединёнными заголовком и описанием */
         .services-modern-container {
+            width: 100%;
+        }
+        .services-list {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 70px;
-            align-items: stretch; /* Добавьте эту строку */
+            gap: 24px;
         }
-
-        .services-titles {
-            display: flex;
-            flex-direction: column;
-            padding-right: 40px;
-            border-right: 1px solid var(--glass-border);
-            min-height: 100%; /* Добавьте эту строку */
-        }
-
-        .service-title-block {
-            padding: 30px 0;
-            border-bottom: 1px solid var(--glass-border);
-            flex: 1; /* Добавьте эту строку */
-            display: flex; /* Добавьте эту строку */
-            align-items: center; /* Добавьте эту строку */
-            min-height: 120px; /* Добавьте эту строку и отрегулируйте по необходимости */
-        }
-
-        .service-title-modern {
-            font-size: 32px; /* Увеличен размер текста */
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            line-height: 1.4;
-            text-align: right;
-            transition: all 0.3s ease;
-            cursor: pointer;
+        .service-item {
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            padding: 28px;
+            backdrop-filter: blur(10px);
+            transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
             position: relative;
-            padding-right: 25px; /* Увеличен отступ */
+            overflow: hidden;
         }
-
-        .service-title-modern:hover {
-            color: var(--accent);
+        .service-item:hover {
+            transform: translateY(-6px);
+            border-color: var(--accent);
+            box-shadow: 0 16px 36px rgba(0,0,0,.35);
         }
-
-        .service-title-modern::after {
-            content: "";
-            position: absolute;
-            right: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 10px; /* Увеличен размер точки */
-            height: 10px; /* Увеличен размер точки */
-            background: var(--accent);
-            border-radius: 50%;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .service-title-modern:hover::after {
-            opacity: 1;
-        }
-
-        .services-descriptions {
+        .service-item-title {
+            font-size: 28px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
             display: flex;
-            flex-direction: column;
-            min-height: 100%; /* Добавьте эту строку */
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
         }
-
-        .service-description-block {
-            padding: 30px 0;
-            border-bottom: 1px solid var(--glass-border);
-            flex: 1; /* Добавьте эту строку */
-            display: flex; /* Добавьте эту строку */
-            align-items: center; /* Добавьте эту строку */
-            min-height: 120px; /* Добавьте эту строку и отрегулируйте по необходимости */
+        .service-item-title::after {
+            content: '';
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--accent);
+            opacity: .9;
         }
-
-        .service-description {
-            font-size: 20px; /* Увеличен размер текста */
-            line-height: 1.7; /* Увеличен межстрочный интервал */
+        .service-item-desc {
+            font-size: 18px;
+            line-height: 1.7;
             color: var(--text-secondary);
-            max-width: 600px; /* Увеличенная ширина текста */
         }
 
         /* Адаптивность для нового блока */
         @media (max-width: 900px) {
-            .services-modern-container {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-            
-            .services-titles {
-                border-right: none;
-                border-bottom: 1px solid var(--glass-border);
-                padding-right: 0;
-                padding-bottom: 30px;
-                margin-bottom: 20px;
-            }
-            
-            .service-title-modern {
-                text-align: left;
-                padding-right: 0;
-                padding-left: 25px;
-            }
-            
-            .service-title-modern::after {
-                left: 0;
-                right: auto;
-            }
+            .services-list { grid-template-columns: 1fr; }
+            .service-item { padding: 22px; }
         }
         
         @media (max-width: 768px) {
-            .service-title-modern {
-                font-size: 26px;
-            }
-            
-            .service-description {
-                font-size: 18px;
-            }
+            .service-item-title { font-size: 24px; }
+            .service-item-desc { font-size: 16px; }
 
             .hero h1 {
                 font-size: 2.8rem;
@@ -1422,49 +1362,26 @@ window.addEventListener('load', function() {
             </div>
             
             <div class="services-modern-container">
-                <div class="services-titles">
-                    <div class="service-title-block">
-                        <h3 class="service-title-modern">Рекламные ролики</h3>
+                <div class="services-list">
+                    <div class="service-item">
+                        <h3 class="service-item-title">Рекламные ролики</h3>
+                        <p class="service-item-desc">Создание продающих видео для соцсетей, YouTube и ТВ с высокой конверсией и вовлеченностью.</p>
                     </div>
-                    <div class="service-title-block">
-                        <h3 class="service-title-modern">UI/UX Анимация</h3>
+                    <div class="service-item">
+                        <h3 class="service-item-title">UI/UX Анимация</h3>
+                        <p class="service-item-desc">Плавные анимации интерфейсов, улучшающие пользовательский опыт и повышающие лояльность клиентов.</p>
                     </div>
-                    <div class="service-title-block">
-                        <h3 class="service-title-modern">Моушн-графика</h3>
+                    <div class="service-item">
+                        <h3 class="service-item-title">Моушн-графика</h3>
+                        <p class="service-item-desc">Анимированные инфографики, презентации и объясняющие ролики для эффективной коммуникации с аудиторией.</p>
                     </div>
-                    <div class="service-title-block">
-                        <h3 class="service-title-modern">3D Визуализация</h3>
+                    <div class="service-item">
+                        <h3 class="service-item-title">3D Визуализация</h3>
+                        <p class="service-item-desc">Создание реалистичных 3D‑анимаций продуктов, архитектуры и персонажей для различных медиаформатов.</p>
                     </div>
-                    <div class="service-title-block">
-                        <h3 class="service-title-modern">Бренд-анимация</h3>
-                    </div>
-                </div>
-                
-                <div class="services-descriptions">
-                    <div class="service-description-block">
-                        <p class="service-description">
-                            Создание продающих видео для соцсетей, YouTube и ТВ с высокой конверсией и вовлеченностью.
-                        </p>
-                    </div>
-                    <div class="service-description-block">
-                        <p class="service-description">
-                            Плавные анимации интерфейсов, улучшающие пользовательский опыт и повышающие лояльность клиентов.
-                        </p>
-                    </div>
-                    <div class="service-description-block">
-                        <p class="service-description">
-                            Анимированные инфографики, презентации и объясняющие ролики для эффективной коммуникации с аудиторией.
-                        </p>
-                    </div>
-                    <div class="service-description-block">
-                        <p class="service-description">
-                            Создание реалистичных 3D-анимаций продуктов, архитектуры и персонажей для различных медиаформатов.
-                        </p>
-                    </div>
-                    <div class="service-description-block">
-                        <p class="service-description">
-                            Разработка уникальной анимационной идентичности бренда, укрепляющей узнаваемость и доверие.
-                        </p>
+                    <div class="service-item">
+                        <h3 class="service-item-title">Бренд-анимация</h3>
+                        <p class="service-item-desc">Разработка уникальной анимационной идентичности бренда, укрепляющей узнаваемость и доверие.</p>
                     </div>
                 </div>
             </div>

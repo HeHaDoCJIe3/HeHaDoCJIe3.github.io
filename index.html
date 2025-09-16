@@ -282,12 +282,17 @@
             --glass-border: rgba(255, 255, 255, 0.1);
         }
 
+        html, body {
+            overflow-x: hidden;
+            width: 100%;
+            max-width: 100%;
+        }
+
         body {
             background-color: var(--primary);
             color: var(--text);
             font-family: 'Roboto', sans-serif;
             line-height: 1.6;
-            overflow-x: hidden;
             position: relative;
             min-height: 100vh;
         }
@@ -384,9 +389,9 @@
 
         /* Основное содержимое - ШИРЕ И МЕНЬШЕ ОТСТУПОВ */
         .container {
-            max-width: 1400px; /* Увеличенная максимальная ширина */
+            max-width: 100%;
             margin: 0 auto;
-            padding: 100px 2% 50px; /* Уменьшены боковые отступы */
+            padding: 100px 2% 50px;
             position: relative;
             z-index: 1;
         }
@@ -400,8 +405,8 @@
             overflow: hidden;
             /* Убраны боковые отступы */
             padding: 0;
-            width: 100vw;
-            margin-left: calc(-50vw + 50%);
+            width: 100%;
+            margin-left: 0;
         }
 
         .hero-animation {
@@ -950,6 +955,11 @@
             .hero-content {
                 padding: 0 20px;
             }
+            
+            /* Жестко предотвращаем горизонтальный скролл на мобильных */
+            html, body { overflow-x: hidden; width: 100%; max-width: 100%; }
+            .container, .section, .portfolio-content, .tab-content, .about-content, .contact-section { overflow-x: hidden; }
+            .honeycomb-diamond { width: 100%; margin-left: 0; overflow: hidden; }
         }
         
         /* Мобильное меню и дополнительные правки адаптива */

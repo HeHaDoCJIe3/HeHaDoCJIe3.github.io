@@ -8,264 +8,123 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
         /* Глобальный анимированный фон */
-#global-hexagon-bg {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -2;
-    opacity: 0;
-    transition: opacity 1s ease;
-    pointer-events: none;
-}
+        #global-hexagon-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            opacity: 0;
+            transition: opacity 1s ease;
+            pointer-events: none;
+        }
 
-#global-hexagon-bg.visible {
-    opacity: 0.25; /* Увеличена непрозрачность */
-}
+        #global-hexagon-bg.visible {
+            opacity: 0.25; /* Увеличена непрозрачность */
+        }
 
-#global-hexagon-bg .floating-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0.35; /* Увеличена непрозрачность */
-}
+        #global-hexagon-bg .floating-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.35; /* Увеличена непрозрачность */
+        }
 
-#global-hexagon-bg .floating-bg-hexagons {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    overflow: hidden;
-}
+        #global-hexagon-bg .floating-bg-hexagons {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+        }
 
-#global-hexagon-bg .floating-hexagon {
-    position: absolute;
-    width: 40px; /* Увеличен размер */
-    height: 46px; /* Увеличен размер */
-    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-    background: rgba(0, 217, 255, 0.2); /* Увеличена непрозрачность */
-    animation: float 6s ease-in-out infinite;
-    box-shadow: 0 0 15px rgba(0, 217, 255, 0.15); /* Добавлено свечение */
-    filter: brightness(120%); /* Добавлена яркость */
-}
-/* Стили для пчелиных сот */
-.honeycomb-diamond {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 50px 0;
-    /* Убрать position: relative */
-    padding: 20px;
-    width: 100%;
-    overflow: hidden;
-}
-
-.honeycomb-row {
-    display: flex;
-    justify-content: center;
-    margin-bottom: -25px;
-}
-
-.honeycomb-cell {
-    width: 180px;
-    height: 200px;
-    margin: 0 5px;
-    position: relative;
-    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    cursor: pointer;
-    overflow: hidden;
-}
-
-.honeycomb-cell-content {
-    background: rgba(20, 20, 40, 0.8);
-    /* Остальные стили без изменений */
-}
-
-.honeycomb-cell:hover .honeycomb-cell-content {
-    background: rgba(0, 217, 255, 0.2);
-    border: 1px solid rgba(0, 217, 255, 0.5);
-    transform: scale(0.92);
-}
-
-.honeycomb-cell img {
-    width: 100%;
-    height: auto;
-    max-height: 100%;
-    object-fit: contain;
-    transition: transform 0.5s ease, filter 0.5s ease;
-    filter: grayscale(70%) brightness(130%);
-}
-
-.honeycomb-cell:hover img {
-    transform: scale(1.15);
-    filter: grayscale(0%) brightness(100%);
-}
-
-.honeycomb-cell:hover {
-    transform: translateY(-10px);
-    z-index: 10;
-}
-
-/* Анимации */
-@keyframes float {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-15px); } /* Увеличен диапазон движения */
-    100% { transform: translateY(0px); }
-}
-
-@keyframes float {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-15px); }
-    100% { transform: translateY(0px); }
-}
-
-/* Адаптивность */
-@media (max-width: 900px) {
-    .honeycomb-cell {
-        width: 150px;
-        height: 170px;
-    }
-}
-
-@media (max-width: 768px) {
-    .honeycomb-cell {
-        width: 130px;
-        height: 145px;
-    }
-}
-
-@media (max-width: 600px) {
-    .honeycomb-diamond {
-        transform: scale(0.85);
-    }
-    .honeycomb-row {
-        margin-bottom: -20px;
-    }
-}
-
-@media (max-width: 480px) {
-    .honeycomb-diamond {
-        transform: scale(0.75);
-    }
-}
+        #global-hexagon-bg .floating-hexagon {
+            position: absolute;
+            width: 40px; /* Увеличен размер */
+            height: 46px; /* Увеличен размер */
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            background: rgba(0, 217, 255, 0.2); /* Увеличена непрозрачность */
+            animation: float 6s ease-in-out infinite;
+            box-shadow: 0 0 15px rgba(0, 217, 255, 0.15); /* Добавлено свечение */
+            filter: brightness(120%); /* Добавлена яркость */
+        }
+        
+        /* Стили для пчелиных сот */
         .honeycomb-diamond {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 50px 0;
-    position: relative;
-    padding: 20px;
-    width: 100%;
-}
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 50px 0;
+            padding: 20px;
+            width: 100%;
+        }
 
-.honeycomb-row {
-    display: flex;
-    justify-content: center;
-    margin-bottom: -25px;
-}
+        .honeycomb-row {
+            display: flex;
+            justify-content: center;
+            margin-bottom: -25px;
+        }
 
-.honeycomb-cell {
-    width: 180px;
-    height: 200px;
-    margin: 0 5px;
-    position: relative;
-    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    cursor: pointer;
-    overflow: hidden;
-}
+        .honeycomb-cell {
+            width: 180px;
+            height: 200px;
+            margin: 0 5px;
+            position: relative;
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+            overflow: hidden;
+        }
 
-.honeycomb-cell-content {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(20, 20, 40, 0.8);
-    transition: all 0.4s ease;
-    padding: 20px;
-    border: 1px solid rgba(0, 217, 255, 0.2);
-    transform: scale(0.85);
-}
+        .honeycomb-cell-content {
+            background: rgba(20, 20, 40, 0.8);
+        }
 
-.honeycomb-cell:hover .honeycomb-cell-content {
-    background: rgba(0, 217, 255, 0.2);
-    border: 1px solid rgba(0, 217, 255, 0.5);
-    transform: scale(0.92);
-}
+        .honeycomb-cell:hover .honeycomb-cell-content {
+            background: rgba(0, 217, 255, 0.2);
+            border: 1px solid rgba(0, 217, 255, 0.5);
+            transform: scale(0.92);
+        }
 
-.honeycomb-cell img {
-    width: 100%;
-    height: auto;
-    max-height: 100%;
-    object-fit: contain;
-    transition: transform 0.5s ease, filter 0.5s ease;
-    filter: grayscale(70%) brightness(130%);
-}
+        .honeycomb-cell img {
+            width: 100%;
+            height: auto;
+            max-height: 100%;
+            object-fit: contain;
+            transition: transform 0.5s ease, filter 0.5s ease;
+            filter: grayscale(70%) brightness(130%);
+        }
 
-.honeycomb-cell:hover img {
-    transform: scale(1.15);
-    filter: grayscale(0%) brightness(100%);
-}
+        .honeycomb-cell:hover img {
+            transform: scale(1.15);
+            filter: grayscale(0%) brightness(100%);
+        }
 
-.honeycomb-cell:hover {
-    transform: translateY(-10px);
-    z-index: 10;
-}
+        .honeycomb-cell:hover {
+            transform: translateY(-10px);
+            z-index: 10;
+        }
 
-/* Анимации */
-@keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
-}
+        /* Анимации */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); } /* Увеличен диапазон движения */
+            100% { transform: translateY(0px); }
+        }
 
-@keyframes float {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
-    100% { transform: translateY(0px); }
-}
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
 
-/* Адаптивность */
-@media (max-width: 900px) {
-    .honeycomb-cell {
-        width: 150px;
-        height: 170px;
-    }
-}
-
-@media (max-width: 768px) {
-    .honeycomb-cell {
-        width: 130px;
-        height: 145px;
-    }
-}
-
-@media (max-width: 600px) {
-    .honeycomb-diamond {
-        transform: scale(0.85);
-    }
-    .honeycomb-row {
-        margin-bottom: -20px;
-    }
-}
-
-@media (max-width: 480px) {
-    .honeycomb-diamond {
-        transform: scale(0.75);
-    }
-}
         * {
             margin: 0;
             padding: 0;
@@ -283,17 +142,12 @@
             --glass-border: rgba(255, 255, 255, 0.1);
         }
 
-        html, body {
-            overflow-x: hidden;
-            width: 100%;
-            max-width: 100%;
-        }
-
         body {
             background-color: var(--primary);
             color: var(--text);
             font-family: 'Roboto', sans-serif;
             line-height: 1.6;
+            overflow-x: hidden;
             position: relative;
             min-height: 100vh;
         }
@@ -331,6 +185,7 @@
             text-decoration: none;
             display: flex;
             align-items: center;
+            white-space: nowrap;
         }
 
         .logo span {
@@ -358,6 +213,7 @@
             position: relative;
             padding: 5px 0;
             transition: 0.3s;
+            white-space: nowrap;
         }
 
         nav a:hover {
@@ -390,9 +246,9 @@
 
         /* Основное содержимое - ШИРЕ И МЕНЬШЕ ОТСТУПОВ */
         .container {
-            max-width: 100%;
+            max-width: 1400px; /* Увеличенная максимальная ширина */
             margin: 0 auto;
-            padding: 100px 2% 50px;
+            padding: 100px 2% 50px; /* Уменьшены боковые отступы */
             position: relative;
             z-index: 1;
         }
@@ -406,8 +262,8 @@
             overflow: hidden;
             /* Убраны боковые отступы */
             padding: 0;
-            width: 100%;
-            margin-left: 0;
+            width: 100vw;
+            margin-left: calc(-50vw + 50%);
         }
 
         .hero-animation {
@@ -437,6 +293,7 @@
             background-clip: text;
             -webkit-text-fill-color: transparent;
             font-weight: 800;
+            white-space: nowrap;
         }
 
         .hero p {
@@ -572,54 +429,6 @@
             color: var(--text-secondary);
         }
 
-        /* Адаптивность для нового блока */
-        @media (max-width: 900px) {
-            .services-list { grid-template-columns: 1fr; }
-            .service-item { padding: 22px; }
-        }
-        
-        @media (max-width: 768px) {
-            .service-item-title { font-size: 24px; }
-            .service-item-desc { font-size: 16px; }
-
-            .hero h1 {
-                font-size: 2.8rem;
-            }
-            
-            nav ul {
-                display: none;
-            }
-            
-            .mobile-menu-btn {
-                display: block;
-            }
-            
-            .hero-btns {
-                flex-direction: column;
-            }
-            
-            .section-title {
-                font-size: 2.5rem; /* Увеличен размер для мобилок */
-            }
-
-            .container {
-                padding: 100px 3% 50px; /* Сохраняем уменьшенные отступы на мобилках */
-            }
-            
-            .tab-content {
-                padding: 20px;
-            }
-            
-            .preview-container {
-                height: 300px;
-            }
-        }
-
-        /* Предотвращение горизонтального переполнения компонентов */
-        header, footer, .container, .section, .hero, .portfolio-content, .tab-content, .about-content, .contact-section, .honeycomb-diamond { max-width: 100%; }
-        .about-text, .work-description, .contact-info, .contact-form { min-width: 0; }
-        img, video { display: block; }
-
         /* Портфолио */
         .portfolio-tabs {
             display: flex;
@@ -638,6 +447,7 @@
             font-weight: 500;
             border: 1px solid transparent;
             text-align: center;
+            white-space: nowrap;
         }
 
         .tab:hover {
@@ -678,13 +488,16 @@
             align-items: center;
             justify-content: center;
             background: var(--secondary);
+            /* Гарантируем прямоугольную форму */
+            aspect-ratio: 16/9;
         }
 
         .work-preview {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            max-width: 100%;
+            /* Гарантируем прямоугольную форму */
+            aspect-ratio: 16/9;
         }
 
         .work-description {
@@ -939,9 +752,16 @@
         }
 
         /* Адаптивность */
+        @media (max-width: 1200px) {
+            .hero h1 {
+                font-size: 3.8rem;
+            }
+        }
+
         @media (max-width: 992px) {
             .hero h1 {
-                font-size: 3.5rem;
+                font-size: 3.2rem;
+                white-space: normal;
             }
             
             .contact-section {
@@ -951,9 +771,68 @@
             .tab-content {
                 grid-template-columns: 1fr;
             }
+            
+            .services-list {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .honeycomb-cell {
+                width: 150px;
+                height: 170px;
+            }
+            
+            .service-item {
+                padding: 22px;
+            }
         }
 
         @media (max-width: 768px) {
+            .honeycomb-cell {
+                width: 130px;
+                height: 145px;
+            }
+            
+            .service-item-title {
+                font-size: 24px;
+            }
+            .service-item-desc {
+                font-size: 16px;
+            }
+
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            nav ul {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+            }
+            
+            .section-title {
+                font-size: 2.5rem; /* Увеличен размер для мобилок */
+            }
+
+            .container {
+                padding: 100px 3% 50px; /* Сохраняем уменьшенные отступы на мобилках */
+            }
+            
+            .tab-content {
+                padding: 20px;
+            }
+            
+            .preview-container {
+                height: 300px;
+            }
+            
             .hero {
                 margin-left: 0;
                 width: 100%;
@@ -962,13 +841,49 @@
             .hero-content {
                 padding: 0 20px;
             }
-            
-            /* Жестко предотвращаем горизонтальный скролл на мобильных */
-            html, body { overflow-x: hidden; width: 100%; max-width: 100%; }
-            .container, .section, .portfolio-content, .tab-content, .about-content, .contact-section { overflow-x: hidden; }
-            .honeycomb-diamond { width: 100%; margin-left: 0; overflow: hidden; }
         }
-        
+
+        @media (max-width: 600px) {
+            .honeycomb-diamond {
+                transform: scale(0.85);
+            }
+            .honeycomb-row {
+                margin-bottom: -20px;
+            }
+            
+            .preview-container {
+                height: 250px;
+            }
+            
+            .portfolio-tabs {
+                overflow-x: auto;
+                justify-content: flex-start;
+                padding-bottom: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .honeycomb-diamond {
+                transform: scale(0.75);
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .work-description h3 {
+                font-size: 1.6rem;
+            }
+            
+            .tab {
+                padding: 8px 14px;
+            }
+            
+            .preview-container {
+                height: 200px;
+            }
+        }
+
         /* Мобильное меню и дополнительные правки адаптива */
         @media (max-width: 768px) {
             nav {
@@ -994,23 +909,14 @@
                 padding: 20px;
             }
 
-            .hero h1 { font-size: 2.2rem !important; }
+            .hero h1 { 
+                font-size: 2.2rem !important; 
+                white-space: normal;
+            }
             .hero p { font-size: 1rem !important; }
             .hero-btns { gap: 12px; }
             .btn { width: 100%; font-size: 1rem; padding: 12px 22px; }
         }
-
-        @media (max-width: 480px) {
-            .section-title { font-size: 2rem; }
-            .work-description h3 { font-size: 1.6rem; }
-            .tab { padding: 8px 14px; }
-            .preview-container { height: 240px; }
-        }
-
-        /* Общие безопасные правила для адаптива */
-        img, video { max-width: 100%; height: auto; }
-        .work-description p { overflow-wrap: anywhere; }
-        body.no-scroll { overflow: hidden; }
 
         /* Затемняющий оверлей для мобильного меню */
         .menu-overlay {
@@ -1043,72 +949,6 @@
             .floating-bg, #global-hexagon-bg { opacity: 0.05 !important; }
         }
 
-        /* Сохранить ПК-вид секции услуг на мобильных */
-        @media (max-width: 900px) {
-            .services-modern-container {
-                grid-template-columns: 1fr 1fr; /* Оставляем две колонки */
-                gap: 70px;
-            }
-            .services-titles {
-                border-right: 1px solid var(--glass-border);
-                border-bottom: none;
-                padding-right: 40px;
-                padding-bottom: 0;
-                margin-bottom: 0;
-            }
-            .service-title-modern {
-                text-align: right;
-                padding-right: 25px;
-                padding-left: 0;
-            }
-            .service-title-modern::after {
-                right: 0;
-                left: auto;
-            }
-        }
-        @media (max-width: 768px) {
-            .service-title-modern { font-size: 32px; }
-            .service-description { font-size: 20px; }
-        }
-
-        /* Глобальные переопределения для сохранения ПК-структуры на телефонах */
-        @media (max-width: 992px) {
-            /* Герой-секция: сохранить крупные размеры */
-            .hero h1 { font-size: 5rem !important; }
-            .hero p { font-size: 1.5rem !important; }
-            .btn { width: auto; }
-
-            /* Портфолио: две колонки как на ПК */
-            .tab-content { grid-template-columns: 1fr 1fr; }
-            .preview-container { height: 400px; }
-
-            /* Контакты: в две колонки как на ПК */
-            .contact-section { flex-direction: row; }
-
-            /* О нас: оставить два столбца */
-            .about-content { flex-direction: row !important; }
-        }
-
-        @media (max-width: 768px) {
-            /* Отключаем мобильные уменьшения размеров */
-            .section-title { font-size: 3rem; }
-            .work-description h3 { font-size: 2.2rem; }
-            .tab { padding: 10px 20px; }
-            .preview-container { height: 400px; }
-            .hero-btns { flex-direction: row; gap: 20px; }
-            .btn { font-size: 1.1rem; padding: 14px 35px; }
-        }
-
-        /* Соты: не масштабировать на мобильных */
-        @media (max-width: 600px) {
-            .honeycomb-diamond { transform: none; }
-            .honeycomb-row { margin-bottom: -25px; }
-            .honeycomb-cell { width: 180px; height: 200px; }
-        }
-        @media (max-width: 480px) {
-            .honeycomb-diamond { transform: none; }
-        }
-
         /* Специальная адаптация для узких экранов ~360x800 */
         @media (max-width: 400px) {
             /* Шапка */
@@ -1122,15 +962,17 @@
             /* Герой */
             .hero { min-height: 92vh; }
             .hero-content { padding: 0 16px; }
-            .hero h1 { font-size: 2.35rem !important; line-height: 1.15; }
+            .hero h1 { 
+                font-size: 2.35rem !important; 
+                line-height: 1.15; 
+                white-space: normal;
+            }
             .hero p { font-size: 1.02rem !important; max-width: 100%; }
             .hero-btns { flex-direction: column; gap: 12px; }
             .btn { width: 100%; padding: 12px 18px; font-size: 1rem; }
 
-            /* Секция услуг: держим две колонки, но плотнее */
-            .services-modern-container { grid-template-columns: 1fr 1fr; gap: 24px; }
-            .services-titles { padding-right: 14px; }
-            .service-title-block, .service-description-block { padding: 18px 0; min-height: 90px; }
+            /* Секция услуг */
+            .services-modern-container { grid-template-columns: 1fr; gap: 24px; }
             .service-title-modern { font-size: 22px; letter-spacing: 1px; padding-right: 16px; }
             .service-title-modern::after { width: 8px; height: 8px; }
             .service-description { font-size: 16.5px; line-height: 1.6; max-width: 100%; }
@@ -1180,6 +1022,18 @@
             .social-link { width: 44px; height: 44px; font-size: 18px; }
             .copyright { font-size: 0.9rem; }
         }
+        
+        /* Общие безопасные правила для адаптива */
+        img, video { 
+            max-width: 100%; 
+            height: auto; 
+        }
+        .work-description p { 
+            overflow-wrap: anywhere; 
+        }
+        body.no-scroll { 
+            overflow: hidden; 
+        }
     </style>
 </head>
 <body>
@@ -1199,139 +1053,6 @@
     <div class="floating-bg-hexagons"></div>
 </div>
 
-<style>
-    /* Глобальный анимированный фон */
-#global-hexagon-bg {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -2; /* ниже основного контента */
-    opacity: 0;
-    transition: opacity 1s ease;
-    pointer-events: none;
-}
-
-#global-hexagon-bg.visible {
-    opacity: 0.1;
-}
-
-#global-hexagon-bg .floating-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    opacity: 0.1;
-    pointer-events: none;
-}
-
-#global-hexagon-bg .floating-bg lottie-player {
-    width: 100%;
-    height: 100%;
-}
-
-#global-hexagon-bg .floating-bg-hexagons {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: -1;
-    overflow: hidden;
-}
-
-#global-hexagon-bg .floating-hexagon {
-    position: absolute;
-    width: 30px;
-    height: 34px;
-    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-    background: rgba(0, 217, 255, 0.1);
-    animation: float 6s ease-in-out infinite;
-}
-
-
-    @keyframes float {
-        0% {
-            transform: translateY(0px);
-        }
-        50% {
-            transform: translateY(-10px);
-        }
-        100% {
-            transform: translateY(0px);
-        }
-    }
-
-    /* ОБНОВЛЕННЫЕ СТИЛИ ДЛЯ ГЕРОЯ */
-    
-</style>
-
-<script>
-// Функция создания плавающих шестиугольников
-function createFloatingHexagons() {
-    const container = document.querySelector('#global-hexagon-bg .floating-bg-hexagons');
-    const colors = [
-        'rgba(0, 217, 255, 0.15)',
-        'rgba(0, 217, 255, 0.12)',
-        'rgba(0, 217, 255, 0.10)'
-    ];
-    
-    // Увеличено количество шестиугольников
-    for (let i = 0; i < 45; i++) {
-        const hexagon = document.createElement('div');
-        hexagon.classList.add('floating-hexagon');
-        
-        const size = Math.random() * 40 + 20; // Увеличен размер
-        hexagon.style.width = `${size}px`;
-        hexagon.style.height = `${size * 1.15}px`;
-        hexagon.style.left = `${Math.random() * 100}%`;
-        hexagon.style.top = `${Math.random() * 100}%`;
-        hexagon.style.background = colors[Math.floor(Math.random() * colors.length)];
-        hexagon.style.animationDelay = `${Math.random() * 5}s`;
-        hexagon.style.animationDuration = `${3 + Math.random() * 6}s`; // Увеличен диапазон длительности
-        
-        container.appendChild(hexagon);
-    }
-}
-
-// Управление видимостью фона
-function handleScroll() {
-    const heroSection = document.getElementById('home');
-    if (!heroSection) return;
-    
-    const heroHeight = heroSection.offsetHeight;
-    const bgElement = document.getElementById('global-hexagon-bg');
-    
-    // Добавляем небольшой отступ для плавного перехода
-    if (window.scrollY > heroHeight * 0.8) {
-        bgElement.classList.add('visible');
-    } else {
-        bgElement.classList.remove('visible');
-    }
-}
-
-// Инициализация при загрузке
-window.addEventListener('load', function() {
-    createFloatingHexagons();
-    handleScroll();
-    window.addEventListener('scroll', handleScroll);
-    
-    // Оптимизация производительности
-    let lastScrollY = window.scrollY;
-    window.addEventListener('scroll', function() {
-        const currentScrollY = window.scrollY;
-        if (Math.abs(currentScrollY - lastScrollY) > 50) {
-            handleScroll();
-            lastScrollY = currentScrollY;
-        }
-    });
-});
-
-</script>
     <!-- Шапка -->
     <header>
         <a href="#" class="logo"><i class="fas fa-play-circle"></i>Barashkov<span>Motion</span></a>
@@ -1814,6 +1535,66 @@ window.addEventListener('load', function() {
             });
         }, { threshold: 0.12 });
         revealEls.forEach(el => io.observe(el));
+        
+        // Функция создания плавающих шестиугольников
+        function createFloatingHexagons() {
+            const container = document.querySelector('#global-hexagon-bg .floating-bg-hexagons');
+            const colors = [
+                'rgba(0, 217, 255, 0.15)',
+                'rgba(0, 217, 255, 0.12)',
+                'rgba(0, 217, 255, 0.10)'
+            ];
+            
+            // Увеличено количество шестиугольников
+            for (let i = 0; i < 45; i++) {
+                const hexagon = document.createElement('div');
+                hexagon.classList.add('floating-hexagon');
+                
+                const size = Math.random() * 40 + 20; // Увеличен размер
+                hexagon.style.width = `${size}px`;
+                hexagon.style.height = `${size * 1.15}px`;
+                hexagon.style.left = `${Math.random() * 100}%`;
+                hexagon.style.top = `${Math.random() * 100}%`;
+                hexagon.style.background = colors[Math.floor(Math.random() * colors.length)];
+                hexagon.style.animationDelay = `${Math.random() * 5}s`;
+                hexagon.style.animationDuration = `${3 + Math.random() * 6}s`; // Увеличен диапазон длительности
+                
+                container.appendChild(hexagon);
+            }
+        }
+
+        // Управление видимостью фона
+        function handleScroll() {
+            const heroSection = document.getElementById('home');
+            if (!heroSection) return;
+            
+            const heroHeight = heroSection.offsetHeight;
+            const bgElement = document.getElementById('global-hexagon-bg');
+            
+            // Добавляем небольшой отступ для плавного перехода
+            if (window.scrollY > heroHeight * 0.8) {
+                bgElement.classList.add('visible');
+            } else {
+                bgElement.classList.remove('visible');
+            }
+        }
+
+        // Инициализация при загрузке
+        window.addEventListener('load', function() {
+            createFloatingHexagons();
+            handleScroll();
+            window.addEventListener('scroll', handleScroll);
+            
+            // Оптимизация производительности
+            let lastScrollY = window.scrollY;
+            window.addEventListener('scroll', function() {
+                const currentScrollY = window.scrollY;
+                if (Math.abs(currentScrollY - lastScrollY) > 50) {
+                    handleScroll();
+                    lastScrollY = currentScrollY;
+                }
+            });
+        });
     </script>
     
 </body>

@@ -1,12 +1,56 @@
+<!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Suhan|Профессиональный моушн-дизайн</title>
-    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <title>Suhan | Профессиональный моушн-дизайн</title>
+    <!-- Предзагрузка критичных ресурсов -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Roboto:wght@300;400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    </noscript>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
+        /* Критический CSS - минимизирован и оптимизирован */
+        :root {
+            --primary: #0a0a16;
+            --secondary: #1a1a2e;
+            --accent: #00d9ff;
+            --accent-dark: #0084a8;
+            --text: #ffffff;
+            --text-secondary: #a0a0c0;
+            --glass: rgba(30, 30, 60, 0.5);
+            --glass-border: rgba(255, 255, 255, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            overflow-x: hidden;
+            width: 100%;
+        }
+
+        body {
+            background-color: var(--primary);
+            color: var(--text);
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            position: relative;
+            min-height: 100vh;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+
         /* Глобальный анимированный фон */
         #global-hexagon-bg {
             position: fixed;
@@ -21,7 +65,7 @@
         }
 
         #global-hexagon-bg.visible {
-            opacity: 0.25; /* Увеличена непрозрачность */
+            opacity: 0.25;
         }
 
         #global-hexagon-bg .floating-bg {
@@ -30,7 +74,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            opacity: 0.35; /* Увеличена непрозрачность */
+            opacity: 0.35;
         }
 
         #global-hexagon-bg .floating-bg-hexagons {
@@ -45,116 +89,13 @@
 
         #global-hexagon-bg .floating-hexagon {
             position: absolute;
-            width: 40px; /* Увеличен размер */
-            height: 46px; /* Увеличен размер */
+            width: 40px;
+            height: 46px;
             clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-            background: rgba(0, 217, 255, 0.2); /* Увеличена непрозрачность */
-            animation: float 6s ease-in-out infinite;
-            box-shadow: 0 0 15px rgba(0, 217, 255, 0.15); /* Добавлено свечение */
-            filter: brightness(120%); /* Добавлена яркость */
-        }
-        
-        /* Стили для пчелиных сот */
-        .honeycomb-diamond {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin: 50px 0;
-            padding: 20px;
-            width: 100%;
-        }
-
-        .honeycomb-row {
-            display: flex;
-            justify-content: center;
-            margin-bottom: -25px;
-        }
-
-        .honeycomb-cell {
-            width: 180px;
-            height: 200px;
-            margin: 0 5px;
-            position: relative;
-            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            cursor: pointer;
-            overflow: hidden;
-        }
-
-        .honeycomb-cell-content {
-            background: rgba(20, 20, 40, 0.8);
-        }
-
-        .honeycomb-cell:hover .honeycomb-cell-content {
             background: rgba(0, 217, 255, 0.2);
-            border: 1px solid rgba(0, 217, 255, 0.5);
-            transform: scale(0.92);
-        }
-
-        .honeycomb-cell img {
-            width: 100%;
-            height: auto;
-            max-height: 100%;
-            object-fit: contain;
-            transition: transform 0.5s ease, filter 0.5s ease;
-            filter: grayscale(70%) brightness(130%);
-        }
-
-        .honeycomb-cell:hover img {
-            transform: scale(1.15);
-            filter: grayscale(0%) brightness(100%);
-        }
-
-        .honeycomb-cell:hover {
-            transform: translateY(-10px);
-            z-index: 10;
-        }
-
-        /* Анимации */
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-15px); } /* Увеличен диапазон движения */
-            100% { transform: translateY(0px); }
-        }
-
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --primary: #0a0a16;
-            --secondary: #1a1a2e;
-            --accent: #00d9ff;
-            --accent-dark: #0084a8;
-            --text: #ffffff;
-            --text-secondary: #a0a0c0;
-            --glass: rgba(30, 30, 60, 0.5);
-            --glass-border: rgba(255, 255, 255, 0.1);
-        }
-
-        body {
-            background-color: var(--primary);
-            color: var(--text);
-            font-family: 'Roboto', sans-serif;
-            line-height: 1.6;
-            overflow-x: hidden;
-            position: relative;
-            min-height: 100vh;
-        }
-
-        h1, h2, h3, h4, h5 {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
+            animation: float 6s ease-in-out infinite;
+            box-shadow: 0 0 15px rgba(0, 217, 255, 0.15);
+            filter: brightness(120%);
         }
 
         /* Навигация */
@@ -162,7 +103,7 @@
             position: fixed;
             top: 0;
             width: 100%;
-            padding: 20px 3%; /* Уменьшены боковые отступы */
+            padding: 20px 3%;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -174,7 +115,7 @@
         }
 
         header.scrolled {
-            padding: 15px 3%; /* Уменьшены боковые отступы */
+            padding: 15px 3%;
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
         }
 
@@ -244,11 +185,11 @@
             cursor: pointer;
         }
 
-        /* Основное содержимое - ШИРЕ И МЕНЬШЕ ОТСТУПОВ */
+        /* Основное содержимое */
         .container {
-            max-width: 1400px; /* Увеличенная максимальная ширина */
+            max-width: 1400px;
             margin: 0 auto;
-            padding: 100px 2% 50px; /* Уменьшены боковые отступы */
+            padding: 100px 15px 50px;
             position: relative;
             z-index: 1;
         }
@@ -260,10 +201,8 @@
             align-items: center;
             position: relative;
             overflow: hidden;
-            /* Убраны боковые отступы */
             padding: 0;
-            width: 100vw;
-            margin-left: calc(-50vw + 50%);
+            width: 100%;
         }
 
         .hero-animation {
@@ -277,11 +216,12 @@
         }
 
         .hero-content {
-            max-width: 800px; /* Увеличенная ширина контента */
+            max-width: 800px;
             position: relative;
             z-index: 2;
-            padding: 0 5%; /* Добавлены боковые отступы для контента */
-            margin: 0 auto; /* Центрирование контента */
+            padding: 0 15px;
+            margin: 0 auto;
+            width: 100%;
         }
 
         .hero h1 {
@@ -297,10 +237,10 @@
         }
 
         .hero p {
-            font-size: 1.3rem; /* Увеличен размер текста */
+            font-size: 1.3rem;
             color: var(--text-secondary);
             margin-bottom: 40px;
-            max-width: 700px; /* Увеличенная ширина текста */
+            max-width: 700px;
         }
 
         .hero-btns {
@@ -356,7 +296,7 @@
         }
 
         .section-title {
-            font-size: 3rem; /* Увеличен размер заголовка */
+            font-size: 3rem;
             margin-bottom: 20px;
             position: relative;
             display: inline-block;
@@ -368,28 +308,25 @@
             bottom: -10px;
             left: 50%;
             transform: translateX(-50%);
-            width: 100px; /* Увеличенная ширина подчеркивания */
-            height: 5px; /* Увеличенная высота подчеркивания */
+            width: 100px;
+            height: 5px;
             background: var(--accent);
             border-radius: 3px;
         }
 
         .section-subtitle {
             color: var(--text-secondary);
-            max-width: 800px; /* Увеличенная ширина подзаголовка */
+            max-width: 800px;
             margin: 0 auto;
-            font-size: 1.3rem; /* Увеличен размер текста */
+            font-size: 1.3rem;
         }
 
-        /* Новый стиль для секции услуг: карточки с объединёнными заголовком и описанием */
-        .services-modern-container {
-            width: 100%;
-        }
         .services-list {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 24px;
         }
+
         .service-item {
             background: var(--glass);
             border: 1px solid var(--glass-border);
@@ -400,11 +337,13 @@
             position: relative;
             overflow: hidden;
         }
+
         .service-item:hover {
             transform: translateY(-6px);
             border-color: var(--accent);
             box-shadow: 0 16px 36px rgba(0,0,0,.35);
         }
+
         .service-item-title {
             font-size: 28px;
             font-weight: 800;
@@ -415,6 +354,7 @@
             gap: 12px;
             margin-bottom: 12px;
         }
+
         .service-item-title::after {
             content: '';
             width: 8px;
@@ -423,6 +363,7 @@
             background: var(--accent);
             opacity: .9;
         }
+
         .service-item-desc {
             font-size: 18px;
             line-height: 1.7;
@@ -488,7 +429,6 @@
             align-items: center;
             justify-content: center;
             background: var(--secondary);
-            /* Гарантируем прямоугольную форму */
             aspect-ratio: 16/9;
         }
 
@@ -496,7 +436,6 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            /* Гарантируем прямоугольную форму */
             aspect-ratio: 16/9;
         }
 
@@ -517,122 +456,102 @@
             color: var(--text-secondary);
         }
 
-        /* Преимущества */
-        .benefits {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-        }
-
-        .benefit-card {
-            background: var(--glass);
-            border: 1px solid var(--glass-border);
-            border-radius: 15px;
-            padding: 30px;
-            backdrop-filter: blur(10px);
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-
-        .benefit-card:hover {
-            transform: translateY(-10px);
-            border-color: var(--accent);
-        }
-
-        .benefit-icon {
-            font-size: 3rem;
-            color: var(--accent);
-            margin-bottom: 20px;
-        }
-
-        /* Отзывы */
-        .testimonials {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Увеличен минимальный размер */
-            gap: 30px; /* Увеличен промежуток */
-            margin-top: 50px;
-        }
-
-        .testimonial-card {
-            background: var(--glass);
-            border: 1px solid var(--glass-border);
-            border-radius: 15px;
-            padding: 35px; /* Увеличен отступ */
-            backdrop-filter: blur(10px);
-            position: relative;
-        }
-
-        .testimonial-card::before {
-            content: '"';
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            font-size: 5rem;
-            color: rgba(0, 217, 255, 0.2);
-            font-family: Georgia, serif;
-            line-height: 1;
-        }
-
-        .testimonial-text {
-            margin-bottom: 25px; /* Увеличен отступ */
-            font-style: italic;
-            font-size: 1.1rem; /* Увеличен размер текста */
-        }
-
-        .testimonial-author {
+        /* Соты */
+        .honeycomb-diamond {
             display: flex;
+            flex-direction: column;
             align-items: center;
+            margin: 50px 0;
+            padding: 20px;
+            width: 100%;
+            overflow: hidden;
         }
 
-        .author-avatar {
-            width: 55px; /* Увеличен размер */
-            height: 55px; /* Увеличен размер */
-            border-radius: 50%;
-            background: var(--accent);
+        .honeycomb-row {
+            display: flex;
+            justify-content: center;
+            margin-bottom: -25px;
+        }
+
+        .honeycomb-cell {
+            width: 180px;
+            height: 200px;
+            margin: 0 5px;
+            position: relative;
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-right: 15px;
-            color: var(--primary);
-            font-weight: bold;
-            font-size: 1.2rem; /* Увеличен размер текста */
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+            overflow: hidden;
+        }
+
+        .honeycomb-cell-content {
+            background: rgba(20, 20, 40, 0.8);
+        }
+
+        .honeycomb-cell:hover .honeycomb-cell-content {
+            background: rgba(0, 217, 255, 0.2);
+            border: 1px solid rgba(0, 217, 255, 0.5);
+            transform: scale(0.92);
+        }
+
+        .honeycomb-cell img {
+            width: 100%;
+            height: auto;
+            max-height: 100%;
+            object-fit: contain;
+            transition: transform 0.5s ease, filter 0.5s ease;
+            filter: grayscale(70%) brightness(130%);
+        }
+
+        .honeycomb-cell:hover img {
+            transform: scale(1.15);
+            filter: grayscale(0%) brightness(100%);
+        }
+
+        .honeycomb-cell:hover {
+            transform: translateY(-10px);
+            z-index: 10;
         }
 
         /* Контакты */
         .contact-section {
             display: flex;
             gap: 60px;
-            align-items: stretch; /* Равная высота блоков */
+            align-items: stretch;
         }
 
         .contact-info {
             flex: 1;
             display: flex;
             flex-direction: column;
-            justify-content: center; /* Центрирование по вертикали */
+            justify-content: center;
         }
+
         .contact-form {
             flex: 1;
-            height: 100%; /* Добавьте эту строку */
-            display: flex; /* Добавьте эту строку */
+            height: 100%;
+            display: flex;
             flex-direction: column;
         }
+
         .contact-card {
             background: var(--glass);
             border: 1px solid var(--glass-border);
             border-radius: 20px;
-            padding: 45px; /* Увеличен отступ */
+            padding: 45px;
             backdrop-filter: blur(10px);
             margin-bottom: 30px;
-            height: 100%; /* Добавьте эту строку */
-            display: flex; /* Добавьте эту строку */
-            flex-direction: column; /* Добавьте эту строку */
+            height: 100%;
+            display: flex;
+            flex-direction: column;
         }
 
         .contact-title {
-            font-size: 2.2rem; /* Увеличен размер текста */
-            margin-bottom: 25px; /* Увеличен отступ */
+            font-size: 2.2rem;
+            margin-bottom: 25px;
             color: var(--accent);
         }
 
@@ -641,51 +560,52 @@
         }
 
         .contact-details li {
-            margin-bottom: 20px; /* Увеличен отступ */
+            margin-bottom: 20px;
             display: flex;
             align-items: center;
-            font-size: 1.1rem; /* Увеличен размер текста */
+            font-size: 1.1rem;
         }
 
         .contact-details i {
-            width: 45px; /* Увеличен размер */
-            height: 45px; /* Увеличен размер */
+            width: 45px;
+            height: 45px;
             background: rgba(0, 217, 255, 0.1);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-right: 20px; /* Увеличен отступ */
+            margin-right: 20px;
             color: var(--accent);
-            font-size: 1.2rem; /* Увеличен размер иконки */
+            font-size: 1.2rem;
         }
 
         .contact-form {
-            flex: 1;
             background: var(--glass);
             border: 1px solid var(--glass-border);
             border-radius: 20px;
-            padding: 45px; /* Увеличен отступ */
+            padding: 45px;
             backdrop-filter: blur(10px);
-            flex: 1; /* Добавьте эту строку */
-            display: flex; /* Добавьте эту строку */
+            flex: 1;
+            display: flex;
             flex-direction: column;
         }
 
         .form-group {
-            margin-bottom: 30px; /* Увеличен отступ */
+            margin-bottom: 30px;
         }
+
         .contact-form .form-group:last-child {
-            margin-top: auto; /* Добавьте эту строку */
+            margin-top: auto;
         }
+
         .form-control {
             width: 100%;
-            padding: 18px 22px; /* Увеличен отступ */
+            padding: 18px 22px;
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid var(--glass-border);
             border-radius: 10px;
             color: var(--text);
-            font-size: 1.1rem; /* Увеличен размер текста */
+            font-size: 1.1rem;
             transition: all 0.3s ease;
         }
 
@@ -696,14 +616,14 @@
         }
 
         textarea.form-control {
-            min-height: 170px; /* Увеличенная высота */
+            min-height: 170px;
             resize: vertical;
         }
 
         /* Футер */
         footer {
             background: rgba(0, 0, 0, 0.3);
-            padding: 60px 3% 40px; /* Уменьшены боковые отступы */
+            padding: 60px 3% 40px;
             text-align: center;
             border-top: 1px solid var(--glass-border);
             position: relative;
@@ -711,9 +631,9 @@
         }
 
         .footer-logo {
-            font-size: 2.2rem; /* Увеличен размер текста */
+            font-size: 2.2rem;
             font-weight: 700;
-            margin-bottom: 25px; /* Увеличен отступ */
+            margin-bottom: 25px;
         }
 
         .footer-logo span {
@@ -723,20 +643,20 @@
         .social-links {
             display: flex;
             justify-content: center;
-            gap: 25px; /* Увеличен промежуток */
-            margin-bottom: 35px; /* Увеличен отступ */
+            gap: 25px;
+            margin-bottom: 35px;
         }
 
         .social-link {
-            width: 55px; /* Увеличен размер */
-            height: 55px; /* Увеличен размер */
+            width: 55px;
+            height: 55px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             background: rgba(255, 255, 255, 0.05);
             color: var(--text);
-            font-size: 22px; /* Увеличен размер иконки */
+            font-size: 22px;
             transition: all 0.3s ease;
         }
 
@@ -748,7 +668,19 @@
 
         .copyright {
             color: var(--text-secondary);
-            font-size: 1rem; /* Увеличен размер текста */
+            font-size: 1rem;
+        }
+
+        /* Анимации */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         /* Адаптивность */
@@ -766,6 +698,7 @@
             
             .contact-section {
                 flex-direction: column;
+                padding: 0 10px;
             }
             
             .tab-content {
@@ -785,6 +718,7 @@
             
             .service-item {
                 padding: 22px;
+                margin: 0 5px;
             }
         }
 
@@ -797,6 +731,7 @@
             .service-item-title {
                 font-size: 24px;
             }
+            
             .service-item-desc {
                 font-size: 16px;
             }
@@ -818,11 +753,11 @@
             }
             
             .section-title {
-                font-size: 2.5rem; /* Увеличен размер для мобилок */
+                font-size: 2.5rem;
             }
 
             .container {
-                padding: 100px 3% 50px; /* Сохраняем уменьшенные отступы на мобилках */
+                padding: 100px 15px 50px;
             }
             
             .tab-content {
@@ -834,12 +769,11 @@
             }
             
             .hero {
-                margin-left: 0;
                 width: 100%;
             }
             
             .hero-content {
-                padding: 0 20px;
+                padding: 0 15px;
             }
         }
 
@@ -847,6 +781,7 @@
             .honeycomb-diamond {
                 transform: scale(0.85);
             }
+            
             .honeycomb-row {
                 margin-bottom: -20px;
             }
@@ -884,7 +819,7 @@
             }
         }
 
-        /* Мобильное меню и дополнительные правки адаптива */
+        /* Мобильное меню */
         @media (max-width: 768px) {
             nav {
                 position: fixed;
@@ -900,7 +835,11 @@
                 transition: right 0.3s ease;
                 box-shadow: -5px 0 15px rgba(0,0,0,0.2);
             }
-            nav.open { right: 0; }
+            
+            nav.open { 
+                right: 0; 
+            }
+            
             nav ul {
                 display: flex;
                 flex-direction: column;
@@ -913,9 +852,20 @@
                 font-size: 2.2rem !important; 
                 white-space: normal;
             }
-            .hero p { font-size: 1rem !important; }
-            .hero-btns { gap: 12px; }
-            .btn { width: 100%; font-size: 1rem; padding: 12px 22px; }
+            
+            .hero p { 
+                font-size: 1rem !important; 
+            }
+            
+            .hero-btns { 
+                gap: 12px; 
+            }
+            
+            .btn { 
+                width: 100%; 
+                font-size: 1rem; 
+                padding: 12px 22px; 
+            }
         }
 
         /* Затемняющий оверлей для мобильного меню */
@@ -928,99 +878,275 @@
             transition: opacity 0.3s ease;
             z-index: 98;
         }
+        
         .menu-overlay.active {
             opacity: 1;
             pointer-events: all;
         }
 
         /* Плавное появление секций */
-        .reveal-init { opacity: 0; transform: translateY(24px); }
-        .reveal-visible { opacity: 1; transform: translateY(0); transition: opacity .6s ease, transform .6s ease; }
+        .reveal-init { 
+            opacity: 0; 
+            transform: translateY(24px); 
+        }
+        
+        .reveal-visible { 
+            opacity: 1; 
+            transform: translateY(0); 
+            transition: opacity .6s ease, transform .6s ease; 
+        }
 
         /* Учёт фиксированной шапки при якорной прокрутке */
-        section[id] { scroll-margin-top: 90px; }
+        section[id] { 
+            scroll-margin-top: 90px; 
+        }
 
         /* Улучшение нажатий */
-        * { -webkit-tap-highlight-color: rgba(0,0,0,0); }
-
-        /* Учет предпочтения снижения анимаций */
-        @media (prefers-reduced-motion: reduce) {
-            * { animation: none !important; transition: none !important; }
-            .floating-bg, #global-hexagon-bg { opacity: 0.05 !important; }
+        * { 
+            -webkit-tap-highlight-color: rgba(0,0,0,0); 
         }
 
         /* Специальная адаптация для узких экранов ~360x800 */
         @media (max-width: 400px) {
-            /* Шапка */
-            header { padding: 14px 4%; }
-            .logo { font-size: 22px; }
-            .mobile-menu-btn { font-size: 1.4rem; }
-            nav { top: 60px; }
-            nav ul { gap: 8px; padding: 12px 16px; }
-            nav a { font-size: 0.98rem; }
+            header { 
+                padding: 14px 4%; 
+            }
+            
+            .logo { 
+                font-size: 22px; 
+            }
+            
+            .mobile-menu-btn { 
+                font-size: 1.4rem; 
+            }
+            
+            nav { 
+                top: 60px; 
+            }
+            
+            nav ul { 
+                gap: 8px; 
+                padding: 12px 16px; 
+            }
+            
+            nav a { 
+                font-size: 0.98rem; 
+            }
 
-            /* Герой */
-            .hero { min-height: 92vh; }
-            .hero-content { padding: 0 16px; }
+            .hero { 
+                min-height: 92vh; 
+            }
+            
+            .hero-content { 
+                padding: 0 16px; 
+            }
+            
             .hero h1 { 
                 font-size: 2.35rem !important; 
                 line-height: 1.15; 
                 white-space: normal;
             }
-            .hero p { font-size: 1.02rem !important; max-width: 100%; }
-            .hero-btns { flex-direction: column; gap: 12px; }
-            .btn { width: 100%; padding: 12px 18px; font-size: 1rem; }
+            
+            .hero p { 
+                font-size: 1.02rem !important; 
+                max-width: 100%; 
+            }
+            
+            .hero-btns { 
+                flex-direction: column; 
+                gap: 12px; 
+            }
+            
+            .btn { 
+                width: 100%; 
+                padding: 12px 18px; 
+                font-size: 1rem; 
+            }
 
-            /* Секция услуг */
-            .services-modern-container { grid-template-columns: 1fr; gap: 24px; }
-            .service-title-modern { font-size: 22px; letter-spacing: 1px; padding-right: 16px; }
-            .service-title-modern::after { width: 8px; height: 8px; }
-            .service-description { font-size: 16.5px; line-height: 1.6; max-width: 100%; }
+            .services-list { 
+                grid-template-columns: 1fr; 
+                gap: 24px; 
+            }
+            
+            .service-item-title { 
+                font-size: 22px; 
+                letter-spacing: 1px; 
+                padding-right: 16px; 
+            }
+            
+            .service-item-title::after { 
+                width: 8px; 
+                height: 8px; 
+            }
+            
+            .service-item-desc { 
+                font-size: 16.5px; 
+                line-height: 1.6; 
+                max-width: 100%; 
+            }
 
-            /* Портфолио */
-            .portfolio-tabs { gap: 8px; margin-bottom: 18px; padding: 0 6px; }
-            .portfolio-tabs { overflow-x: auto; -webkit-overflow-scrolling: touch; }
-            .tab { padding: 8px 12px; font-size: 0.95rem; white-space: nowrap; }
-            .portfolio-content { border-radius: 14px; }
-            .tab-content { grid-template-columns: 1fr; padding: 18px; gap: 18px; }
-            .preview-container { height: 230px; border-radius: 12px; }
-            .work-description h3 { font-size: 1.5rem; }
-            .work-description p { font-size: 1rem; }
+            .portfolio-tabs { 
+                gap: 8px; 
+                margin-bottom: 18px; 
+                padding: 0 6px; 
+            }
+            
+            .portfolio-tabs { 
+                overflow-x: auto; 
+                -webkit-overflow-scrolling: touch; 
+            }
+            
+            .tab { 
+                padding: 8px 12px; 
+                font-size: 0.95rem; 
+                white-space: nowrap; 
+            }
+            
+            .portfolio-content { 
+                border-radius: 14px; 
+                margin: 0 10px;
+            }
 
-            /* О нас */
-            .about-content { flex-direction: column !important; gap: 22px; }
-            .about-photo { flex: 0 0 auto !important; }
-            .about-text p[style*="font-size: 3.5rem"] { font-size: 1.6rem !important; line-height: 1.4 !important; }
+            .tab-content { 
+                grid-template-columns: 1fr; 
+                padding: 18px; 
+                gap: 18px; 
+            }
+            
+            .preview-container { 
+                height: 230px; 
+                border-radius: 12px; 
+            }
+            
+            .work-description h3 { 
+                font-size: 1.5rem; 
+            }
+            
+            .work-description p { 
+                font-size: 1rem; 
+            }
 
-            /* Соты (honeycomb) */
-            .honeycomb-diamond { transform: scale(0.72); transform-origin: top center; margin: 20px 0; }
-            .honeycomb-row { margin-bottom: -18px; }
-            .honeycomb-cell { width: 150px; height: 170px; }
-            .honeycomb-cell-content { padding: 14px; }
+            .about-content { 
+                flex-direction: column !important; 
+                gap: 22px; 
+            }
+            
+            .about-photo { 
+                flex: 0 0 auto !important; 
+            }
+            
+            .about-text p[style*="font-size: 3.5rem"] { 
+                font-size: 1.6rem !important; 
+                line-height: 1.4 !important; 
+            }
 
-            /* Контакты */
-            .contact-section { flex-direction: column; gap: 18px; }
-            .contact-card, .contact-form { padding: 20px; border-radius: 14px; }
-            .contact-title { font-size: 1.4rem; margin-bottom: 16px; }
-            .contact-details li { margin-bottom: 14px; font-size: 1rem; }
-            .contact-details i { width: 40px; height: 40px; font-size: 1rem; margin-right: 14px; }
-            .form-group { margin-bottom: 16px; }
-            .form-control { padding: 14px 16px; font-size: 1rem; }
-            textarea.form-control { min-height: 140px; }
+            .honeycomb-diamond { 
+                transform: scale(0.72); 
+                transform-origin: top center; 
+                margin: 20px 0;
+                width: 100%;
+                overflow: hidden;
+            }
+            
+            .honeycomb-row { 
+                margin-bottom: -18px; 
+            }
+            
+            .honeycomb-cell { 
+                width: 150px; 
+                height: 170px; 
+            }
+            
+            .honeycomb-cell-content { 
+                padding: 14px; 
+            }
 
-            /* Секции и заголовки */
-            .section { padding: 60px 0; }
-            .section-header { margin-bottom: 36px; }
-            .section-title { font-size: 2rem; }
-            .section-title::after { width: 70px; height: 4px; bottom: -8px; }
-            .section-subtitle { font-size: 1.05rem; padding: 0 8px; }
+            .contact-section { 
+                flex-direction: column; 
+                gap: 18px; 
+            }
+            
+            .contact-card, .contact-form { 
+                padding: 20px; 
+                border-radius: 14px; 
+            }
+            
+            .contact-title { 
+                font-size: 1.4rem; 
+                margin-bottom: 16px; 
+            }
+            
+            .contact-details li { 
+                margin-bottom: 14px; 
+                font-size: 1rem; 
+            }
+            
+            .contact-details i { 
+                width: 40px; 
+                height: 40px; 
+                font-size: 1rem; 
+                margin-right: 14px; 
+            }
+            
+            .form-group { 
+                margin-bottom: 16px; 
+            }
+            
+            .form-control { 
+                padding: 14px 16px; 
+                font-size: 1rem; 
+            }
+            
+            textarea.form-control { 
+                min-height: 140px; 
+            }
 
-            /* Футер */
-            footer { padding: 40px 4% 28px; }
-            .footer-logo { font-size: 1.6rem; margin-bottom: 16px; }
-            .social-links { gap: 14px; margin-bottom: 22px; }
-            .social-link { width: 44px; height: 44px; font-size: 18px; }
-            .copyright { font-size: 0.9rem; }
+            .section { 
+                padding: 60px 0; 
+            }
+            
+            .section-header { 
+                margin-bottom: 36px; 
+            }
+            
+            .section-title { 
+                font-size: 2rem; 
+            }
+            
+            .section-title::after { 
+                width: 70px; 
+                height: 4px; 
+                bottom: -8px; 
+            }
+            
+            .section-subtitle { 
+                font-size: 1.05rem; 
+                padding: 0 8px; 
+            }
+
+            footer { 
+                padding: 40px 4% 28px; 
+            }
+            
+            .footer-logo { 
+                font-size: 1.6rem; 
+                margin-bottom: 16px; 
+            }
+            
+            .social-links { 
+                gap: 14px; 
+                margin-bottom: 22px; 
+            }
+            
+            .social-link { 
+                width: 44px; 
+                height: 44px; 
+                font-size: 18px; 
+            }
+            
+            .copyright { 
+                font-size: 0.9rem; 
+            }
         }
         
         /* Общие безопасные правила для адаптива */
@@ -1028,9 +1154,11 @@
             max-width: 100%; 
             height: auto; 
         }
+        
         .work-description p { 
             overflow-wrap: anywhere; 
         }
+        
         body.no-scroll { 
             overflow: hidden; 
         }
@@ -1065,13 +1193,13 @@
                 <li><a href="#contact">Контакты</a></li>
             </ul>
         </nav>
-        <button class="mobile-menu-btn">
+        <button class="mobile-menu-btn" aria-label="Открыть меню">
             <i class="fas fa-bars"></i>
         </button>
     </header>
     <div class="menu-overlay" aria-hidden="true"></div>
 
-    <!-- Герой-секция (вынесена за пределы контейнера) -->
+    <!-- Герой-секция -->
     <section class="hero" id="home">
         <!-- Видео на фоне -->
         <div class="hero-animation">
@@ -1081,19 +1209,19 @@
             </video>
         </div>
         
-        <div class="hero-content" style="max-width: 1000px; padding: 0 5%;">
-    <h1 style="font-size: 5rem; max-width: 900px;">Премиальная анимация для Вашего бренда</h1>
-    <p style="font-size: 1.5rem; max-width: 850px;">Отражение Вашей мысли в каждом кадре</p>
-    <div class="hero-btns">
-        <a href="#portfolio" class="btn btn-primary">Посмотреть работы</a>
-        <a href="#contact" class="btn btn-secondary">Обсудить проект</a>
-    </div>
-</div>
+        <div class="hero-content" style="max-width: 1000px; padding: 0 15px;">
+            <h1 style="font-size: 5rem; max-width: 900px; background: linear-gradient(90deg, #ffffff, #00d9ff); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">Премиальная анимация для Вашего бренда</h1>
+            <p style="font-size: 1.5rem; max-width: 850px;">Отражение Вашей мысли в каждом кадре</p>
+            <div class="hero-btns">
+                <a href="#portfolio" class="btn btn-primary">Посмотреть работы</a>
+                <a href="#contact" class="btn btn-secondary">Обсудить проект</a>
+            </div>
+        </div>
     </section>
 
     <!-- Основной контент -->
     <main class="container">
-        <!-- Услуги - НОВЫЙ БЛОК -->
+        <!-- Услуги -->
         <section class="section" id="services">
             <div class="section-header">
                 <h2 class="section-title">Направления работы</h2>
@@ -1146,7 +1274,7 @@
                     <div class="preview-container">
                         <!-- Видео-превью работы -->
                         <video autoplay loop muted playsinline class="work-preview">
-                            <source src="videos/Лицо 2.mp4"> 
+                            <source src="videos/Лицо 2.mp4" type="video/mp4"> 
                         </video>
                     </div>
                     <div class="work-description">
@@ -1160,8 +1288,8 @@
                 <div class="tab-content" id="restaurant">
                     <div class="preview-container">
                         <!-- Видео-превью работы -->
-                        <video autoplay loop muted playsinline class="work-preview">
-                            <source src= "videos/3D Animation Iphone Functional.mp4">
+                        <video loop muted playsinline class="work-preview" preload="metadata">
+                            <source src="videos/3D Animation Iphone Functional.mp4" type="video/mp4">
                         </video>
                     </div>
                     <div class="work-description">
@@ -1175,8 +1303,8 @@
                 <div class="tab-content" id="tech">
                     <div class="preview-container">
                         <!-- Видео-превью работы -->
-                        <video autoplay loop muted playsinline class="work-preview">
-                            <source src= "videos/Spanish VFX phone.mp4" type="video/mp4">
+                        <video loop muted playsinline class="work-preview" preload="metadata">
+                            <source src="videos/Spanish VFX phone.mp4" type="video/mp4">
                         </video>
                     </div>
                     <div class="work-description">
@@ -1190,7 +1318,7 @@
                 <div class="tab-content" id="education">
                     <div class="preview-container">
                         <!-- Видео-превью работы -->
-                        <video autoplay loop muted playsinline class="work-preview">
+                        <video loop muted playsinline class="work-preview" preload="metadata">
                             <source src="videos/квадр.mp4" type="video/mp4">
                         </video>
                     </div>
@@ -1211,23 +1339,15 @@
             
             <div class="about-content" style="display: flex; gap: 50px; align-items: center; margin-bottom: 70px;">
                 <div class="about-photo" style="flex: 0 0 40%; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.3);">
-                    <img src="images/drucya.png" alt="Дрюся Барашков" style="width: 100%; height: auto; display: block;">
+                    <img src="images/drucya.png" alt="Дрюся Барашков" style="width: 100%; height: auto; display: block;" loading="lazy">
                 </div>
                 <div class="about-text" style="flex: 1;">
-                    <p style="margin-bottom: 20px; font-size: 1.1rem; line-height: 1.7; color: var(--text-secondary); font-family: 'Roboto', sans-serif;">
-                        
-                    </p>
-                    <p style="margin-bottom: 20px; font-size: 3.5rem; line-height: 1.7; color: var(--text-secondary); font-family: 'Roboto', sans-serif;">
-                        Мы мост между безупречным брендом и премиальной анимацией – это Barashkov Motion.
-                    </p>
-                    <p style="margin-bottom: 20px; font-size: 1.1rem; line-height: 1.7; color: var(--text-secondary); font-family: 'Roboto', sans-serif;">
-                        
-                    </p>
+                    <p style="margin-bottom: 20px; font-size: clamp(1.8rem, 5vw, 3rem); line-height: 1.4; color: var(--text-secondary); font-family: 'Montserrat', sans-serif; max-width: 100%; overflow-wrap: break-word; word-wrap: break-word; hyphens: auto;"> Мы мост между безупрочным брендом и премиальной анимацией – это Barashkov Motion. </p>
                 </div>
             </div>
             
             <div class="section-subsection" style="text-align: center; margin-bottom: 40px;">
-                <h2 class="section-title"> Нам доверяют</h2>
+                <h2 class="section-title">Нам доверяют</h2>
             </div>
             
             <div class="honeycomb-diamond">
@@ -1235,17 +1355,17 @@
                 <div class="honeycomb-row">
                     <div class="honeycomb-cell" style="animation: fadeInUp 0.5s ease forwards;">
                         <div class="honeycomb-cell-content">
-                            <img src="images\logo (1).png" alt="Windows">
+                            <img src="images/logo (1).png" alt="Windows" loading="lazy">
                         </div>
                     </div>
                     <div class="honeycomb-cell" style="animation: fadeInUp 0.5s 0.1s ease forwards;">
                         <div class="honeycomb-cell-content">
-                            <img src="images\logo (2).png" alt="LinkedIn">
+                            <img src="images/logo (2).png" alt="LinkedIn" loading="lazy">
                         </div>
                     </div>
                     <div class="honeycomb-cell" style="animation: fadeInUp 0.5s 0.2s ease forwards;">
                         <div class="honeycomb-cell-content">
-                            <img src="images\logo2000.png" alt="Figma">
+                            <img src="images/logo2000.png" alt="Figma" loading="lazy">
                         </div>
                     </div>
                 </div>
@@ -1253,22 +1373,22 @@
                 <div class="honeycomb-row">
                     <div class="honeycomb-cell" style="animation: fadeInUp 0.6s 0.1s ease forwards;">
                         <div class="honeycomb-cell-content">
-                            <img src="images\annnn.jpg" alt="GitHub">
+                            <img src="images/annnn.jpg" alt="GitHub" loading="lazy">
                         </div>
                     </div>
                     <div class="honeycomb-cell" style="animation: fadeInUp 0.6s 0.2s ease forwards;">
                         <div class="honeycomb-cell-content">
-                            <img src="images\annnn.jpg" alt="Adobe">
+                            <img src="images/annnn.jpg" alt="Adobe" loading="lazy">
                         </div>
                     </div>
                     <div class="honeycomb-cell" style="animation: fadeInUp 0.6s 0.3s ease forwards;">
                         <div class="honeycomb-cell-content">
-                            <img src="images\annnn.jpg" alt="YouTube">
+                            <img src="images/annnn.jpg" alt="YouTube" loading="lazy">
                         </div>
                     </div>
                     <div class="honeycomb-cell" style="animation: fadeInUp 0.6s 0.4s ease forwards;">
                         <div class="honeycomb-cell-content">
-                            <img src="images\annnn.jpg" alt="WordPress">
+                            <img src="images/annnn.jpg" alt="WordPress" loading="lazy">
                         </div>
                     </div>
                 </div>
@@ -1276,28 +1396,21 @@
                 <div class="honeycomb-row">
                     <div class="honeycomb-cell" style="animation: fadeInUp 0.7s 0.2s ease forwards;">
                         <div class="honeycomb-cell-content">
-                            <img src="images\annnn.jpg" alt="Instagram">
+                            <img src="images/annnn.jpg" alt="Instagram" loading="lazy">
                         </div>
                     </div>
                     <div class="honeycomb-cell" style="animation: fadeInUp 0.7s 0.3s ease forwards;">
                         <div class="honeycomb-cell-content">
-                            <img src="images\annnn.jpg" alt="YouTube">
+                            <img src="images/annnn.jpg" alt="YouTube" loading="lazy">
                         </div>
                     </div>
                     <div class="honeycomb-cell" style="animation: fadeInUp 0.7s 0.4s ease forwards;">
                         <div class="honeycomb-cell-content">
-                            <img src="images\annnn.jpg" alt="GitHub">
+                            <img src="images/annnn.jpg" alt="GitHub" loading="lazy">
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
-            
-    <!-- Декоративные плавающие шестиугольники -->
-    <div class="floating-bg-hexagons">
-        <!-- Сгенерированные JS -->
-    </div>
-    
         </section>
 
         <!-- Контакты -->
@@ -1305,49 +1418,49 @@
             <div class="section-header">
                 <h2 class="section-title">Связаться с нами</h2>
             </div>
-<div class="contact-section">
-    <div class="contact-info">
-        <div class="contact-card">
-            <h3 class="contact-title">Контакты</h3>
-            <ul class="contact-details">
-                <li>
-                    <i class="fas fa-map-marker-alt"></i>
-                    <span>УРАЛМАШ, ул. Д4</span>
-                </li>
-                <li>
-                    <i class="fas fa-phone-alt"></i>
-                    <span>+7 (495) 123-45-67</span>
-                </li>
-                <li>
-                    <i class="fas fa-envelope"></i>
-                    <span>hello@motionlab.ru</span>
-                </li>
-                <li>
-                    <i class="fas fa-clock"></i>
-                    <span>Пн-Пт: 10:00 - 19:00</span>
-                </li>
-            </ul>
-        </div>
-    </div>
-    <div class="contact-form">
-        <h3 class="contact-title">Отправить сообщение</h3>
-        <form>
-            <div class="form-group">
-                <input type="text" class="form-control" placeholder="Ваше имя" required>
+            <div class="contact-section">
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <h3 class="contact-title">Контакты</h3>
+                        <ul class="contact-details">
+                            <li>
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>УРАЛМАШ, ул. Д4</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-phone-alt"></i>
+                                <span>+7 (495) 123-45-67</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-envelope"></i>
+                                <span>hello@motionlab.ru</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-clock"></i>
+                                <span>Пн-Пт: 10:00 - 19:00</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3 class="contact-title">Отправить сообщение</h3>
+                    <form>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Ваше имя" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Ваш email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" class="form-control" placeholder="Ваш телефон">
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" placeholder="Опишите ваш проект" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%">Отправить</button>
+                    </form>
+                </div>
             </div>
-            <div class="form-group">
-                <input type="email" class="form-control" placeholder="Ваш email" required>
-            </div>
-            <div class="form-group">
-                <input type="tel" class="form-control" placeholder="Ваш телефон">
-            </div>
-            <div class="form-group">
-                <textarea class="form-control" placeholder="Опишите ваш проект" required></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary" style="width: 100%">Отправить</button>
-        </form>
-    </div>
-</div>
         </section>
     </main>
 
@@ -1356,236 +1469,209 @@
         <div class="footer-logo">Barashkov<span>Motion</span></div>
         <p>Профессиональный моушн-дизайн для России и СНГ</p>
         <div class="social-links">
-            <a href="#" class="social-link"><i class="fab fa-behance"></i></a>
-            <a href="#" class="social-link"><i class="fab fa-dribbble"></i></a>
-            <a href="#" class="social-link"><i class="fab fa-telegram"></i></a>
-            <a href="#" class="social-link"><i class="fab fa-vk"></i></a>
-            <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+            <a href="#" class="social-link" aria-label="Behance"><i class="fab fa-behance"></i></a>
+            <a href="#" class="social-link" aria-label="Dribbble"><i class="fab fa-dribbble"></i></a>
+            <a href="#" class="social-link" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+            <a href="#" class="social-link" aria-label="VK"><i class="fab fa-vk"></i></a>
+            <a href="#" class="social-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
         </div>
         <p class="copyright">© 2025 Barashkov Motion Все права защищены.</p>
     </footer>
- <div id="global-hexagon-bg">
-    <!-- Lottie анимация -->
-    <div class="floating-bg">
-        <lottie-player 
-            src="https://lottie.host/embed/d1a7a4eb-8bf1-4787-8a1c-a722e37b1dd2/CM4JhUwHBm.lottie" 
-            background="transparent"
-            speed="0.8"
-            loop
-            autoplay>
-        </lottie-player>
-    </div>
-    <!-- Плавающие шестиугольники -->
-    <div class="floating-bg-hexagons"></div>
- </div>
+
     <script>
-        // Плавная прокрутка
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth' });
+        // Оптимизированный JavaScript
+        document.addEventListener('DOMContentLoaded', function() {
+            // Плавная прокрутка
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+            });
+
+            // Изменение шапки при прокрутке
+            let ticking = false;
+            window.addEventListener('scroll', function() {
+                if (!ticking) {
+                    requestAnimationFrame(function() {
+                        const header = document.querySelector('header');
+                        if (window.scrollY > 50) {
+                            header.classList.add('scrolled');
+                        } else {
+                            header.classList.remove('scrolled');
+                        }
+                        ticking = false;
+                    });
+                    ticking = true;
                 }
             });
-        });
 
-        // Изменение шапки при прокрутке
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('header');
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
+            // Мобильное меню
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const navEl = document.querySelector('nav');
+            const overlayEl = document.querySelector('.menu-overlay');
+            const bodyEl = document.body;
+            
+            mobileMenuBtn.addEventListener('click', function() {
+                navEl.classList.toggle('open');
+                bodyEl.classList.toggle('no-scroll');
+                overlayEl.classList.toggle('active');
+                const icon = this.querySelector('i');
+                if (icon) {
+                    icon.classList.toggle('fa-bars');
+                    icon.classList.toggle('fa-times');
+                }
+            });
 
-        // Мобильное меню
-        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-        const navEl = document.querySelector('nav');
-        const overlayEl = document.querySelector('.menu-overlay');
-        const bodyEl = document.body;
-        mobileMenuBtn.addEventListener('click', function() {
-            navEl.classList.toggle('open');
-            bodyEl.classList.toggle('no-scroll');
-            overlayEl.classList.toggle('active');
-            const icon = this.querySelector('i');
-            if (icon) {
-                icon.classList.toggle('fa-bars');
-                icon.classList.toggle('fa-times');
-            }
-        });
+            // Закрытие меню при клике на пункт
+            document.querySelectorAll('nav a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navEl.classList.remove('open');
+                    bodyEl.classList.remove('no-scroll');
+                    overlayEl.classList.remove('active');
+                    const icon = mobileMenuBtn.querySelector('i');
+                    if (icon) {
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    }
+                });
+            });
 
-        // Закрытие меню при клике на пункт
-        document.querySelectorAll('nav a').forEach(link => {
-            link.addEventListener('click', () => {
+            // Закрытие меню по клику на оверлей
+            overlayEl.addEventListener('click', () => {
                 navEl.classList.remove('open');
-                bodyEl.classList.remove('no-scroll');
                 overlayEl.classList.remove('active');
+                bodyEl.classList.remove('no-scroll');
                 const icon = mobileMenuBtn.querySelector('i');
                 if (icon) {
                     icon.classList.remove('fa-times');
                     icon.classList.add('fa-bars');
                 }
             });
-        });
 
-        // Закрытие меню по клику на оверлей
-        overlayEl.addEventListener('click', () => {
-            navEl.classList.remove('open');
-            overlayEl.classList.remove('active');
-            bodyEl.classList.remove('no-scroll');
-            const icon = mobileMenuBtn.querySelector('i');
-            if (icon) {
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
-            }
-        });
-
-        // Свайп для закрытия меню
-        let touchStartX = 0;
-        navEl.addEventListener('touchstart', (e) => {
-            touchStartX = e.touches[0].clientX;
-        });
-        navEl.addEventListener('touchmove', (e) => {
-            const diff = e.touches[0].clientX - touchStartX;
-            if (diff > 60) {
-                navEl.classList.remove('open');
-                overlayEl.classList.remove('active');
-                bodyEl.classList.remove('no-scroll');
-                const icon = mobileMenuBtn.querySelector('i');
-                if (icon) { icon.classList.remove('fa-times'); icon.classList.add('fa-bars'); }
-            }
-        });
-
-        // Анимация при прокрутке
-        const animateOnScroll = () => {
-            const elements = document.querySelectorAll('.benefit-card, .testimonial-card');
-            
-            elements.forEach(el => {
-                const position = el.getBoundingClientRect();
-                
-                // Если элемент виден на экране
-                if(position.top < window.innerHeight - 100) {
-                    el.style.opacity = 1;
-                    el.style.transform = 'translateY(0)';
+            // Свайп для закрытия меню
+            let touchStartX = 0;
+            navEl.addEventListener('touchstart', (e) => {
+                touchStartX = e.touches[0].clientX;
+            });
+            navEl.addEventListener('touchmove', (e) => {
+                const diff = e.touches[0].clientX - touchStartX;
+                if (diff > 60) {
+                    navEl.classList.remove('open');
+                    overlayEl.classList.remove('active');
+                    bodyEl.classList.remove('no-scroll');
+                    const icon = mobileMenuBtn.querySelector('i');
+                    if (icon) { icon.classList.remove('fa-times'); icon.classList.add('fa-bars'); }
                 }
             });
-        };
 
-        // Инициализация анимации
-        window.addEventListener('scroll', animateOnScroll);
-        window.addEventListener('load', animateOnScroll);
-        
-        // Изначально скрываем элементы
-        document.querySelectorAll('.benefit-card, .testimonial-card').forEach(el => {
-            el.style.opacity = 0;
-            el.style.transform = 'translateY(30px)';
-            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        });
-        
-        // Переключение вкладок портфолио + управление видео
-        document.querySelectorAll('.tab').forEach(tab => {
-            tab.addEventListener('click', () => {
-                // Убираем активные классы
-                document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-                document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+            // Переключение вкладок портфолио + управление видео
+            document.querySelectorAll('.tab').forEach(tab => {
+                tab.addEventListener('click', () => {
+                    // Убираем активные классы
+                    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+                    document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
 
-                // Ставим на паузу все видео
-                document.querySelectorAll('video').forEach(v => {
-                    try { v.pause(); } catch (e) {}
-                });
+                    // Ставим на паузу все видео
+                    document.querySelectorAll('video').forEach(v => {
+                        try { v.pause(); } catch (e) {}
+                    });
 
-                // Активируем вкладку
-                tab.classList.add('active');
-                const target = document.getElementById(tab.dataset.tab);
-                if (target) {
-                    target.classList.add('active');
-                    const activeVideo = target.querySelector('video');
-                    if (activeVideo && window.innerWidth >= 768) {
-                        activeVideo.play().catch(()=>{});
+                    // Активируем вкладку
+                    tab.classList.add('active');
+                    const target = document.getElementById(tab.dataset.tab);
+                    if (target) {
+                        target.classList.add('active');
+                        const activeVideo = target.querySelector('video');
+                        if (activeVideo) {
+                            activeVideo.play().catch(()=>{});
+                        }
                     }
-                }
+                });
             });
-        });
-        
-        // Lazy-loading изображений
-        document.querySelectorAll('img').forEach(img => {
-            if (!img.getAttribute('loading')) img.setAttribute('loading', 'lazy');
-            img.setAttribute('decoding', 'async');
-        });
-
-        // Оптимизация анимации для мобильных устройств
-        if (window.innerWidth < 768) {
-            const player = document.querySelector('.hero-animation lottie-player');
-            if (player && player.setSpeed) {
-                try { player.setSpeed(0.8); } catch(e) {}
+            
+            // Lazy-loading изображений
+            if ('loading' in HTMLImageElement.prototype) {
+                document.querySelectorAll('img').forEach(img => {
+                    if (!img.getAttribute('loading')) img.setAttribute('loading', 'lazy');
+                    img.setAttribute('decoding', 'async');
+                });
             }
-        }
 
-        // Reveal-анимации секций
-        const revealEls = document.querySelectorAll('.section, .benefit-card, .testimonial-card, .contact-card, .contact-form');
-        revealEls.forEach(el => el.classList.add('reveal-init'));
-        const io = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('reveal-visible');
-                    io.unobserve(entry.target);
+            // Reveal-анимации секций
+            const revealEls = document.querySelectorAll('.section, .service-item, .testimonial-card, .contact-card, .contact-form');
+            revealEls.forEach(el => el.classList.add('reveal-init'));
+            
+            const observerOptions = {
+                threshold: 0.12,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const io = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('reveal-visible');
+                        io.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+            
+            revealEls.forEach(el => io.observe(el));
+            
+            // Функция создания плавающих шестиугольников
+            function createFloatingHexagons() {
+                const container = document.querySelector('#global-hexagon-bg .floating-bg-hexagons');
+                const colors = [
+                    'rgba(0, 217, 255, 0.15)',
+                    'rgba(0, 217, 255, 0.12)',
+                    'rgba(0, 217, 255, 0.10)'
+                ];
+                
+                // Создаем DocumentFragment для оптимизации
+                const fragment = document.createDocumentFragment();
+                
+                for (let i = 0; i < 45; i++) {
+                    const hexagon = document.createElement('div');
+                    hexagon.classList.add('floating-hexagon');
+                    
+                    const size = Math.random() * 40 + 20;
+                    hexagon.style.width = `${size}px`;
+                    hexagon.style.height = `${size * 1.15}px`;
+                    hexagon.style.left = `${Math.random() * 100}%`;
+                    hexagon.style.top = `${Math.random() * 100}%`;
+                    hexagon.style.background = colors[Math.floor(Math.random() * colors.length)];
+                    hexagon.style.animationDelay = `${Math.random() * 5}s`;
+                    hexagon.style.animationDuration = `${3 + Math.random() * 6}s`;
+                    
+                    fragment.appendChild(hexagon);
                 }
-            });
-        }, { threshold: 0.12 });
-        revealEls.forEach(el => io.observe(el));
-        
-        // Функция создания плавающих шестиугольников
-        function createFloatingHexagons() {
-            const container = document.querySelector('#global-hexagon-bg .floating-bg-hexagons');
-            const colors = [
-                'rgba(0, 217, 255, 0.15)',
-                'rgba(0, 217, 255, 0.12)',
-                'rgba(0, 217, 255, 0.10)'
-            ];
-            
-            // Увеличено количество шестиугольников
-            for (let i = 0; i < 45; i++) {
-                const hexagon = document.createElement('div');
-                hexagon.classList.add('floating-hexagon');
                 
-                const size = Math.random() * 40 + 20; // Увеличен размер
-                hexagon.style.width = `${size}px`;
-                hexagon.style.height = `${size * 1.15}px`;
-                hexagon.style.left = `${Math.random() * 100}%`;
-                hexagon.style.top = `${Math.random() * 100}%`;
-                hexagon.style.background = colors[Math.floor(Math.random() * colors.length)];
-                hexagon.style.animationDelay = `${Math.random() * 5}s`;
-                hexagon.style.animationDuration = `${3 + Math.random() * 6}s`; // Увеличен диапазон длительности
+                container.appendChild(fragment);
+            }
+
+            // Управление видимостью фона
+            function handleScroll() {
+                const heroSection = document.getElementById('home');
+                if (!heroSection) return;
                 
-                container.appendChild(hexagon);
+                const heroHeight = heroSection.offsetHeight;
+                const bgElement = document.getElementById('global-hexagon-bg');
+                
+                if (window.scrollY > heroHeight * 0.8) {
+                    bgElement.classList.add('visible');
+                } else {
+                    bgElement.classList.remove('visible');
+                }
             }
-        }
 
-        // Управление видимостью фона
-        function handleScroll() {
-            const heroSection = document.getElementById('home');
-            if (!heroSection) return;
-            
-            const heroHeight = heroSection.offsetHeight;
-            const bgElement = document.getElementById('global-hexagon-bg');
-            
-            // Добавляем небольшой отступ для плавного перехода
-            if (window.scrollY > heroHeight * 0.8) {
-                bgElement.classList.add('visible');
-            } else {
-                bgElement.classList.remove('visible');
-            }
-        }
-
-        // Инициализация при загрузке
-        window.addEventListener('load', function() {
+            // Инициализация при загрузке
             createFloatingHexagons();
             handleScroll();
-            window.addEventListener('scroll', handleScroll);
             
-            // Оптимизация производительности
+            // Оптимизация производительности скролла
             let lastScrollY = window.scrollY;
             window.addEventListener('scroll', function() {
                 const currentScrollY = window.scrollY;
@@ -1596,6 +1682,5 @@
             });
         });
     </script>
-    
 </body>
 </html>

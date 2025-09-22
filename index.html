@@ -1,0 +1,2075 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suhan | Профессиональный моушн-дизайн</title>
+    <!-- Предзагрузка критичных ресурсов -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Roboto:wght@300;400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    </noscript>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+                /* Исправление для заголовка на десктопе */
+        @media (min-width: 769px) {
+            .hero h1 {
+            font-size: 4.5rem;
+            line-height: 1.2;
+            margin-bottom: 400px;
+            background: linear-gradient(90deg, #ffffff, var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 800;
+            white-space: normal; /* Разрешаем перенос текста */
+            word-wrap: break-word;
+            max-width: 100%;
+         }
+
+         .hero-content {
+            max-width: 1200px; /* Увеличенная максимальная ширина */
+            position: relative;
+            z-index: 2;
+            padding: 0 400px; /* Увеличиваем боковые отступы */
+            margin: 0 auto;
+            width: 100%;
+            text-align: center;;
+        }
+         .hero p {
+            font-size: 1.3rem;
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+            max-width: 900px; /* Увеличиваем максимальную ширину */
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+       }
+        /* Для десктопной версии */
+        @media (min-width: 769px) {
+            .hero h1 {
+                font-size: 3.5rem; /* Оптимальный размер для десктопа */
+                line-height: 1.1;
+            }
+            
+            .hero-content {
+                max-width: 9000px;
+                padding: 0 300px;
+            }
+        }
+         /* Для очень больших экранов */
+     @media (min-width: 1600px) {
+        .hero h1 {
+            font-size: 4.5rem; /* Увеличиваем размер шрифта для больших экранов */
+        }
+    }
+        .hero-content {
+                max-width: 900px; /* Увеличена максимальная ширина */
+                padding: 0 30px; /* Добавлены отступы */
+            }
+
+        /* Дополнительное исправление для очень больших экранов */
+        @media (min-width: 1600px) {
+            .hero h1 {
+                font-size: 5rem; /* Увеличиваем размер шрифта для больших экранов */
+            }
+        }
+        /* Исправление для контейнера hero */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding: 0;
+            width: 100%;
+            justify-content: center;
+        }
+
+        .hero-content {
+            max-width: 1200px; /* Увеличенная ширина по умолчанию */
+            position: relative;
+            z-index: 2;
+            padding: 0 20px;
+            margin: 0 auto;
+            width: 100%;
+            text-align: center;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+
+        @media (min-width: 992px) and (max-width: 4200px) {
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+            .tab-content {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 40px;
+                align-items: start; /* Изменено с center на start */
+                padding: 40px;
+            }
+    
+            .preview-container {
+                height: auto;
+                max-height: 400px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+    
+            .work-preview {
+                width: 100%;
+                height: auto;
+                max-height: 400px;
+                object-fit: contain;
+            }
+    
+             
+            .work-description h3 {
+                margin-top: 0;
+            }
+        }
+            .work-description {
+                padding: 20px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+         }
+        .tab-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: start;
+            padding: 40px;
+            overflow: hidden; /* Добавляем это свойство */
+        }
+
+        .preview-container {
+            border-radius: 15px;
+            overflow: hidden; /* Убедитесь, что это свойство присутствует */
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+            height: auto; /* Меняем фиксированную высоту на auto */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--secondary);
+            aspect-ratio: 16/9; /* Сохраняем пропорции */
+            max-width: 100%; /* Ограничиваем максимальную ширину */
+        }
+
+        .work-preview {
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* Меняем cover на contain чтобы все содержимое было видно */
+        }
+
+        /* Для мобильных устройств */
+        @media (max-width: 992px) {
+            .tab-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .preview-container {
+                order: 1;
+                margin-bottom: 20px;
+                max-height: 50vh; /* Ограничиваем максимальную высоту на мобильных */
+            }
+        }
+
+         /* НОВЫЕ СТИЛИ ДЛЯ КРУГОВОГО РАСПОЛОЖЕНИЯ СОТ НА МОБИЛЬНЫХ УСТРОЙСТВАХ */
+        @media (min-width: 769px) {
+            .honeycomb-diamond {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin: 50px 0;
+                padding: 20px;
+                width: 100%;
+                overflow: hidden;
+            }
+            
+            .honeycomb-row {
+                display: flex;
+                justify-content: center;
+                margin-bottom: -25px;
+            }
+            
+            .honeycomb-cell {
+                width: 180px;
+                height: 200px;
+                margin: 0 5px;
+                position: relative;
+                clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                cursor: pointer;
+                overflow: hidden;
+            }
+            
+            .honeycomb-cell-content {
+                background: rgba(20, 20, 40, 0.8);
+            }
+        }
+
+        /* НОВЫЕ СТИЛИ ДЛЯ МОБИЛЬНЫХ УСТРОЙСТВ */
+        @media (max-width: 768px) {
+            .honeycomb-diamond {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                margin: 30px 0;
+                padding: 10px;
+                width: 100%;
+                overflow: hidden;
+                transform: none !important;
+            }
+            
+            .honeycomb-row {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-wrap: wrap;
+                margin-bottom: 10px;
+                width: 100%;
+            }
+            
+            .honeycomb-cell {
+                width: 80px;
+                height: 90px;
+                margin: 5px;
+                position: relative;
+                clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                cursor: pointer;
+                overflow: hidden;
+                flex-shrink: 0;
+            }
+            
+            .honeycomb-cell-content {
+                background: rgba(20, 20, 40, 0.8);
+                width: 100%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 10px;
+            }
+            
+            .honeycomb-cell img {
+                width: 100%;
+                height: auto;
+                max-height: 100%;
+                object-fit: contain;
+                transition: transform 0.5s ease, filter 0.5s ease;
+                filter: grayscale(70%) brightness(130%);
+            }
+            
+            /* Круговое расположение */
+            .honeycomb-diamond.circle-layout {
+                height: auto;
+                min-height: 300px;
+                position: relative;
+                display: flex;
+                flex-direction: column;
+            }
+            
+            .honeycomb-diamond.circle-layout .honeycomb-row {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 8px;
+                justify-items: center;
+                align-items: center;
+                width: 100%;
+                max-width: 300px;
+                margin: 0 auto 15px auto;
+            }
+            
+            .honeycomb-diamond.circle-layout .honeycomb-cell {
+                margin: 4px;
+                width: 70px;
+                height: 80px;
+            }
+            
+            /* Специальные стили для одиночной ячейки */
+            .honeycomb-row.single-cell {
+                order: -1; /* Помещаем ряд с одной ячейкой в начало */
+                margin-bottom: 20px;
+            }
+            
+            /* Адаптация для очень маленьких экранов */
+            @media (max-width: 360px) {
+                .honeycomb-diamond.circle-layout .honeycomb-cell {
+                    width: 60px;
+                    height: 70px;
+                }
+            }
+            
+            @media (max-width: 320px) {
+                .honeycomb-diamond.circle-layout .honeycomb-cell {
+                    width: 55px;
+                    height: 65px;
+                }
+            }
+        }
+            /* Для очень маленьких экранов */
+            @media (max-width: 480px) {
+                .tab-content {
+                    padding: 20px;
+                    gap: 25px;
+                }
+                
+                .preview-container {
+                    margin-bottom: 15px;
+                }
+            }
+        /* Стили для десктопной версии (ничего не меняем) */
+        @media (min-width: 769px) {
+            .honeycomb-diamond {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin: 50px 0;
+                padding: 20px;
+                width: 100%;
+                overflow: hidden;
+            }
+            
+            .honeycomb-row {
+                display: flex;
+                justify-content: center;
+                margin-bottom: -25px;
+            }
+            
+            .honeycomb-cell {
+                width: 180px;
+                height: 200px;
+                margin: 0 5px;
+                position: relative;
+                clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                cursor: pointer;
+                overflow: hidden;
+            }
+            
+            .honeycomb-cell-content {
+                background: rgba(20, 20, 40, 0.8);
+            }
+        }
+        /* Критический CSS - минимизирован и оптимизирован */
+        :root {
+            --primary: #0a0a16;
+            --secondary: #1a1a2e;
+            --accent: #00d9ff;
+            --accent-dark: #0084a8;
+            --text: #ffffff;
+            --text-secondary: #a0a0c0;
+            --glass: rgba(30, 30, 60, 0.5);
+            --glass-border: rgba(255, 255, 255, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            overflow-x: hidden;
+            width: 100%;
+        }
+
+        body {
+            background-color: var(--primary);
+            color: var(--text);
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            position: relative;
+            min-height: 100vh;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+
+        /* Глобальный анимированный фон */
+        #global-hexagon-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            opacity: 0;
+            transition: opacity 1s ease;
+            pointer-events: none;
+        }
+
+        #global-hexagon-bg.visible {
+            opacity: 0.25;
+        }
+
+        #global-hexagon-bg .floating-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.35;
+        }
+
+        #global-hexagon-bg .floating-bg-hexagons {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        #global-hexagon-bg .floating-hexagon {
+            position: absolute;
+            width: 40px;
+            height: 46px;
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            background: rgba(0, 217, 255, 0.2);
+            animation: float 6s ease-in-out infinite;
+            box-shadow: 0 0 15px rgba(0, 217, 255, 0.15);
+            filter: brightness(120%);
+        }
+
+        /* Навигация */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 3%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+            background: var(--glass);
+            border-bottom: 1px solid var(--glass-border);
+            transition: all 0.3s ease;
+        }
+
+        header.scrolled {
+            padding: 15px 3%;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--text);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            white-space: nowrap;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        .logo i {
+            margin-right: 10px;
+            color: var(--accent);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav li {
+            margin-left: 30px;
+        }
+
+        nav a {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+            padding: 5px 0;
+            transition: 0.3s;
+            white-space: nowrap;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Основное содержимое */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 100px 15px 50px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Герой-секция */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding: 0;
+            width: 100%;
+        }
+
+        .hero-animation {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            position: relative;
+            z-index: 2;
+            padding: 0 15px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .hero h1 {
+            font-size: 4.5rem;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            background: linear-gradient(90deg, #ffffff, var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 800;
+            white-space: normal;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+            max-width: 700px;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            border: 2px solid transparent;
+            font-size: 1.1rem;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: var(--primary);
+            box-shadow: 0 5px 20px rgba(0, 217, 255, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 217, 255, 0.6);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--text);
+            border: 2px solid var(--accent);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(0, 217, 255, 0.1);
+            transform: translateY(-3px);
+        }
+
+        /* Секция услуг */
+        .section {
+            padding: 100px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 5px;
+            background: var(--accent);
+            border-radius: 3px;
+        }
+
+        .section-subtitle {
+            color: var(--text-secondary);
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.3rem;
+        }
+
+        .services-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+
+        .service-item {
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            padding: 28px;
+            backdrop-filter: blur(10px);
+            transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-item:hover {
+            transform: translateY(-6px);
+            border-color: var(--accent);
+            box-shadow: 0 16px 36px rgba(0,0,0,.35);
+        }
+
+        .service-item-title {
+            font-size: 28px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .service-item-title::after {
+            content: '';
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--accent);
+            opacity: .9;
+        }
+
+        .service-item-desc {
+            font-size: 18px;
+            line-height: 1.7;
+            color: var(--text-secondary);
+        }
+
+        /* Портфолио */
+        .portfolio-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .tab {
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 30px;
+            background: var(--glass);
+            transition: all 0.3s ease;
+            font-weight: 500;
+            border: 1px solid transparent;
+            text-align: center;
+            white-space: nowrap;
+        }
+
+        .tab:hover {
+            border-color: var(--accent);
+        }
+
+        .tab.active {
+            background: var(--accent);
+            color: var(--primary);
+        }
+
+        .portfolio-content {
+            background: var(--glass);
+            border-radius: 20px;
+            border: 1px solid var(--glass-border);
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+        }
+
+        .tab-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: start; /* Изменено с center на start */
+            padding: 40px;
+        }
+
+        .tab-content.active {
+            display: grid;
+        }
+
+        .preview-container {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--secondary);
+            aspect-ratio: 16/9;
+        }
+
+        .work-preview {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            aspect-ratio: 16/9;
+        }
+
+        .work-description {
+            padding: 20px;
+        }
+
+        .work-description h3 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            color: var(--accent);
+        }
+
+        .work-description p {
+            font-size: 1.2rem;
+            line-height: 1.7;
+            margin-bottom: 30px;
+            color: var(--text-secondary);
+        }
+
+        /* Соты */
+        .honeycomb-diamond {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 50px 0;
+            padding: 20px;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .honeycomb-row {
+            display: flex;
+            justify-content: center;
+            margin-bottom: -25px;
+        }
+
+        .honeycomb-cell {
+            width: 180px;
+            height: 200px;
+            margin: 0 5px;
+            position: relative;
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+            overflow: hidden;
+        }
+
+        .honeycomb-cell-content {
+            background: rgba(20, 20, 40, 0.8);
+        }
+
+        .honeycomb-cell:hover .honeycomb-cell-content {
+            background: rgba(0, 217, 255, 0.2);
+            border: 1px solid rgba(0, 217, 255, 0.5);
+            transform: scale(0.92);
+        }
+
+        .honeycomb-cell img {
+            width: 100%;
+            height: auto;
+            max-height: 100%;
+            object-fit: contain;
+            transition: transform 0.5s ease, filter 0.5s ease;
+            filter: grayscale(70%) brightness(130%);
+        }
+
+        .honeycomb-cell:hover img {
+            transform: scale(1.15);
+            filter: grayscale(0%) brightness(100%);
+        }
+
+        .honeycomb-cell:hover {
+            transform: translateY(-10px);
+            z-index: 10;
+        }
+
+        /* Контакты */
+        .contact-section {
+            display: flex;
+            gap: 60px;
+            align-items: stretch;
+        }
+
+        .contact-info {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .contact-form {
+            flex: 1;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact-card {
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 45px;
+            backdrop-filter: blur(10px);
+            margin-bottom: 30px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact-title {
+            font-size: 2.2rem;
+            margin-bottom: 25px;
+            color: var(--accent);
+        }
+
+        .contact-details {
+            list-style: none;
+        }
+
+        .contact-details li {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            font-size: 1.1rem;
+        }
+
+        .contact-details i {
+            width: 45px;
+            height: 45px;
+            background: rgba(0, 217, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            color: var(--accent);
+            font-size: 1.2rem;
+        }
+
+        .contact-form {
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 45px;
+            backdrop-filter: blur(10px);
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group {
+            margin-bottom: 30px;
+        }
+
+        .contact-form .form-group:last-child {
+            margin-top: auto;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 18px 22px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--glass-border);
+            border-radius: 10px;
+            color: var(--text);
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--accent);
+            background: rgba(0, 217, 255, 0.05);
+        }
+
+        textarea.form-control {
+            min-height: 170px;
+            resize: vertical;
+        }
+
+        /* Футер */
+        footer {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 60px 3% 40px;
+            text-align: center;
+            border-top: 1px solid var(--glass-border);
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer-logo {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+        }
+
+        .footer-logo span {
+            color: var(--accent);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-bottom: 35px;
+        }
+
+        .social-link {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text);
+            font-size: 22px;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: var(--accent);
+            color: var(--primary);
+            transform: translateY(-5px);
+        }
+
+        .copyright {
+            color: var(--text-secondary);
+            font-size: 1rem;
+        }
+
+        /* Анимации */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Адаптивность */
+        @media (max-width: 1200px) {
+            .hero h1 {
+                font-size: 3.8rem;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 3.2rem;
+                white-space: normal;
+            }
+            
+            .contact-section {
+                flex-direction: column;
+                padding: 0 10px;
+            }
+            
+            .tab-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .services-list {
+                grid-template-columns: 1fr;
+            }
+
+            .tab-content {
+                grid-template-columns: 1fr;
+                gap: 30px; /* Увеличиваем промежуток между элементами */
+            }
+    
+            .preview-container {
+                order: 1; /* Видео first */
+                margin-bottom: 20px; /* Добавляем отступ снизу */
+            }
+    
+            .work-description {
+                order: 2; /* Текст second */
+                padding: 0;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .honeycomb-cell {
+                width: 150px;
+                height: 170px;
+            }
+            
+            .service-item {
+                padding: 22px;
+                margin: 0 5px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .honeycomb-cell {
+                width: 130px;
+                height: 145px;
+            }
+            
+            .service-item-title {
+                font-size: 24px;
+            }
+            
+            .service-item-desc {
+                font-size: 16px;
+            }
+
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            nav ul {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+            }
+            
+            .section-title {
+                font-size: 2.5rem;
+            }
+
+            .container {
+                padding: 100px 15px 50px;
+            }
+            
+            .tab-content {
+                padding: 20px;
+            }
+            
+            .preview-container {
+                height: 300px;
+            }
+            
+            .hero {
+                width: 100%;
+            }
+            
+            .hero-content {
+                padding: 0 15px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .honeycomb-diamond {
+                transform: scale(0.85);
+            }
+            
+            .honeycomb-row {
+                margin-bottom: -20px;
+            }
+            
+            .preview-container {
+                height: 250px;
+            }
+            
+            .portfolio-tabs {
+                overflow-x: auto;
+                justify-content: flex-start;
+                padding-bottom: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .honeycomb-diamond {
+                transform: scale(0.75);
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .work-description h3 {
+                font-size: 1.6rem;
+            }
+            
+            .tab {
+                padding: 8px 14px;
+            }
+            
+            .preview-container {
+                height: 200px;
+            }
+        }
+
+        /* Мобильное меню */
+        @media (max-width: 768px) {
+            nav {
+                position: fixed;
+                top: 70px;
+                right: -100%;
+                left: auto;
+                width: 80%;
+                height: calc(100vh - 70px);
+                background: var(--secondary);
+                border-left: 1px solid var(--glass-border);
+                backdrop-filter: blur(10px);
+                z-index: 99;
+                transition: right 0.3s ease;
+                box-shadow: -5px 0 15px rgba(0,0,0,0.2);
+            }
+            
+            nav.open { 
+                right: 0; 
+            }
+            
+            nav ul {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+                padding: 20px;
+            }
+
+            .hero h1 { 
+                font-size: 2.2rem !important; 
+                white-space: normal;
+            }
+            
+            .hero p { 
+                font-size: 1rem !important; 
+            }
+            
+            .hero-btns { 
+                gap: 12px; 
+            }
+            
+            .btn { 
+                width: 100%; 
+                font-size: 1rem; 
+                padding: 12px 22px; 
+            }
+        }
+
+        /* Затемняющий оверлей для мобильного меню */
+        .menu-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.5);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+            z-index: 98;
+        }
+        
+        .menu-overlay.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        /* Плавное появление секций */
+        .reveal-init { 
+            opacity: 0; 
+            transform: translateY(24px); 
+        }
+        
+        .reveal-visible { 
+            opacity: 1; 
+            transform: translateY(0); 
+            transition: opacity .6s ease, transform .6s ease; 
+        }
+
+        /* Учёт фиксированной шапки при якорной прокрутке */
+        section[id] { 
+            scroll-margin-top: 90px; 
+        }
+
+        /* Улучшение нажатий */
+        * { 
+            -webkit-tap-highlight-color: rgba(0,0,0,0); 
+        }
+
+        /* Специальная адаптация для узких экранов ~360x800 */
+        @media (max-width: 400px) {
+            header { 
+                padding: 14px 4%; 
+            }
+            
+            .logo { 
+                font-size: 22px; 
+            }
+            
+            .mobile-menu-btn { 
+                font-size: 1.4rem; 
+            }
+            
+            nav { 
+                top: 60px; 
+            }
+            
+            nav ul { 
+                gap: 8px; 
+                padding: 12px 16px; 
+            }
+            
+            nav a { 
+                font-size: 0.98rem; 
+            }
+
+            .hero { 
+                min-height: 92vh; 
+            }
+            
+            .hero-content { 
+                padding: 0 16px; 
+            }
+            
+            .hero h1 { 
+                font-size: 2.35rem !important; 
+                line-height: 1.15; 
+                white-space: normal;
+            }
+            
+            .hero p { 
+                font-size: 1.02rem !important; 
+                max-width: 100%; 
+            }
+            
+            .hero-btns { 
+                flex-direction: column; 
+                gap: 12px; 
+            }
+            
+            .btn { 
+                width: 100%; 
+                padding: 12px 18px; 
+                font-size: 1rem; 
+            }
+
+            .services-list { 
+                grid-template-columns: 1fr; 
+                gap: 24px; 
+            }
+            
+            .service-item-title { 
+                font-size: 22px; 
+                letter-spacing: 1px; 
+                padding-right: 16px; 
+            }
+            
+            .service-item-title::after { 
+                width: 8px; 
+                height: 8px; 
+            }
+            
+            .service-item-desc { 
+                font-size: 16.5px; 
+                line-height: 1.6; 
+                max-width: 100%; 
+            }
+
+            .portfolio-tabs { 
+                gap: 8px; 
+                margin-bottom: 18px; 
+                padding: 0 6px; 
+            }
+            
+            .portfolio-tabs { 
+                overflow-x: auto; 
+                -webkit-overflow-scrolling: touch; 
+            }
+            
+            .tab { 
+                padding: 8px 12px; 
+                font-size: 0.95rem; 
+                white-space: nowrap; 
+            }
+            
+            .portfolio-content { 
+                border-radius: 14px; 
+                margin: 0 10px;
+            }
+
+            .tab-content { 
+                grid-template-columns: 1fr; 
+                padding: 18px; 
+                gap: 18px; 
+            }
+            
+            .preview-container { 
+                height: 230px; 
+                border-radius: 12px; 
+            }
+            
+            .work-description h3 { 
+                font-size: 1.5rem; 
+            }
+            
+            .work-description p { 
+                font-size: 1rem; 
+            }
+
+            .about-content { 
+                flex-direction: column !important; 
+                gap: 22px; 
+            }
+            
+            .about-photo { 
+                flex: 0 0 auto !important; 
+            }
+            
+            .about-text p[style*="font-size: 3.5rem"] { 
+                font-size: 1.6rem !important; 
+                line-height: 1.4 !important; 
+            }
+
+            .honeycomb-diamond { 
+                transform: scale(0.72); 
+                transform-origin: top center; 
+                margin: 20px 0;
+                width: 100%;
+                overflow: hidden;
+            }
+            
+            .honeycomb-row { 
+                margin-bottom: -18px; 
+            }
+            
+            .honeycomb-cell { 
+                width: 150px; 
+                height: 170px; 
+            }
+            
+            .honeycomb-cell-content { 
+                padding: 14px; 
+            }
+
+            .contact-section { 
+                flex-direction: column; 
+                gap: 18px; 
+            }
+            
+            .contact-card, .contact-form { 
+                padding: 20px; 
+                border-radius: 14px; 
+            }
+            
+            .contact-title { 
+                font-size: 1.4rem; 
+                margin-bottom: 16px; 
+            }
+            
+            .contact-details li { 
+                margin-bottom: 14px; 
+                font-size: 1rem; 
+            }
+            
+            .contact-details i { 
+                width: 40px; 
+                height: 40px; 
+                font-size: 1rem; 
+                margin-right: 14px; 
+            }
+            
+            .form-group { 
+                margin-bottom: 16px; 
+            }
+            
+            .form-control { 
+                padding: 14px 16px; 
+                font-size: 1rem; 
+            }
+            
+            textarea.form-control { 
+                min-height: 140px; 
+            }
+
+            .section { 
+                padding: 60px 0; 
+            }
+            
+            .section-header { 
+                margin-bottom: 36px; 
+            }
+            
+            .section-title { 
+                font-size: 2rem; 
+            }
+            
+            .section-title::after { 
+                width: 70px; 
+                height: 4px; 
+                bottom: -8px; 
+            }
+            
+            .section-subtitle { 
+                font-size: 1.05rem; 
+                padding: 0 8px; 
+            }
+
+            footer { 
+                padding: 40px 4% 28px; 
+            }
+            
+            .footer-logo { 
+                font-size: 1.6rem; 
+                margin-bottom: 16px; 
+            }
+            
+            .social-links { 
+                gap: 14px; 
+                margin-bottom: 22px; 
+            }
+            
+            .social-link { 
+                width: 44px; 
+                height: 44px; 
+                font-size: 18px; 
+            }
+            
+            .copyright { 
+                font-size: 0.9rem; 
+            }
+        }
+        
+        /* Общие безопасные правила для адаптива */
+        img, video { 
+            max-width: 100%; 
+            height: auto; 
+        }
+        
+        .work-description p { 
+            overflow-wrap: anywhere; 
+        }
+        
+        body.no-scroll { 
+            overflow: hidden; 
+        }
+
+        /* НОВЫЕ СТИЛИ ДЛЯ КРУГОВОГО РАСПОЛОЖЕНИЯ СОТ НА МОБИЛЬНЫХ УСТРОЙСТВАХ */
+        @media (max-width: 768px) {
+            .honeycomb-diamond {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                margin: 30px 0;
+                padding: 10px;
+                width: 100%;
+                overflow: hidden;
+                transform: none !important;
+            }
+            
+            .honeycomb-row {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-wrap: wrap;
+                margin-bottom: 0;
+                width: 100%;
+            }
+            
+            .honeycomb-cell {
+                width: 80px;
+                height: 90px;
+                margin: 5px;
+                position: relative;
+                clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                cursor: pointer;
+                overflow: hidden;
+                flex-shrink: 0;
+            }
+            
+            .honeycomb-cell-content {
+                background: rgba(20, 20, 40, 0.8);
+                width: 100%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 10px;
+            }
+            
+            .honeycomb-cell img {
+                width: 100%;
+                height: auto;
+                max-height: 100%;
+                object-fit: contain;
+                transition: transform 0.5s ease, filter 0.5s ease;
+                filter: grayscale(70%) brightness(130%);
+            }
+            
+            /* Круговое расположение */
+            .honeycomb-diamond.circle-layout {
+                height: auto;
+                min-height: 300px;
+                position: relative;
+            }
+            
+            .honeycomb-diamond.circle-layout .honeycomb-row {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 8px;
+                justify-items: center;
+                align-items: center;
+                width: 100%;
+                max-width: 300px;
+                margin: 0 auto;
+            }
+            
+            .honeycomb-diamond.circle-layout .honeycomb-cell {
+                margin: 4px;
+                width: 70px;
+                height: 80px;
+            }
+            
+            /* Адаптация для очень маленьких экранов */
+            @media (max-width: 360px) {
+                .honeycomb-diamond.circle-layout .honeycomb-cell {
+                    width: 60px;
+                    height: 70px;
+                }
+            }
+            
+            @media (max-width: 320px) {
+                .honeycomb-diamond.circle-layout .honeycomb-cell {
+                    width: 55px;
+                    height: 65px;
+                }
+            }
+        }
+    </style>
+</head>
+<body>
+<!-- Глобальный анимированный фон -->
+<div id="global-hexagon-bg">
+    <!-- Lottie анимация -->
+    <div class="floating-bg">
+       
+    </div>
+    <!-- Плавающие шестиугольники -->
+    <div class="floating-bg-hexagons"></div>
+</div>
+
+    <!-- Шапка -->
+    <header>
+        <a href="#" class="logo"><i class="fas fa-play-circle"></i>Barashkov<span>Motion</span></a>
+        <nav>
+            <ul>
+                <li><a href="#home">Главная</a></li>
+                <li><a href="#services">Услуги</a></li>
+                <li><a href="#portfolio">Портфолио</a></li>
+                <li><a href="#about">О нас</a></li>
+                <li><a href="#contact">Контакты</a></li>
+            </ul>
+        </nav>
+        <button class="mobile-menu-btn" aria-label="Открыть меню">
+            <i class="fas fa-bars"></i>
+        </button>
+    </header>
+    <div class="menu-overlay"></div>
+
+    <!-- Основное содержимое -->
+    <div class="container">
+        <!-- Герой-секция -->
+       <section id="home" class="hero">
+            <div class="hero-animation">
+                <video autoplay muted loop playsinline class="hero-video">
+                    <source src="" type="video/mp4">
+                    Ваш браузер не поддерживает видео тег.
+                </video>
+                <div class="video-overlay"></div>
+            </div>
+            <div class="hero-content">
+                <h1>Премиальная анимация<br>для Вашего бренда</h1>
+                <p>Отражение Вашей мысли в каждом кадре</p>
+                <div class="hero-btns">
+                    <a href="#portfolio" class="btn btn-primary">Смотреть работы</a>
+                    <a href="#contact" class="btn btn-secondary">Обсудить проект</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Секция услуг -->
+        <section id="services" class="section">
+            <div class="section-header">
+                <h2 class="section-title">Направления работы</h2>
+
+            </div>
+            <div class="services-list">
+                <div class="service-item reveal-init">
+                    <h3 class="service-item-title">Рекламные ролики</h3>
+                    <p class="service-item-desc">Создание динамичных и запоминающихся рекламных видео, которые эффективно продвигают ваш продукт или услугу и увеличивают конверсию.</p>
+                </div>
+                <div class="service-item reveal-init">
+                    <h3 class="service-item-title">Анимированная графика</h3>
+                    <p class="service-item-desc">Разработка уникальной анимированной графики для телевидения, онлайн-платформ и социальных сетей, которая подчеркивает индивидуальность бренда.</p>
+                </div>
+                <div class="service-item reveal-init">
+                    <h3 class="service-item-title">Видео-презентации</h3>
+                    <p class="service-item-desc">Производство понятных и визуально привлекательных идео-презентаций, которые просто и доступно представляют сложные идеи и продукты.</p>
+                </div>
+                <div class="service-item reveal-init">
+                    <h3 class="service-item-title">Визуализация данных</h3>
+                    <p class="service-item-desc">Превращение скучных цифр и статистики в увлекательные анимированные инфографики и диаграммы, которые легко воспринимаются зрителем.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Секция портфолио -->
+       <section id="portfolio" class="section">
+        <div class="section-header">
+            <h2 class="section-title">Проекты</h2>
+        </div>
+        
+        <div class="portfolio-content">
+            <div class="tab-content active" id="all-content">
+                <div class="preview-container">
+                    <video autoplay muted loop playsinline class="work-preview">
+                        <source src="videos/Забор.mp4" type="video/mp4">
+                        Ваш браузер не поддерживает видео тег.
+                    </video>
+                </div>
+                <div class="work-description">
+                    <h3>Процесс построения забора</h3>
+                    <p>Создан 3D-ролик процесса изготовления забора: от моделинга конструкции до добавления эффектов сварки и финальной сборки. Видео наглядно показало технологичность производства и стало эффективным инструментом для презентаций компании. </p>
+                </div>
+            </div>
+            <div class="tab-content" id="commercial-content">
+                <div class="preview-container">
+                    <video autoplay muted loop playsinline class="work-preview">
+                        <source src="videos/Часы.mp4" type="video/mp4">
+                        Ваш браузер не поддерживает видео тег.
+                    </video>
+                </div>
+                <div class="work-description">
+                    <h3>Презентация часов</h3>
+                    <p>Создан фотореалистичный CG-ролик для спортивных часов: проработаны материалы, анимацию и свет. Видео усилило восприятие бренда как премиального и помогло компании выделиться среди конкурентов. </p>
+                </div>
+            </div>
+            <div class="tab-content" id="animation-content">
+                <div class="preview-container">
+                    <video autoplay muted loop playsinline class="work-preview">
+                        <source src="videos/Кроссовок.mp4" type="video/mp4">
+                        Ваш браузер не поддерживает видео тег.
+                    </video>
+                </div>
+                <div class="work-description">
+                    <h3>Презентация спортивной обуви</h3>
+                    <p>Разработан ролик для магазина обуви, визуализирующий технологичность через динамичную анимацию и проработку деталей. Видео усилило доверие к бренду и стало инструментом для продвижения в digital-среде, повысив интерес к коллекции.</p>
+                </div>
+            </div>
+            <div class="tab-content" id="explainer-content">
+                <div class="preview-container">
+                    <video autoplay muted loop playsinline class="work-preview">
+                        <source src="videos/Абстракция.mp4" type="video/mp4">
+                        Ваш браузер не поддерживает видео тег.
+                    </video>
+                </div>
+                <div class="work-description">
+                    <h3>Работа с абстракциями</h3>
+                    <p>Смоделировали и анимировал абстрактный ролик, отражающий энергию и динамику компании. Видео стало инструментом для презентаций и digital-продвижения, что положительно сказалось на имидже бренда и отклике клиентов.</p>
+                </div>
+            </div>
+        </div>
+        </section>
+
+        <!-- Секция с сотами -->
+        <section class="section">
+        <div class="section-header">
+            <h2 class="section-title">Нам доверяют</h2>
+           
+        </div>
+        
+        <div class="honeycomb-diamond circle-layout">
+            <!-- Первый ряд -->
+            <div class="honeycomb-row">
+                <div class="honeycomb-cell" style="animation: fadeInUp 0.5s ease forwards;">
+                    <div class="honeycomb-cell-content">
+                        <img src="images/logo (1).png" alt="Windows" loading="lazy" decoding="async">
+                    </div>
+                </div>
+                <div class="honeycomb-cell" style="animation: fadeInUp 0.5s 0.1s ease forwards;">
+                    <div class="honeycomb-cell-content">
+                        <img src="images/logo (2).png" alt="LinkedIn" loading="lazy" decoding="async">
+                    </div>
+                </div>
+                <div class="honeycomb-cell" style="animation: fadeInUp 0.5s 0.2s ease forwards;">
+                    <div class="honeycomb-cell-content">
+                        <img src="images/logo (3).png" alt="Figma" loading="lazy" decoding="async">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Второй ряд -->
+            <div class="honeycomb-row">
+                <div class="honeycomb-cell" style="animation: fadeInUp 0.6s 0.1s ease forwards;">
+                    <div class="honeycomb-cell-content">
+                        <img src="images/logo (4).png" alt="GitHub" loading="lazy" decoding="async">
+                    </div>
+                </div>
+                <div class="honeycomb-cell" style="animation: fadeInUp 0.6s 0.2s ease forwards;">
+                    <div class="honeycomb-cell-content">
+                        <img src="images/logo (5).png" alt="Adobe" loading="lazy" decoding="async">
+                    </div>
+                </div>
+                <div class="honeycomb-cell" style="animation: fadeInUp 0.6s 0.3s ease forwards;">
+                    <div class="honeycomb-cell-content">
+                        <img src="images/logo (6).png" alt="YouTube" loading="lazy" decoding="async">
+                    </div>
+                </div>
+                <div class="honeycomb-cell" style="animation: fadeInUp 0.6s 0.4s ease forwards;">
+                    <div class="honeycomb-cell-content">
+                        <img src="images/logo (7).png" alt="WordPress" loading="lazy" decoding="async">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Третий ряд (одиночная ячейка) -->
+            <div class="honeycomb-row single-cell">
+                <div class="honeycomb-cell" style="animation: fadeInUp 0.7s 0.2s ease forwards;">
+                    <div class="honeycomb-cell-content">
+                        <img src="images/logo (10).png" alt="Instagram" loading="lazy" decoding="async">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- Секция контактов -->
+        <section id="contact" class="section">
+            <div class="section-header">
+                <h2 class="section-title">Связаться с нами</h2>
+            </div>
+            <div class="contact-section">
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <h3 class="contact-title">Контактная информация</h3>
+                        <ul class="contact-details">
+                            <li>
+                                <i class="fas fa-envelope"></i>
+                                <span>example@barashkovmotion.com</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-phone"></i>
+                                <span>+7 (999) 123-45-67</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Москва, Россия</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-clock"></i>
+                                <span>Пн-Пт: 9:00 - 18:00</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3 class="contact-title">Отправить сообщение</h3>
+                    <form>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Ваше имя" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Ваш email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" placeholder="Сообщение" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary" style="width: 100%;">Отправить сообщение</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Футер -->
+    <footer>
+        <div class="footer-logo">Barashkov<span>Motion</span></div>
+        
+        <p class="copyright">© 2025 BarashkovMotion. Все права защищены.</p>
+    </footer>
+
+    <script>
+        // Инициализация глобального фона
+        document.addEventListener('DOMContentLoaded', function() {
+            // Показать глобальный фон после загрузки
+            setTimeout(() => {
+                document.getElementById('global-hexagon-bg').classList.add('visible');
+            }, 300);
+            
+            // Создание плавающих шестиугольников для фона
+            const hexagonContainer = document.querySelector('.floating-bg-hexagons');
+            const hexagonCount = 15;
+            
+            for (let i = 0; i < hexagonCount; i++) {
+                const hexagon = document.createElement('div');
+                hexagon.classList.add('floating-hexagon');
+                
+                // Случайная позиция
+                const left = Math.random() * 100;
+                const top = Math.random() * 100;
+                
+                // Случайный размер
+                const size = 20 + Math.random() * 40;
+                
+                // Случайная задержка анимации
+                const delay = Math.random() * 5;
+                
+                hexagon.style.left = `${left}%`;
+                hexagon.style.top = `${top}%`;
+                hexagon.style.width = `${size}px`;
+                hexagon.style.height = `${size * 1.15}px`;
+                hexagon.style.animationDelay = `${delay}s`;
+                
+                hexagonContainer.appendChild(hexagon);
+            }
+            
+            // Мобильное меню
+            const menuBtn = document.querySelector('.mobile-menu-btn');
+            const nav = document.querySelector('nav');
+            const overlay = document.querySelector('.menu-overlay');
+            const body = document.body;
+            
+            menuBtn.addEventListener('click', function() {
+                nav.classList.toggle('open');
+                overlay.classList.toggle('active');
+                body.classList.toggle('no-scroll');
+            });
+            
+            overlay.addEventListener('click', function() {
+                nav.classList.remove('open');
+                overlay.classList.remove('active');
+                body.classList.remove('no-scroll');
+            });
+            
+            // Плавная прокрутка для навигации
+            document.querySelectorAll('nav a, .hero-btns a').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetSection = document.querySelector(targetId);
+                    if (targetSection) {
+                        // Закрыть мобильное меню если открыто
+                        nav.classList.remove('open');
+                        overlay.classList.remove('active');
+                        body.classList.remove('no-scroll');
+                        
+                        // Плавная прокрутка
+                        window.scrollTo({
+                            top: targetSection.offsetTop - 90,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+           
+            // Функция для определения рядов с одной ячейкой и применения специальных стилей
+            function adjustHoneycombLayout() {
+                if (window.innerWidth <= 768) {
+                    const rows = document.querySelectorAll('.honeycomb-row');
+                    rows.forEach(row => {
+                        // Удаляем предыдущие классы
+                        row.classList.remove('single-cell');
+                        
+                        // Считаем количество ячеек в ряду
+                        const cells = row.querySelectorAll('.honeycomb-cell');
+                        if (cells.length === 1) {
+                            row.classList.add('single-cell');
+                        }
+                    });
+                } else {
+                    // На десктопе убираем все специальные классы
+                    const rows = document.querySelectorAll('.honeycomb-row');
+                    rows.forEach(row => {
+                        row.classList.remove('single-cell');
+                        row.style.order = '';
+                    });
+                }
+            }
+            
+            // Вызываем при загрузке и изменении размера окна
+            window.addEventListener('load', adjustHoneycombLayout);
+            window.addEventListener('resize', adjustHoneycombLayout);
+            // Табы портфолио
+            const tabs = document.querySelectorAll('.tab');
+            const tabContents = document.querySelectorAll('.tab-content');
+            
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    const tabId = tab.getAttribute('data-tab');
+                    
+                    // Убрать активный класс у всех табов и контента
+                    tabs.forEach(t => t.classList.remove('active'));
+                    tabContents.forEach(c => c.classList.remove('active'));
+                    
+                    // Добавить активный класс текущему табу и соответствующему контенту
+                    tab.classList.add('active');
+                    document.getElementById(`${tabId}-content`).classList.add('active');
+                });
+            });
+            
+            // Анимация появления элементов при скролле
+            const revealElements = document.querySelectorAll('.reveal-init');
+            
+            function checkReveal() {
+                const windowHeight = window.innerHeight;
+                const revealPoint = 150;
+                
+                revealElements.forEach(element => {
+                    const elementTop = element.getBoundingClientRect().top;
+                    
+                    if (elementTop < windowHeight - revealPoint) {
+                        element.classList.add('reveal-visible');
+                    }
+                });
+            }
+            
+            // Проверить при загрузке и при скролле
+            window.addEventListener('load', checkReveal);
+            window.addEventListener('scroll', checkReveal);
+            
+            // Изменение шапки при скролле
+            window.addEventListener('scroll', function() {
+                const header = document.querySelector('header');
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+            
+            // Автоматическое изменение размера текста для героя на мобильных устройствах
+            function adjustHeroText() {
+                const heroTitle = document.querySelector('.hero h1');
+                const heroText = document.querySelector('.hero p');
+                
+                if (window.innerWidth <= 768) {
+                    // Дополнительная адаптация для очень маленьких экранов
+                    if (window.innerWidth <= 400) {
+                        heroTitle.style.fontSize = '2.2rem';
+                        heroText.style.fontSize = '1rem';
+                    } else if (window.innerWidth <= 480) {
+                        heroTitle.style.fontSize = '2.5rem';
+                        heroText.style.fontSize = '1.1rem';
+                    }
+                } else {
+                    // Сброс стилей для десктопа
+                    heroTitle.style.fontSize = '';
+                    heroText.style.fontSize = '';
+                }
+            }
+            
+            // Вызов при загрузке и изменении размера окна
+            window.addEventListener('load', adjustHeroText);
+            window.addEventListener('resize', adjustHeroText);
+        });
+    </script>
+</body>
+</html>

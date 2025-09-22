@@ -1867,15 +1867,18 @@
                 </div>
                 <div class="contact-form">
                     <h3 class="contact-title">Отправить сообщение</h3>
-                    <form>
+                    <form action="https://formspree.io/f/xkgvggne" method="POST">
+                        <input type="hidden" name="_subject" value="Новое сообщение с сайта BarashkovMotion">
+                        <input type="hidden" name="_language" value="ru">
+                        
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Ваше имя" required>
+                            <input type="text" name="name" class="form-control" placeholder="Ваше имя" required>
                         </div>
                         <div class="form-group">
-                            <input type="email" class="form-control" placeholder="Ваш email" required>
+                            <input type="email" name="email" class="form-control" placeholder="Ваш email" required>
                         </div>
                         <div class="form-group">
-                            <textarea class="form-control" placeholder="Сообщение" required></textarea>
+                            <textarea name="message" class="form-control" placeholder="Сообщение" required></textarea>
                         </div>
                         <div class="form-group">
                             <button type="submit" class="btn btn-primary" style="width: 100%;">Отправить сообщение</button>
@@ -2070,8 +2073,37 @@
             window.addEventListener('load', adjustHeroText);
             window.addEventListener('resize', adjustHeroText);
         });
+                // Обработчик формы Formspree
+        const contactForm = document.querySelector('#contact form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', async function(e) {
+                const submitButton = this.querySelector('button[type="submit"]');
+                const originalText = submitButton.textContent;
+                
+                // Показываем загрузку
+                submitButton.textContent = 'Отправка...';
+                submitButton.disabled = true;
+                
+                try {
+                    // Formspree автоматически обработает отправку через action формы
+                    // Можно добавить кастомную логику при успешной отправке
+                    setTimeout(() => {
+                        alert('Сообщение отправлено! Мы свяжемся с вами в ближайшее время.');
+                        this.reset();
+                        submitButton.textContent = originalText;
+                        submitButton.disabled = false;
+                    }, 1000);
+                    
+                } catch (error) {
+                    alert('Ошибка при отправке. Пожалуйста, попробуйте еще раз.');
+                    submitButton.textContent = originalText;
+                    submitButton.disabled = false;
+                }
+            });
+        }
     </script>
 </body>
 
 </html>
+
 

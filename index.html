@@ -955,6 +955,32 @@
             font-size: 1.2rem;
         }
 
+        /* Стиль для номера телефона с сокрытием последних цифр */
+        .phone-number {
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: inline-block;
+        }
+        .phone-number .hidden-digits {
+            filter: blur(4px);
+            background: rgba(0, 217, 255, 0.15);
+            border-radius: 4px;
+            padding: 0 2px;
+            transition: filter 0.2s ease, background 0.2s ease;
+        }
+        .phone-number:hover .hidden-digits {
+            filter: blur(0);
+            background: transparent;
+        }
+        /* Дополнительная подсказка для пользователя */
+        .phone-number::after {
+            content: " (наведите для показа)";
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            margin-left: 6px;
+            opacity: 0.7;
+        }
+
         .contact-form {
             background: var(--glass);
             border: 1px solid var(--glass-border);
@@ -1667,7 +1693,7 @@
                 <li><a href="#home">Главная</a></li>
                 <li><a href="#services">Услуги</a></li>
                 <li><a href="#portfolio">Портфолио</a></li>
-                <li><a href="#partners">Партнеры</a></li>   <!-- новый пункт меню -->
+                <li><a href="#partners">Партнеры</a></li>
                 <li><a href="#contact">Контакты</a></li>
             </ul>
         </nav>
@@ -1790,7 +1816,6 @@
                 <h2 class="section-title">Нам доверяют</h2>
             </div>
             <div class="honeycomb-diamond circle-layout">
-                <!-- Первый ряд -->
                 <div class="honeycomb-row">
                     <div class="honeycomb-cell" style="animation: fadeInUp 0.5s ease forwards;">
                         <div class="honeycomb-cell-content">
@@ -1809,7 +1834,6 @@
                     </div>
                 </div>
                 
-                <!-- Второй ряд -->
                 <div class="honeycomb-row">
                     <div class="honeycomb-cell" style="animation: fadeInUp 0.6s 0.1s ease forwards;">
                         <div class="honeycomb-cell-content">
@@ -1833,7 +1857,6 @@
                     </div>
                 </div>
                 
-                <!-- Третий ряд (одиночная ячейка) -->
                 <div class="honeycomb-row single-cell">
                     <div class="honeycomb-cell" style="animation: fadeInUp 0.7s 0.2s ease forwards;">
                         <div class="honeycomb-cell-content">
@@ -1860,7 +1883,10 @@
                             </li>
                             <li>
                                 <i class="fas fa-phone"></i>
-                                <span>+7 963 014 54 18</span>
+                                <!-- Скрытие последних 4 цифр с отображением при наведении и отправкой события в метрику -->
+                                <span class="phone-number" data-full="+7 963 014 54 18">
+                                    +7 963 014 <span class="hidden-digits">** **</span>
+                                </span>
                             </li>
                             <li>
                                 <i class="fas fa-map-marker-alt"></i>
@@ -2063,6 +2089,65 @@
             
             window.addEventListener('load', adjustHeroText);
             window.addEventListener('resize', adjustHeroText);
+            
+            // Обработка отображения номера телефона при наведении и отправка события в Яндекс.Метрику
+            const phoneSpan = document.querySelector('.phone-number');
+            if (phoneSpan) {
+                let eventSent = false; // Флаг для отправки события один раз за сессию (можно убрать, если нужно при каждом наведении)
+                const fullNumber = phoneSpan.getAttribute('data-full');
+                const hiddenSpan = phoneSpan.querySelector('.hidden-digits');
+                
+                const showFullNumber = () => {
+                    if (hiddenSpan && fullNumber) {
+                        // Извлекаем последние 4 цифры из полного номера
+                        const digits = fullNumber.match(/\d/g);
+                        if (digits && digits.length >= 4) {
+                            const last4 = digits.slice(-4).join('');
+                            const formattedLast4 = last4.slice(0,2) + ' ' + last4.slice(2);
+                            hiddenSpan.textContent = formattedLast4;
+                            hiddenSpan.style.filter = 'blur(0)';
+                            hiddenSpan.style.background = 'transparent';
+                        } else {
+                            // fallback
+                            hiddenSpan.textContent = '54 18';
+                        }
+                        // Отправка события в Яндекс.Метрику (цель "phone_hover")
+                        if (typeof ym !== 'undefined' && !eventSent) {
+                            ym(108446006, 'reachGoal', 'phone_hover');
+                            eventSent = true;
+                            // Можно также отправить событие через dataLayer или просто оставить так
+                            console.log('Метрика: событие phone_hover отправлено');
+                        }
+                    }
+                };
+                
+                const hideLastDigits = () => {
+                    if (hiddenSpan) {
+                        hiddenSpan.textContent = '** **';
+                        hiddenSpan.style.filter = 'blur(4px)';
+                        hiddenSpan.style.background = 'rgba(0, 217, 255, 0.15)';
+                    }
+                };
+                
+                // Изначально скрываем последние цифры
+                hideLastDigits();
+                
+                // При наведении мыши показываем полный номер
+                phoneSpan.addEventListener('mouseenter', showFullNumber);
+                // При уходе мыши возвращаем скрытый вид
+                phoneSpan.addEventListener('mouseleave', hideLastDigits);
+                
+                // Для мобильных устройств: по клику также показываем полный номер (на мобильных нет наведения)
+                phoneSpan.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    if (window.innerWidth <= 768) {
+                        // Показываем полный номер при клике на мобильных
+                        showFullNumber();
+                        // Через 3 секунды скрываем обратно, чтобы не мешать
+                        setTimeout(hideLastDigits, 3000);
+                    }
+                });
+            }
         });
         
         // Обработчик формы Formspree (имитация)

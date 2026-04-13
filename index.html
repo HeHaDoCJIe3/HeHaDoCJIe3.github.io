@@ -13,7 +13,7 @@
     </noscript>
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-        <!-- Yandex.Metrika counter -->
+    <!-- Yandex.Metrika counter -->
     <script type="text/javascript">
         (function(m,e,t,r,i,k,a){
             m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
@@ -27,45 +27,45 @@
     <noscript><div><img src="https://mc.yandex.ru/watch/108446006" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
     <!-- /Yandex.Metrika counter -->
     <style>
-                /* Исправление для заголовка на десктопе */
+        /* Исправление для заголовка на десктопе */
         @media (min-width: 769px) {
             .hero h1 {
-            font-size: 4.5rem;
-            line-height: 1.2;
-            margin-bottom: 400px;
-            background: linear-gradient(90deg, #ffffff, var(--accent));
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-weight: 800;
-            white-space: normal; /* Разрешаем перенос текста */
-            word-wrap: break-word;
-            max-width: 100%;
-         }
+                font-size: 4.5rem;
+                line-height: 1.2;
+                margin-bottom: 400px;
+                background: linear-gradient(90deg, #ffffff, var(--accent));
+                -webkit-background-clip: text;
+                background-clip: text;
+                -webkit-text-fill-color: transparent;
+                font-weight: 800;
+                white-space: normal;
+                word-wrap: break-word;
+                max-width: 100%;
+            }
 
-         .hero-content {
-            max-width: 1200px; /* Увеличенная максимальная ширина */
-            position: relative;
-            z-index: 2;
-            padding: 0 400px; /* Увеличиваем боковые отступы */
-            margin: 0 auto;
-            width: 100%;
-            text-align: center;;
+            .hero-content {
+                max-width: 1200px;
+                position: relative;
+                z-index: 2;
+                padding: 0 400px;
+                margin: 0 auto;
+                width: 100%;
+                text-align: center;
+            }
+            .hero p {
+                font-size: 1.3rem;
+                color: var(--text-secondary);
+                margin-bottom: 40px;
+                max-width: 900px;
+                margin-left: auto;
+                margin-right: auto;
+                line-height: 1.6;
+            }
         }
-         .hero p {
-            font-size: 1.3rem;
-            color: var(--text-secondary);
-            margin-bottom: 40px;
-            max-width: 900px; /* Увеличиваем максимальную ширину */
-            margin-left: auto;
-            margin-right: auto;
-            line-height: 1.6;
-        }
-       }
         /* Для десктопной версии */
         @media (min-width: 769px) {
             .hero h1 {
-                font-size: 3.5rem; /* Оптимальный размер для десктопа */
+                font-size: 3.5rem;
                 line-height: 1.1;
             }
             
@@ -74,21 +74,21 @@
                 padding: 0 300px;
             }
         }
-         /* Для очень больших экранов */
-     @media (min-width: 1600px) {
-        .hero h1 {
-            font-size: 4.5rem; /* Увеличиваем размер шрифта для больших экранов */
-        }
-    }
-        .hero-content {
-                max-width: 900px; /* Увеличена максимальная ширина */
-                padding: 0 30px; /* Добавлены отступы */
+        /* Для очень больших экранов */
+        @media (min-width: 1600px) {
+            .hero h1 {
+                font-size: 4.5rem;
             }
+        }
+        .hero-content {
+            max-width: 900px;
+            padding: 0 30px;
+        }
 
         /* Дополнительное исправление для очень больших экранов */
         @media (min-width: 1600px) {
             .hero h1 {
-                font-size: 5rem; /* Увеличиваем размер шрифта для больших экранов */
+                font-size: 5rem;
             }
         }
         /* Исправление для контейнера hero */
@@ -104,7 +104,7 @@
         }
 
         .hero-content {
-            max-width: 1200px; /* Увеличенная ширина по умолчанию */
+            max-width: 1200px;
             position: relative;
             z-index: 2;
             padding: 0 20px;
@@ -131,7 +131,7 @@
                 display: grid;
                 grid-template-columns: 1fr 1fr;
                 gap: 40px;
-                align-items: start; /* Изменено с center на start */
+                align-items: start;
                 padding: 40px;
             }
     
@@ -150,43 +150,42 @@
                 object-fit: contain;
             }
     
-             
             .work-description h3 {
                 margin-top: 0;
             }
         }
-            .work-description {
-                padding: 20px;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-         }
+        .work-description {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
         .tab-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 40px;
             align-items: start;
             padding: 40px;
-            overflow: hidden; /* Добавляем это свойство */
+            overflow: hidden;
         }
 
         .preview-container {
             border-radius: 15px;
-            overflow: hidden; /* Убедитесь, что это свойство присутствует */
+            overflow: hidden;
             box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
-            height: auto; /* Меняем фиксированную высоту на auto */
+            height: auto;
             display: flex;
             align-items: center;
             justify-content: center;
             background: var(--secondary);
-            aspect-ratio: 16/9; /* Сохраняем пропорции */
-            max-width: 100%; /* Ограничиваем максимальную ширину */
+            aspect-ratio: 16/9;
+            max-width: 100%;
         }
 
         .work-preview {
             width: 100%;
             height: 100%;
-            object-fit: contain; /* Меняем cover на contain чтобы все содержимое было видно */
+            object-fit: contain;
         }
 
         /* Для мобильных устройств */
@@ -199,11 +198,11 @@
             .preview-container {
                 order: 1;
                 margin-bottom: 20px;
-                max-height: 50vh; /* Ограничиваем максимальную высоту на мобильных */
+                max-height: 50vh;
             }
         }
 
-         /* НОВЫЕ СТИЛИ ДЛЯ КРУГОВОГО РАСПОЛОЖЕНИЯ СОТ НА МОБИЛЬНЫХ УСТРОЙСТВАХ */
+        /* НОВЫЕ СТИЛИ ДЛЯ КРУГОВОГО РАСПОЛОЖЕНИЯ СОТ НА МОБИЛЬНЫХ УСТРОЙСТВАХ */
         @media (min-width: 769px) {
             .honeycomb-diamond {
                 display: flex;
@@ -325,7 +324,7 @@
             
             /* Специальные стили для одиночной ячейки */
             .honeycomb-row.single-cell {
-                order: -1; /* Помещаем ряд с одной ячейкой в начало */
+                order: -1;
                 margin-bottom: 20px;
             }
             
@@ -344,17 +343,17 @@
                 }
             }
         }
-            /* Для очень маленьких экранов */
-            @media (max-width: 480px) {
-                .tab-content {
-                    padding: 20px;
-                    gap: 25px;
-                }
-                
-                .preview-container {
-                    margin-bottom: 15px;
-                }
+        /* Для очень маленьких экранов */
+        @media (max-width: 480px) {
+            .tab-content {
+                padding: 20px;
+                gap: 25px;
             }
+            
+            .preview-container {
+                margin-bottom: 15px;
+            }
+        }
         /* Стили для десктопной версии (ничего не меняем) */
         @media (min-width: 769px) {
             .honeycomb-diamond {
@@ -789,7 +788,7 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 40px;
-            align-items: start; /* Изменено с center на start */
+            align-items: start;
             padding: 40px;
         }
 
@@ -1088,16 +1087,16 @@
 
             .tab-content {
                 grid-template-columns: 1fr;
-                gap: 30px; /* Увеличиваем промежуток между элементами */
+                gap: 30px;
             }
     
             .preview-container {
-                order: 1; /* Видео first */
-                margin-bottom: 20px; /* Добавляем отступ снизу */
+                order: 1;
+                margin-bottom: 20px;
             }
     
             .work-description {
-                order: 2; /* Текст second */
+                order: 2;
                 padding: 0;
             }
         }
@@ -1656,11 +1655,7 @@
 <body>
 <!-- Глобальный анимированный фон -->
 <div id="global-hexagon-bg">
-    <!-- Lottie анимация -->
-    <div class="floating-bg">
-       
-    </div>
-    <!-- Плавающие шестиугольники -->
+    <div class="floating-bg"></div>
     <div class="floating-bg-hexagons"></div>
 </div>
 
@@ -1672,6 +1667,7 @@
                 <li><a href="#home">Главная</a></li>
                 <li><a href="#services">Услуги</a></li>
                 <li><a href="#portfolio">Портфолио</a></li>
+                <li><a href="#partners">Партнеры</a></li>   <!-- новый пункт меню -->
                 <li><a href="#contact">Контакты</a></li>
             </ul>
         </nav>
@@ -1684,7 +1680,7 @@
     <!-- Основное содержимое -->
     <div class="container">
         <!-- Герой-секция -->
-       <section id="home" class="hero">
+        <section id="home" class="hero">
             <div class="hero-animation">
                 <video autoplay muted loop playsinline class="hero-video">
                     <source src="" type="video/mp4">
@@ -1706,7 +1702,6 @@
         <section id="services" class="section">
             <div class="section-header">
                 <h2 class="section-title">Направления работы</h2>
-
             </div>
             <div class="services-list">
                 <div class="service-item reveal-init">
@@ -1729,135 +1724,125 @@
         </section>
 
         <!-- Секция портфолио -->
-       <section id="portfolio" class="section">
-        <div class="section-header">
-            <h2 class="section-title">Проекты</h2>
-        </div>
-        
-        <div class="portfolio-content">
-            <div class="tab-content active" id="all-content">
-                <div class="preview-container">
-                    <video autoplay muted loop playsinline class="work-preview">
-                        <source src="videos/Забор.mp4" type="video/mp4">
-                        Ваш браузер не поддерживает видео тег.
-                    </video>
+        <section id="portfolio" class="section">
+            <div class="section-header">
+                <h2 class="section-title">Проекты</h2>
+            </div>
+            <div class="portfolio-content">
+                <div class="tab-content active" id="all-content">
+                    <div class="preview-container">
+                        <video autoplay muted loop playsinline class="work-preview">
+                            <source src="videos/Забор.mp4" type="video/mp4">
+                            Ваш браузер не поддерживает видео тег.
+                        </video>
+                    </div>
+                    <div class="work-description">
+                        <h3>Процесс построения забора</h3>
+                        <p>Создан 3D-ролик процесса изготовления забора: от моделинга конструкции до добавления эффектов сварки и финальной сборки. Видео наглядно показало технологичность производства и стало эффективным инструментом для презентаций компании. Хотите такой же инструмент для презентаций?</p>
+                        <a href="#contact" class="btn btn-primary" style="margin-top: 20px; display: inline-block;">Заказать ролик</a>
+                    </div>
                 </div>
-                <div class="work-description">
-                    <h3>Процесс построения забора</h3>
-                    <p>Создан 3D-ролик процесса изготовления забора: от моделинга конструкции до добавления эффектов сварки и финальной сборки. Видео наглядно показало технологичность производства и стало эффективным инструментом для презентаций компании. Хотите такой же инструмент для презентаций?</p>
-                    <a href="#contact" class="btn btn-primary" style="margin-top: 20px; display: inline-block;">Заказать ролик</a>
+                <div class="tab-content" id="commercial-content">
+                    <div class="preview-container">
+                        <video autoplay muted loop playsinline class="work-preview">
+                            <source src="videos/Часы.mp4" type="video/mp4">
+                            Ваш браузер не поддерживает видео тег.
+                        </video>
+                    </div>
+                    <div class="work-description">
+                        <h3>Презентация часов</h3>
+                        <p>Представьте: ваш продукт — в идеальном свете, с безупречной анимацией и материалами, которые хочется трогать. Именно такой фотореалистичный CG-ролик мы сделали для спортивных часов. Он превратил обычное видео в мощный инструмент премиум-позиционирования и помог бренду стать заметнее конкурентов. Готовы повысить ценность вашего продукта?</p>
+                        <a href="#contact" class="btn btn-primary" style="margin-top: 20px; display: inline-block;">Заказать ролик</a>
+                    </div>
+                </div>
+                <div class="tab-content" id="animation-content">
+                    <div class="preview-container">
+                        <video autoplay muted loop playsinline class="work-preview">
+                            <source src="videos/Кроссовок.mp4" type="video/mp4">
+                            Ваш браузер не поддерживает видео тег.
+                        </video>
+                    </div>
+                    <div class="work-description">
+                        <h3>Презентация спортивной обуви</h3>
+                        <p>Хотите, чтобы ваш магазин обуви вызывал доверие и выделялся в digital-среде? Мы разработали ролик, который через динамичную анимацию и проработку каждой детали визуализирует технологичность вашей обуви. Результат: рост доверия к бренду, взрывной интерес к коллекции и готовый инструмент для продвижения в соцсетях и на сайтах. Закажите такой же ролик для вашей компании — и ваши продажи заговорят на языке эмоций и качества.</p>
+                        <a href="#contact" class="btn btn-primary" style="margin-top: 20px; display: inline-block;">Заказать ролик</a>
+                    </div>
+                </div>
+                <div class="tab-content" id="explainer-content">
+                    <div class="preview-container">
+                        <video autoplay muted loop playsinline class="work-preview">
+                            <source src="videos/Абстракция.mp4" type="video/mp4">
+                            Ваш браузер не поддерживает видео тег.
+                        </video>
+                    </div>
+                    <div class="work-description">
+                        <h3>Работа с абстракциями</h3>
+                        <p>Чувствуете, что ваш бренд достоин большего, но стандартные видео не передают его драйв? Мы создали абстрактный ролик, где анимация и форма работают на эмоции — энергия компании становится видимой. Презентации заиграли, digital-кампании взлетели, клиенты пишут чаще. Пора сделать такой же для вас. Закажите ролик — и мы упакуем вашу динамику в визуал, который продаёт.</p>
+                        <a href="#contact" class="btn btn-primary" style="margin-top: 20px; display: inline-block;">Заказать ролик</a>
+                    </div>
                 </div>
             </div>
-            <div class="tab-content" id="commercial-content">
-                <div class="preview-container">
-                    <video autoplay muted loop playsinline class="work-preview">
-                        <source src="videos/Часы.mp4" type="video/mp4">
-                        Ваш браузер не поддерживает видео тег.
-                    </video>
-                </div>
-                <div class="work-description">
-                    <h3>Презентация часов</h3>
-                    <p>Представьте: ваш продукт — в идеальном свете, с безупречной анимацией и материалами, которые хочется трогать. Именно такой фотореалистичный CG-ролик мы сделали для спортивных часов. Он превратил обычное видео в мощный инструмент премиум-позиционирования и помог бренду стать заметнее конкурентов.
-
-Готовы повысить ценность вашего продукта?</p>
-                    <a href="#contact" class="btn btn-primary" style="margin-top: 20px; display: inline-block;">Заказать ролик</a>
-                </div>
-            </div>
-            <div class="tab-content" id="animation-content">
-                <div class="preview-container">
-                    <video autoplay muted loop playsinline class="work-preview">
-                        <source src="videos/Кроссовок.mp4" type="video/mp4">
-                        Ваш браузер не поддерживает видео тег.
-                    </video>
-                </div>
-                <div class="work-description">
-                    <h3>Презентация спортивной обуви</h3>
-                    <p>Хотите, чтобы ваш магазин обуви вызывал доверие и выделялся в digital-среде?
-Мы разработали ролик, который через динамичную анимацию и проработку каждой детали визуализирует технологичность вашей обуви. Результат: рост доверия к бренду, взрывной интерес к коллекции и готовый инструмент для продвижения в соцсетях и на сайтах.
-
-Закажите такой же ролик для вашей компании — и ваши продажи заговорят на языке эмоций и качества.</p>
-                    <a href="#contact" class="btn btn-primary" style="margin-top: 20px; display: inline-block;">Заказать ролик</a>
-                </div>
-            </div>
-            <div class="tab-content" id="explainer-content">
-                <div class="preview-container">
-                    <video autoplay muted loop playsinline class="work-preview">
-                        <source src="videos/Абстракция.mp4" type="video/mp4">
-                        Ваш браузер не поддерживает видео тег.
-                    </video>
-                </div>
-                <div class="work-description">
-                    <h3>Работа с абстракциями</h3>
-                    <p>Чувствуете, что ваш бренд достоин большего, но стандартные видео не передают его драйв? Мы создали абстрактный ролик, где анимация и форма работают на эмоции — энергия компании становится видимой. Презентации заиграли, digital-кампании взлетели, клиенты пишут чаще.
-
-Пора сделать такой же для вас. Закажите ролик — и мы упакуем вашу динамику в визуал, который продаёт.</p>
-                    <a href="#contact" class="btn btn-primary" style="margin-top: 20px; display: inline-block;">Заказать ролик</a>
-                </div>
-            </div>
-        </div>
         </section>
 
-        <!-- Секция с сотами -->
-        <section class="section">
-        <div class="section-header">
-            <h2 class="section-title">Нам доверяют</h2>
-           
-        </div>
-        
-        <div class="honeycomb-diamond circle-layout">
-            <!-- Первый ряд -->
-            <div class="honeycomb-row">
-                <div class="honeycomb-cell" style="animation: fadeInUp 0.5s ease forwards;">
-                    <div class="honeycomb-cell-content">
-                        <img src="images/logo (1).png" alt="Windows" loading="lazy" decoding="async">
+        <!-- Секция с сотами (Нам доверяют) + добавлен ID "partners" -->
+        <section id="partners" class="section">
+            <div class="section-header">
+                <h2 class="section-title">Нам доверяют</h2>
+            </div>
+            <div class="honeycomb-diamond circle-layout">
+                <!-- Первый ряд -->
+                <div class="honeycomb-row">
+                    <div class="honeycomb-cell" style="animation: fadeInUp 0.5s ease forwards;">
+                        <div class="honeycomb-cell-content">
+                            <img src="images/logo (1).png" alt="Windows" loading="lazy" decoding="async">
+                        </div>
+                    </div>
+                    <div class="honeycomb-cell" style="animation: fadeInUp 0.5s 0.1s ease forwards;">
+                        <div class="honeycomb-cell-content">
+                            <img src="images/logo (2).png" alt="LinkedIn" loading="lazy" decoding="async">
+                        </div>
+                    </div>
+                    <div class="honeycomb-cell" style="animation: fadeInUp 0.5s 0.2s ease forwards;">
+                        <div class="honeycomb-cell-content">
+                            <img src="images/logo (3).png" alt="Figma" loading="lazy" decoding="async">
+                        </div>
                     </div>
                 </div>
-                <div class="honeycomb-cell" style="animation: fadeInUp 0.5s 0.1s ease forwards;">
-                    <div class="honeycomb-cell-content">
-                        <img src="images/logo (2).png" alt="LinkedIn" loading="lazy" decoding="async">
+                
+                <!-- Второй ряд -->
+                <div class="honeycomb-row">
+                    <div class="honeycomb-cell" style="animation: fadeInUp 0.6s 0.1s ease forwards;">
+                        <div class="honeycomb-cell-content">
+                            <img src="images/logo (4).png" alt="GitHub" loading="lazy" decoding="async">
+                        </div>
+                    </div>
+                    <div class="honeycomb-cell" style="animation: fadeInUp 0.6s 0.2s ease forwards;">
+                        <div class="honeycomb-cell-content">
+                            <img src="images/logo (5).png" alt="Adobe" loading="lazy" decoding="async">
+                        </div>
+                    </div>
+                    <div class="honeycomb-cell" style="animation: fadeInUp 0.6s 0.3s ease forwards;">
+                        <div class="honeycomb-cell-content">
+                            <img src="images/logo (6).png" alt="YouTube" loading="lazy" decoding="async">
+                        </div>
+                    </div>
+                    <div class="honeycomb-cell" style="animation: fadeInUp 0.6s 0.4s ease forwards;">
+                        <div class="honeycomb-cell-content">
+                            <img src="images/logo (7).png" alt="WordPress" loading="lazy" decoding="async">
+                        </div>
                     </div>
                 </div>
-                <div class="honeycomb-cell" style="animation: fadeInUp 0.5s 0.2s ease forwards;">
-                    <div class="honeycomb-cell-content">
-                        <img src="images/logo (3).png" alt="Figma" loading="lazy" decoding="async">
+                
+                <!-- Третий ряд (одиночная ячейка) -->
+                <div class="honeycomb-row single-cell">
+                    <div class="honeycomb-cell" style="animation: fadeInUp 0.7s 0.2s ease forwards;">
+                        <div class="honeycomb-cell-content">
+                            <img src="images/logo (10).png" alt="Instagram" loading="lazy" decoding="async">
+                        </div>
                     </div>
                 </div>
             </div>
-            
-            <!-- Второй ряд -->
-            <div class="honeycomb-row">
-                <div class="honeycomb-cell" style="animation: fadeInUp 0.6s 0.1s ease forwards;">
-                    <div class="honeycomb-cell-content">
-                        <img src="images/logo (4).png" alt="GitHub" loading="lazy" decoding="async">
-                    </div>
-                </div>
-                <div class="honeycomb-cell" style="animation: fadeInUp 0.6s 0.2s ease forwards;">
-                    <div class="honeycomb-cell-content">
-                        <img src="images/logo (5).png" alt="Adobe" loading="lazy" decoding="async">
-                    </div>
-                </div>
-                <div class="honeycomb-cell" style="animation: fadeInUp 0.6s 0.3s ease forwards;">
-                    <div class="honeycomb-cell-content">
-                        <img src="images/logo (6).png" alt="YouTube" loading="lazy" decoding="async">
-                    </div>
-                </div>
-                <div class="honeycomb-cell" style="animation: fadeInUp 0.6s 0.4s ease forwards;">
-                    <div class="honeycomb-cell-content">
-                        <img src="images/logo (7).png" alt="WordPress" loading="lazy" decoding="async">
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Третий ряд (одиночная ячейка) -->
-            <div class="honeycomb-row single-cell">
-                <div class="honeycomb-cell" style="animation: fadeInUp 0.7s 0.2s ease forwards;">
-                    <div class="honeycomb-cell-content">
-                        <img src="images/logo (10).png" alt="Instagram" loading="lazy" decoding="async">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
 
         <!-- Секция контактов -->
         <section id="contact" class="section">
@@ -1890,23 +1875,18 @@
                 </div>
                 <div class="contact-form">
                     <h3 class="contact-title">Оставить заявку</h3>
-                  <!--  <form action="https://formspree.io/f/xkgvggne" method="POST">
-                        <input type="hidden" name="_subject" value="Новое сообщение с сайта BarashkovMotion">
-                        <input type="hidden" name="_language" value="ru"> -->
-                        
-                        <div class="form-group">
-                            <input type="text" name="name" class="form-control" placeholder="Ваше имя" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" name="email" class="form-control" placeholder="Ваш email" required>
-                        </div>
-                        <div class="form-group">
-                            <textarea name="message" class="form-control" placeholder="Сообщение" required></textarea>
-                        </div>
-                        <div class="form-group">
-                            <button type="submit" class="btn btn-primary" style="width: 100%;">Отправить сообщение</button>
-                        </div>
-                    </form>
+                    <div class="form-group">
+                        <input type="text" name="name" class="form-control" placeholder="Ваше имя" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" class="form-control" placeholder="Ваш email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="message" class="form-control" placeholder="Сообщение" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Отправить сообщение</button>
+                    </div>
                 </div>
             </div>
         </section>
@@ -1915,7 +1895,6 @@
     <!-- Футер -->
     <footer>
         <div class="footer-logo">Barashkov<span>Motion</span></div>
-        
         <p class="copyright">© 2025 BarashkovMotion. Все права защищены.</p>
     </footer>
 
@@ -2001,17 +1980,13 @@
                 if (window.innerWidth <= 768) {
                     const rows = document.querySelectorAll('.honeycomb-row');
                     rows.forEach(row => {
-                        // Удаляем предыдущие классы
                         row.classList.remove('single-cell');
-                        
-                        // Считаем количество ячеек в ряду
                         const cells = row.querySelectorAll('.honeycomb-cell');
                         if (cells.length === 1) {
                             row.classList.add('single-cell');
                         }
                     });
                 } else {
-                    // На десктопе убираем все специальные классы
                     const rows = document.querySelectorAll('.honeycomb-row');
                     rows.forEach(row => {
                         row.classList.remove('single-cell');
@@ -2020,26 +1995,24 @@
                 }
             }
             
-            // Вызываем при загрузке и изменении размера окна
             window.addEventListener('load', adjustHoneycombLayout);
             window.addEventListener('resize', adjustHoneycombLayout);
-            // Табы портфолио
+            
+            // Табы портфолио (упрощённая версия, так как в разметке нет кнопок табов, но скрипт оставлен)
             const tabs = document.querySelectorAll('.tab');
             const tabContents = document.querySelectorAll('.tab-content');
             
-            tabs.forEach(tab => {
-                tab.addEventListener('click', () => {
-                    const tabId = tab.getAttribute('data-tab');
-                    
-                    // Убрать активный класс у всех табов и контента
-                    tabs.forEach(t => t.classList.remove('active'));
-                    tabContents.forEach(c => c.classList.remove('active'));
-                    
-                    // Добавить активный класс текущему табу и соответствующему контенту
-                    tab.classList.add('active');
-                    document.getElementById(`${tabId}-content`).classList.add('active');
+            if(tabs.length) {
+                tabs.forEach(tab => {
+                    tab.addEventListener('click', () => {
+                        const tabId = tab.getAttribute('data-tab');
+                        tabs.forEach(t => t.classList.remove('active'));
+                        tabContents.forEach(c => c.classList.remove('active'));
+                        tab.classList.add('active');
+                        document.getElementById(`${tabId}-content`).classList.add('active');
+                    });
                 });
-            });
+            }
             
             // Анимация появления элементов при скролле
             const revealElements = document.querySelectorAll('.reveal-init');
@@ -2050,14 +2023,12 @@
                 
                 revealElements.forEach(element => {
                     const elementTop = element.getBoundingClientRect().top;
-                    
                     if (elementTop < windowHeight - revealPoint) {
                         element.classList.add('reveal-visible');
                     }
                 });
             }
             
-            // Проверить при загрузке и при скролле
             window.addEventListener('load', checkReveal);
             window.addEventListener('scroll', checkReveal);
             
@@ -2077,7 +2048,6 @@
                 const heroText = document.querySelector('.hero p');
                 
                 if (window.innerWidth <= 768) {
-                    // Дополнительная адаптация для очень маленьких экранов
                     if (window.innerWidth <= 400) {
                         heroTitle.style.fontSize = '2.2rem';
                         heroText.style.fontSize = '1rem';
@@ -2086,45 +2056,33 @@
                         heroText.style.fontSize = '1.1rem';
                     }
                 } else {
-                    // Сброс стилей для десктопа
                     heroTitle.style.fontSize = '';
                     heroText.style.fontSize = '';
                 }
             }
             
-            // Вызов при загрузке и изменении размера окна
             window.addEventListener('load', adjustHeroText);
             window.addEventListener('resize', adjustHeroText);
         });
-                // Обработчик формы Formspree
+        
+        // Обработчик формы Formspree (имитация)
         const contactForm = document.querySelector('#contact form');
         if (contactForm) {
             contactForm.addEventListener('submit', async function(e) {
+                e.preventDefault();
                 const submitButton = this.querySelector('button[type="submit"]');
                 const originalText = submitButton.textContent;
-                
-                // Показываем загрузку
                 submitButton.textContent = 'Отправка...';
                 submitButton.disabled = true;
                 
-                try {
-                    // Formspree автоматически обработает отправку через action формы
-                    // Можно добавить кастомную логику при успешной отправке
-                    setTimeout(() => {
-                        alert('Сообщение отправлено! Мы свяжемся с вами в ближайшее время.');
-                        this.reset();
-                        submitButton.textContent = originalText;
-                        submitButton.disabled = false;
-                    }, 1000);
-                    
-                } catch (error) {
-                    alert('Ошибка при отправке. Пожалуйста, попробуйте еще раз.');
+                setTimeout(() => {
+                    alert('Сообщение отправлено! Мы свяжемся с вами в ближайшее время.');
+                    this.reset();
                     submitButton.textContent = originalText;
                     submitButton.disabled = false;
-                }
+                }, 1000);
             });
         }
     </script>
 </body>
-
 </html>

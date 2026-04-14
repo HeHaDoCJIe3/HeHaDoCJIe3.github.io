@@ -832,6 +832,70 @@
             color: var(--text-secondary);
         }
 
+        /* Секция "О нас" */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            background: var(--glass);
+            border-radius: 20px;
+            padding: 40px;
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+        }
+        .about-photo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .about-photo img {
+            width: 100%;
+            max-width: 320px;
+            border-radius: 24px;
+            box-shadow: 0 20px 35px rgba(0,0,0,0.4);
+            border: 2px solid rgba(0, 217, 255, 0.3);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+            object-fit: cover;
+            aspect-ratio: 1 / 1;
+        }
+        .about-photo img:hover {
+            transform: scale(1.02);
+            border-color: var(--accent);
+        }
+        .about-text p {
+            font-size: 1.15rem;
+            line-height: 1.7;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+        }
+        .about-text strong {
+            color: var(--accent);
+            font-weight: 600;
+        }
+        @media (max-width: 992px) {
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 35px;
+                text-align: center;
+                padding: 30px;
+            }
+            .about-photo img {
+                max-width: 260px;
+            }
+            .about-text p {
+                font-size: 1rem;
+            }
+        }
+        @media (max-width: 480px) {
+            .about-content {
+                padding: 20px;
+            }
+            .about-photo img {
+                max-width: 200px;
+            }
+        }
+
         /* Соты */
         .honeycomb-diamond {
             display: flex;
@@ -1443,18 +1507,11 @@
                 font-size: 1rem; 
             }
 
-            .about-content { 
-                flex-direction: column !important; 
-                gap: 22px; 
+            .about-content {
+                padding: 20px;
             }
-            
-            .about-photo { 
-                flex: 0 0 auto !important; 
-            }
-            
-            .about-text p[style*="font-size: 3.5rem"] { 
-                font-size: 1.6rem !important; 
-                line-height: 1.4 !important; 
+            .about-photo img {
+                max-width: 170px;
             }
 
             .honeycomb-diamond { 
@@ -1693,6 +1750,7 @@
                 <li><a href="#home">Главная</a></li>
                 <li><a href="#services">Услуги</a></li>
                 <li><a href="#portfolio">Портфолио</a></li>
+                <li><a href="#about">О нас</a></li>
                 <li><a href="#partners">Партнеры</a></li>
                 <li><a href="#contact">Контакты</a></li>
             </ul>
@@ -1806,6 +1864,24 @@
                         <p>Чувствуете, что ваш бренд достоин большего, но стандартные видео не передают его драйв? Мы создали абстрактный ролик, где анимация и форма работают на эмоции — энергия компании становится видимой. Презентации заиграли, digital-кампании взлетели, клиенты пишут чаще. Пора сделать такой же для вас. Закажите ролик — и мы упакуем вашу динамику в визуал, который продаёт.</p>
                         <a href="#contact" class="btn btn-primary" style="margin-top: 20px; display: inline-block;">Заказать ролик</a>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- НОВАЯ СЕКЦИЯ "О НАС" -->
+        <section id="about" class="section">
+            <div class="section-header">
+                <h2 class="section-title">О нас</h2>
+            </div>
+            <div class="about-content reveal-init">
+                <div class="about-photo">
+                    <!-- Замените путь на свою фотографию: images/your-photo.jpg -->
+                    <img src="F:\site\Портфолио\фотка моя.png" alt="Основатель студии BarashkovMotion" loading="lazy">
+                </div>
+                <div class="about-text">
+                    <p><strong>BarashkovMotion</strong> — это моушн-дизайн, который превращает идеи в мощный бизнес-инструмент. Мы оживляем картинки: ваш логотип или продукт становится объёмным кино с идеальным светом и фактурой. Он может вращаться, парить, рассыпаться — как в рекламе премиальных автомобилей или техники.</p>
+                    <p>Такие ролики повышают конверсию в соцсетях <strong>до 40%</strong>, упаковывают бренд на порядок выше конкурентов и становятся вашей визитной карточкой на переговорах и презентациях. Благодаря нам компании и частные клиенты реально зарабатывают — закрывают сделки дороже, получают лиды из Reels и TikTok, окупают вложения в анимацию с первых показов.</p>
+                    <p>Более, чем за <strong>6 лет</strong> мы работали с разными заказчиками: от стартапов до рекламных агентств — и каждый раз результатом был не просто ролик, а <strong>рост их бизнеса</strong>.</p>
                 </div>
             </div>
         </section>
@@ -2115,7 +2191,6 @@
                         if (typeof ym !== 'undefined' && !eventSent) {
                             ym(108446006, 'reachGoal', 'phone_hover');
                             eventSent = true;
-                            // Можно также отправить событие через dataLayer или просто оставить так
                             console.log('Метрика: событие phone_hover отправлено');
                         }
                     }
@@ -2141,9 +2216,7 @@
                 phoneSpan.addEventListener('click', function(e) {
                     e.stopPropagation();
                     if (window.innerWidth <= 768) {
-                        // Показываем полный номер при клике на мобильных
                         showFullNumber();
-                        // Через 3 секунды скрываем обратно, чтобы не мешать
                         setTimeout(hideLastDigits, 3000);
                     }
                 });
